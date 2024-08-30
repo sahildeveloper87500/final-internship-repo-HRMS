@@ -1,0 +1,313 @@
+/* card.component.css */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  width: 300px; /* Adjust as needed */
+  height: 190px;
+  max-width: 100%; /* Set maximum width to make it responsive */
+  margin-right: 1px;
+  width: calc(25% - 20px);
+}
+
+.image-container {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.text-container {
+  text-align: center;
+}
+
+.app-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.developer {
+  font-size: 14px;
+  color: #555;
+}
+.main5 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%; /* Set maximum width for the container */
+  // margin:  0 auto; /* Center the container */
+  // margin-top: 13%;
+  // z-index: -1000;
+  padding-right: 10px;
+}
+
+@media (max-width: 668px) {
+  .main5 {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center; /* Center the cards vertically */
+    margin-top: 5%;
+  }
+
+  .card {
+    width: calc(
+      50% - 20px
+    ); /* 50% width for two cards in a row on smaller screens */
+    margin-bottom: 20px; /* Add some margin between cards */
+  }
+}
+
+@media (max-width: 950px) {
+  .main5 {
+    margin-top: 25%;
+  }
+  .card {
+    width: calc(
+      50% - 20px
+    ); /* 50% width for two cards in a row on screens up to 950px */
+  }
+}
+
+@media (max-width: 480px) {
+  .main5 {
+    margin-top: 35%;
+  }
+  .card {
+    width: calc(
+      100% - 20px
+    ); /* Full width for a single card on screens up to 480px */
+  }
+}
+
+.options {
+  position: absolute;
+  right: 25px;
+  top: 60px; /* Adjust the top position as needed */
+  background-color: #fff;
+  // border: 1px solid #ccc;
+  padding: 5px;
+  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+.btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.btn i {
+  font-size: 18px;
+  color: black;
+
+  margin-left: px;
+}
+.btn span {
+  color: black;
+
+  margin-left: 0px;
+}
+.btn1 {
+  margin: 3px;
+  margin-left: -80px;
+}
+.options button {
+  margin-right: 5px;
+}
+#icon {
+  margin-right: 10px;
+}
+
+#button-footer {
+  margin: 0 auto;
+}
+
+.modal-header h1 {
+  text-align: center;
+  margin: auto;
+  font-size: 50px;
+}
+
+// @media (max-width: 767px) {
+//   .row {
+//     flex-direction: column;
+//   }
+//   .col {
+//     width: 100%;
+//   }
+//   label {
+//     margin-bottom: 1px;
+//   }
+// }
+label {
+  margin-bottom: 5px;
+}
+.rk {
+  margin-top: 45px;
+  height: 700px;
+}
+.top {
+  margin-top: 10vh;
+  margin-left: 20vw;
+}
+
+#button {
+  width: 20vw;
+}
+
+.icon {
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: black !important;
+}
+
+/* Add this CSS to your stylesheet */
+html,
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.row {
+  margin-right: 0; /* Remove default right margin for .row */
+  margin-left: 0; /* Remove default left margin for .row */
+}
+
+.row {
+  display: flex;
+  justify-content: space-between; /* Adjust alignment as needed */
+}
+
+.button-links a {
+  margin-left: 10px; /* Adjust margin as needed */
+}
+a i {
+  font-size: 40px;
+}
+
+
+
+
+
+////////////////********header CSS*************************
+#search{
+  width: 20vw;
+  }
+  .top{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  #div{
+    margin-left: 1vw;
+  }
+  .width{
+    width: 19%;
+  }
+  .bgcolor{
+    background-color: #ff7022;
+  }
+  .addEmp{
+    width: 4vw;
+  }
+  
+  // 
+  
+  
+  .outer {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 100vw;
+  }
+  
+  .heading {
+    text-align: left;
+  }
+  
+  .button-links {
+    text-align: right;
+  }
+  
+  .icon-container {
+    display: flex;
+  }
+  
+  .icon-square {
+    background-color: rgb(254, 254, 254);
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px; /* Adjust the spacing between icons */
+   
+    border-radius: 50% ;
+    background-color: var(--orange-primary);
+    color: white;
+  }
+  
+  
+  .icon-square i {
+    color: rgb(53, 49, 49); /* Adjust the icon color */
+    font-size: 20px; /* Adjust the icon size */
+  }
+  .head{
+    font-weight: bolder;
+    font-size: 5vh;
+  }
+  
+  .outerbox{
+    display: flex;
+    justify-content: space-between;
+  }
+  .container-fluid {
+  
+    width: 98%;
+    height: 100%;
+  }
+  
+  #searchbtn{
+    background-color: var(--orange-primary);
+    color: white;
+    width:16vw;
+    border-radius: 18px 18px 18px 18px; 
+  }
+  
+  @media only screen and (max-width: 650px) {
+   
+  #input-field{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+  }
+  #input-field .col{
+    margin: 1vh;
+  }
+  #input-field #searchbtn{
+    width:87vw;
+  }
+  .outerbox{
+    width: 95%;
+  }
+}
+  
+  .outer{
+    display: flex;
+   flex-direction:row;
+  }

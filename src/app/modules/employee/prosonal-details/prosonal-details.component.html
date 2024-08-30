@@ -1,0 +1,263 @@
+<app-employee-sub-header></app-employee-sub-header>
+<div class="main ">
+    <mdb-tabs class=" d-md-block">
+        <mdb-tab>
+            <ng-template mdbTabTitle><span><i class="fas fa-user-plus fa-fw me-2"></i>Add</span></ng-template>
+            <div class="tab1">
+                <fieldset class="border p-2">
+                    <legend class="float-none w-auto">Add Details</legend>
+                    <form [formGroup]="validationForm" (ngSubmit)="onSubmit(validationForm)">
+                        <div class="row md-4">
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbValidate mdbInput type="text" id="text1" class="form-control"
+                                        formControlName="fullname" required />
+                                    <label mdbLabel class="form-label" for="form8Example1">Full Name <span
+                                            class="text-danger">*</span></label>
+                                    <mdb-error *ngIf="
+          fullname?.invalid && (fullname?.dirty || fullname?.touched)
+              "></mdb-error>
+                                    <mdb-success *ngIf="
+          fullname?.valid && (fullname?.dirty || fullname?.touched)
+              "></mdb-success>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <!-- Email input -->
+                                <mdb-form-control>
+                                    <input mdbValidate mdbInput type="date" id="text2" class="form-control"
+                                        formControlName="Dob" />
+                                    <label mdbLabel class="form-label" for="form8Example2">Date Of Birth <span
+                                            class="text-danger">*</span></label>
+                                    <mdb-error *ngIf="Dob?.invalid && (Dob?.dirty || Dob?.touched)"></mdb-error>
+                                    <mdb-success *ngIf="Dob?.valid && (Dob?.dirty || Dob?.touched)"></mdb-success>
+                                </mdb-form-control>
+                            </div>
+
+                            <div class="col-sm-3 mb-4">
+                                <!-- Name dropdown list -->
+                                <mdb-form-control>
+                                    <select mdbValidate mdbInput id="dd1" class="form-control" formControlName="Gender"
+                                        aria-labelledby="dropdownMenuLink">
+                                        <option value disabled selected hidden></option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                        <option value="3">Others</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example3">Gender <span
+                                            class="text-danger">*</span></label>
+                                    <mdb-error
+                                        *ngIf="Gender?.invalid && (Gender?.dirty || Gender?.touched)"></mdb-error>
+                                    <mdb-success
+                                        *ngIf="Gender?.valid && (Gender?.dirty || Gender?.touched)"></mdb-success>
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px; pointer-events: none;"></i>
+                                </mdb-form-control>
+                            </div>
+
+                            <div class="col-sm-3 mb-4">
+                                <!-- Name dropdown list -->
+
+                                <mdb-form-control>
+                                    <select mdbValidate mdbInput id="dd2" class="form-control"
+                                        formControlName="Bloodgroup" aria-labelledby="dropdownMenuLink">
+                                        <option value disabled selected hidden></option>
+                                        <option value="1">A+</option>
+                                        <option value="2">A-</option>
+                                        <option value="3">B-</option>
+                                        <option value="4">B+</option>
+                                        <option value="5">O+</option>
+                                        <option value="6">O-</option>
+                                        <option value="7">AB+</option>
+                                        <option value="8">AB-</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example4">Blood Group <span
+                                            class="text-danger">*</span></label>
+                                    <mdb-error
+                                        *ngIf="Bloodgroup?.invalid && (Bloodgroup?.dirty || Bloodgroup?.touched)"></mdb-error>
+                                    <mdb-success
+                                        *ngIf="Bloodgroup?.valid && (Bloodgroup?.dirty || Bloodgroup?.touched)"></mdb-success>
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;  pointer-events: none"></i>
+                                </mdb-form-control>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3 mb-4">
+                                <!-- Country dropdown list -->
+
+                                <mdb-form-control>
+                                    <select mdbValidate mdbInput id="dd3" class="form-control"
+                                        formControlName="Religion" aria-labelledby="dropdownMenuLink">
+                                        <option value disabled selected hidden></option>
+                                        <option value="1">Hinduism</option>
+                                        <option value="2">Islam</option>
+                                        <option value="3">christianity</option>
+                                        <option value="4">Sikhism</option>
+                                        <option value="5">Buddhism</option>
+                                        <option value="6">Jainism</option>
+                                        <option value="7">Others</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example4">Religion <span
+                                            class="text-danger">*</span></label>
+                                    <mdb-error
+                                        *ngIf="Religion?.invalid && (Religion?.dirty || Religion?.touched)"></mdb-error>
+                                    <mdb-success
+                                        *ngIf="Religion?.valid && (Religion?.dirty || Religion?.touched)"></mdb-success>
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;  pointer-events: none;"></i>
+                                </mdb-form-control>
+
+                            </div>
+
+                            <div class="col-sm-3 mb-4">
+                                <!-- Country dropdown list -->
+                                <mdb-form-control>
+                                    <input mdbValidate mdbInput type="email" id="text3" class="form-control"
+                                        formControlName="Fatherhusbandname" />
+                                    <label mdbLabel class="form-label" for="form8Example8">Father/Husband name
+                                        <span class="text-danger">*</span></label>
+                                    <mdb-error
+                                        *ngIf="Fatherhusbandname?.invalid && (Fatherhusbandname?.dirty || Fatherhusbandname?.touched)"></mdb-error>
+                                    <mdb-success
+                                        *ngIf="Fatherhusbandname?.valid && (Fatherhusbandname?.dirty || Fatherhusbandname?.touched)"></mdb-success>
+                                </mdb-form-control>
+
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <!-- Marital status input -->
+                                <mdb-form-control>
+                                    <select mdbValidate mdbInput id="dd4" class="form-control"
+                                        formControlName="Maritalstatus" aria-labelledby="dropdownMenuLink">
+                                        <option value disabled selected hidden></option>
+                                        <option value="1">Unmarried</option>
+                                        <option value="2">Married</option>
+                                        <option value="3">Other</option>
+
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example6">Marital status <span
+                                            class="text-danger">*</span></label>
+                                    <mdb-error
+                                        *ngIf="Maritalstatus?.invalid && (Maritalstatus?.dirty || Maritalstatus?.touched)"></mdb-error>
+                                    <mdb-success
+                                        *ngIf="Maritalstatus?.valid && (Maritalstatus?.dirty || Maritalstatus?.touched)"></mdb-success>
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;  pointer-events: none;"></i>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <!-- Date of Marriage input -->
+                                <mdb-form-control>
+                                    <input mdbValidate mdbInput type="date" id="text4" class="form-control"
+                                        formControlName="Domarriage" />
+                                    <label mdbLabel class="form-label" for="form8Example10">Date of
+                                        Marriage</label>
+                                    <mdb-error
+                                        *ngIf="Domarriage?.invalid && (Domarriage?.dirty || Domarriage?.touched)"></mdb-error>
+                                    <mdb-success
+                                        *ngIf="Domarriage?.valid && (Domarriage?.dirty || Domarriage?.touched)"></mdb-success>
+                                </mdb-form-control>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3 mb-4">
+                                <!-- Date of Marriage input -->
+                                <mdb-form-control>
+                                    <input mdbValidate mdbInput type="text" id="text5" class="form-control"
+                                        formControlName="Mobilenumber" />
+                                    <label mdbLabel class="form-label" for="form8Example10">Mobile Number <span
+                                            class="text-danger">*</span></label>
+                                    <mdb-error
+                                        *ngIf="Mobilenumber?.invalid && (Mobilenumber?.dirty || Mobilenumber?.touched)"></mdb-error>
+                                    <mdb-success
+                                        *ngIf="Mobilenumber?.valid && (Mobilenumber?.dirty || Mobilenumber?.touched)"></mdb-success>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <!-- Date of Marriage input -->
+                                <mdb-form-control>
+                                    <input mdbValidate mdbInput type="text" id="text6" class="form-control"
+                                        formControlName="Emailid" />
+                                    <label mdbLabel class="form-label" for="form8Example10">Email Id<span
+                                            class="text-danger">*</span></label>
+                                    <mdb-error
+                                        *ngIf="Emailid?.invalid && (Emailid?.dirty || Emailid?.touched)"></mdb-error>
+                                    <mdb-success
+                                        *ngIf="Emailid?.valid && (Emailid?.dirty || Emailid?.touched)"></mdb-success>
+                                </mdb-form-control>
+                            </div>
+
+                        </div>
+                        <span class="text-danger">*</span> Required
+                        <hr>
+                        <!-- <div class="button col-sm-4">
+                            <button mdbRipple type="button" class="btn btn-secondary btn-sm"><i
+                                    class="fa-solid fa-backward"></i> &nbsp;
+                                Back</button>
+                            <button mdbRipple type="submit" class="btn btn-info btn-sm"><i
+                                    class="fas fa-save fa-fw me-2"></i>Save</button>
+                            <button mdbRipple type="button" class="btn btn-secondary btn-sm"> Next &nbsp; <i
+                                    class="fa-solid fa-forward"></i></button>
+                        </div> -->
+                        <div class="button col-sm-4">
+                            <a routerLink="../employement" mdbRipple class="btnClass btnClass-secondary"><i
+                            class="fa-solid fa-backward"></i> &nbsp; Back</a>
+                            <button mdbRipple type="submit" class="btnClass btnClass-primary"><i
+                            class="fas fa-save fa-fw me-2"></i>Save</button>
+                            <a routerLink="../address" mdbRipple type="button" class="btnClass btnClass-secondary"> Next
+                            &nbsp; <i class="fa-solid fa-forward"></i></a>
+                            </div>
+                    </form>
+                </fieldset>
+            </div>
+        </mdb-tab>
+        <mdb-tab>
+            <ng-template mdbTabTitle><span><i class="fas fa-users-line fa-fw me-2"></i>List</span></ng-template>
+            <div class="tab2">
+                <table class="table align-middle mb-0 bg-white">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Position</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt
+                                        style="width: 45px; height: 45px" class="rounded-circle" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">John Doe</p>
+                                        <p class="text-muted mb-0">john.doegmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">Software engineer</p>
+                                <p class="text-muted mb-0">IT department</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-success rounded-pill d-inline">Active</span>
+                            </td>
+                            <td>Senior</td>
+                            <td>
+                                <button type="button" class="btn btn-link btn-sm btn-rounded">Edit</button>
+                            </td>
+                        </tr>
+                        <!-- Repeat similar structure for other rows -->
+                    </tbody>
+                </table>
+            </div>
+        </mdb-tab>
+    </mdb-tabs>
+</div>

@@ -1,0 +1,369 @@
+<app-employee-sub-header></app-employee-sub-header>
+<div class="main ">
+  <mdb-tabs class=" d-md-block">
+    <mdb-tab>
+      <ng-template mdbTabTitle><span><i class="fas fa-id-card fa-fw me-2"></i>Contact</span></ng-template>
+      <div class="tab1">
+        <form [formGroup]="validationForm" (ngSubmit)="onSubmit(validationForm)">
+
+          <fieldset class="border p-2">
+            <legend class="float-none w-auto ">Contact
+              Person Details</legend>
+            <div class="row md-4">
+              <div class="col-sm-3 mb-4">
+                <mdb-form-control>
+                  <input mdbValidate mdbInput type="text" id="text1" class="form-control" formControlName="MobileNo"
+                    required />
+                  <label mdbLabel class="form-label" for="form8Example1">Mobile no
+                    <span class="text-danger">*</span></label>
+                  <mdb-error *ngIf="
+                  MobileNo?.invalid && (MobileNo?.dirty || MobileNo?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            MobileNo?.valid && (MobileNo?.dirty || MobileNo?.touched)
+                      "></mdb-success>
+                </mdb-form-control>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <!-- Email input -->
+                <mdb-form-control>
+                  <input mdbValidate mdbInput type="text" id="text2" class="form-control"
+                    formControlName="AlternateMobile" required />
+                  <label mdbLabel class="form-label" for="form8Example2">Alternate
+                    Mobile Number</label>
+                  <mdb-error *ngIf="
+                  AlternateMobile?.invalid && (AlternateMobile?.dirty || AlternateMobile?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            AlternateMobile?.valid && (AlternateMobile?.dirty || AlternateMobile?.touched)
+                      "></mdb-success>
+                </mdb-form-control>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <mdb-form-control>
+                  <input mdbValidate mdbInput type="email" id="text3" class="form-control"
+                    formControlName="PersonalEmailId" required />
+                  <label mdbLabel class="form-label" for="form8Example2">Personal
+                    Email Id <span class="text-danger">*</span></label>
+                  <mdb-error *ngIf="
+                  PersonalEmailId?.invalid && (PersonalEmailId?.dirty || PersonalEmailId?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            PersonalEmailId?.valid && (PersonalEmailId?.dirty || PersonalEmailId?.touched)
+                      "></mdb-success>
+                </mdb-form-control>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <mdb-form-control>
+                  <input mdbValidate mdbInput type="email" id="text4" class="form-control"
+                    formControlName="ProfessionalEmailId" required />
+                  <label mdbLabel class="form-label" for="form8Example2">Professional Email Id</label>
+                  <mdb-error *ngIf="
+                  ProfessionalEmailId?.invalid && (ProfessionalEmailId?.dirty || ProfessionalEmailId?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            ProfessionalEmailId?.valid && (ProfessionalEmailId?.dirty || ProfessionalEmailId?.touched)
+                      "></mdb-success>
+                </mdb-form-control>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <mdb-form-control>
+                  <input mdbValidate mdbInput type="text" id="text5" class="form-control"
+                    formControlName="HomeTelephone" required />
+                  <label mdbLabel class="form-label" for="form8Example1">Home
+                    Telephone <span class="text-danger">*</span></label>
+                  <mdb-error *ngIf="
+                  HomeTelephone?.invalid && (HomeTelephone?.dirty || HomeTelephone?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            HomeTelephone?.valid && (HomeTelephone?.dirty || HomeTelephone?.touched)
+                      "></mdb-success>
+                </mdb-form-control>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="Emergency1">
+            <fieldset class="border p-2">
+              <legend class="float-none w-auto ">Emergency Contact Detail
+                1</legend>
+              <div class="row md-4">
+                <div class="col-sm-3 mb-4">
+                  <mdb-form-control>
+                    <input mdbValidate mdbInput type="text" id="text6" class="form-control"
+                      formControlName="EmergencyContactPersonName" required />
+                    <label mdbLabel class="form-label" for="form8Example1">Emergency Contact Person Name <span
+                        class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                      EmergencyContactPersonName?.invalid && (EmergencyContactPersonName?.dirty || EmergencyContactPersonName?.touched)
+                          "></mdb-error>
+                    <mdb-success *ngIf="
+                                                EmergencyContactPersonName?.valid && (EmergencyContactPersonName?.dirty || EmergencyContactPersonName?.touched)
+                          "></mdb-success>
+                  </mdb-form-control>
+                </div>
+                <div class="col-sm-3 mb-4">
+                  <!-- Email input -->
+                  <mdb-form-control>
+                    <select mdbValidate mdbInput id="dd1" class="form-control"
+                      formControlName="RelationshipWithContactPerson" required aria-labelledby="dropdownMenuLink">
+                      <option value disabled selected hidden></option>
+                      <option value="1">Wife</option>
+                      <option value="2">Husband</option>
+                      <option value="3">Son</option>
+                      <option value="4">Daughter</option>
+                      <option value="5">Father</option>
+                      <option value="6">Mother</option>
+                      <option value="7">Brother</option>
+                      <option value="8">Sister</option>
+                      <option value="9">Other</option>
+                      <!-- Add more options as needed -->
+                    </select>
+                    <label mdbLabel class="form-label" for="form8Example6">Relationship With Contact Person <span
+                        class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                      RelationshipWithContactPerson?.invalid && (RelationshipWithContactPerson?.dirty || RelationshipWithContactPerson?.touched)
+                          "></mdb-error>
+                    <mdb-success *ngIf="
+                                                RelationshipWithContactPerson?.valid && (RelationshipWithContactPerson?.dirty || RelationshipWithContactPerson?.touched)
+                          "></mdb-success>
+                    <i class="fas fa-caret-down"
+                      style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;  pointer-events: none;"></i>
+                  </mdb-form-control>
+                </div>
+
+                <div class="col-sm-3 mb-4">
+                  <!-- Name dropdown list -->
+                  <mdb-form-control>
+                    <input mdbValidate mdbInput type="text" id="text7" class="form-control"
+                      formControlName="ContactPersonNumber" required />
+                    <label mdbLabel class="form-label" for="form8Example2">Contact
+                      Person Number <span class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                    ContactPersonNumber?.invalid && (ContactPersonNumber?.dirty || ContactPersonNumber?.touched)
+                        "></mdb-error>
+                    <mdb-success *ngIf="
+                                              ContactPersonNumber?.valid && (ContactPersonNumber?.dirty || ContactPersonNumber?.touched)
+                        "></mdb-success>
+                  </mdb-form-control>
+                </div>
+                <div class="col-sm-3 mb-4">
+                  <!-- Name dropdown list -->
+                  <mdb-form-control>
+                    <input mdbValidate mdbInput type="Text" id="text8" class="form-control"
+                      formControlName="ContactPersonAddress" required />
+                    <label mdbLabel class="form-label" for="form8Example2">Contact
+                      Person Address <span class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                    ContactPersonAddress?.invalid && (ContactPersonAddress?.dirty || ContactPersonAddress?.touched)
+                        "></mdb-error>
+                    <mdb-success *ngIf="
+                                              ContactPersonAddress?.valid && (ContactPersonAddress?.dirty || ContactPersonAddress?.touched)
+                        "></mdb-success>
+                  </mdb-form-control>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+          <div class="Emergency2">
+            <fieldset class="border p-2">
+              <legend class="float-none w-auto ">Emergency Contact Detail
+                2</legend>
+              <div class="row md-4">
+                <div class="col-sm-3 mb-4">
+                  <mdb-form-control>
+                    <input mdbValidate mdbInput type="text" id="text9" class="form-control"
+                      formControlName="AlternateEmergencyContactPersonName" required />
+                    <label mdbLabel class="form-label" for="form8Example1">Emergency Contact Person Name <span
+                        class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                      AlternateEmergencyContactPersonName?.invalid && (AlternateEmergencyContactPersonName?.dirty || AlternateEmergencyContactPersonName?.touched)
+                          "></mdb-error>
+                    <mdb-success *ngIf="
+                                                AlternateEmergencyContactPersonName?.valid && (AlternateEmergencyContactPersonName?.dirty || AlternateEmergencyContactPersonName?.touched)
+                          "></mdb-success>
+                  </mdb-form-control>
+                </div>
+                <div class="col-sm-3 mb-4">
+                  <!-- Email input -->
+                  <mdb-form-control>
+                    <select mdbValidate mdbInput id="dd2" class="form-control"
+                      formControlName="AlternateRelationshipWithContactPerson" required
+                      aria-labelledby="dropdownMenuLink">
+                      <option value disabled selected hidden></option>
+                      <option value="1">Wife</option>
+                      <option value="2">Husband</option>
+                      <option value="3">Son</option>
+                      <option value="4">Daughter</option>
+                      <option value="5">Father</option>
+                      <option value="6">Mother</option>
+                      <option value="7">Brother</option>
+                      <option value="8">Sister</option>
+                      <option value="9">Other</option>
+                      <!-- Add more options as needed -->
+                    </select>
+                    <label mdbLabel class="form-label" for="form8Example6">Relationship With Contact Person <span
+                        class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                      AlternateRelationshipWithContactPerson?.invalid && (AlternateRelationshipWithContactPerson?.dirty || AlternateRelationshipWithContactPerson?.touched)
+                          "></mdb-error>
+                    <mdb-success *ngIf="
+                                                AlternateRelationshipWithContactPerson?.valid && (AlternateRelationshipWithContactPerson?.dirty || AlternateRelationshipWithContactPerson?.touched)
+                          "></mdb-success>
+                    <i class="fas fa-caret-down"
+                      style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;  pointer-events: none;"></i>
+                  </mdb-form-control>
+                </div>
+
+                <div class="col-sm-3 mb-4">
+                  <!-- Name dropdown list -->
+                  <mdb-form-control>
+                    <input mdbValidate mdbInput type="text" id="text10" class="form-control"
+                      formControlName="AlternateContactPersonNumber" required />
+                    <label mdbLabel class="form-label" for="form8Example2">Contact
+                      Person Number <span class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                    AlternateContactPersonNumber?.invalid && (AlternateContactPersonNumber?.dirty || AlternateContactPersonNumber?.touched)
+                        "></mdb-error>
+                    <mdb-success *ngIf="
+                                              AlternateContactPersonNumber?.valid && (AlternateContactPersonNumber?.dirty || AlternateContactPersonNumber?.touched)
+                        "></mdb-success>
+                  </mdb-form-control>
+                </div>
+                <div class="col-sm-3 mb-4">
+                  <!-- Name dropdown list -->
+                  <mdb-form-control>
+                    <input mdbValidate mdbInput type="Text" id="text11" class="form-control"
+                      formControlName="AlternateContactPersonAddress" required />
+                    <label mdbLabel class="form-label" for="form8Example2">Contact
+                      Person Address <span class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                    AlternateContactPersonAddress?.invalid && (AlternateContactPersonAddress?.dirty || AlternateContactPersonAddress?.touched)
+                        "></mdb-error>
+                    <mdb-success *ngIf="
+                                              AlternateContactPersonAddress?.valid && (AlternateContactPersonAddress?.dirty || AlternateContactPersonAddress?.touched)
+                        "></mdb-success>
+                  </mdb-form-control>
+                </div>
+              </div>
+
+              <hr>
+
+              <div class="button col-sm-4">
+
+                <button mdbRipple type="button" class="btn btn-primary btn-sm"><i class="fa-solid fa-backward"></i>
+                  Back</button>
+                <button mdbRipple type="submit" class="btn btn-primary btn-sm"><i
+                    class="fas fa-save fa-fw me-2"></i>Save</button>
+                <button mdbRipple type="button" class="btn btn-primary btn-sm"><i class="fa-solid fa-forward"></i>
+                  Next</button>
+
+              </div>
+
+            </fieldset>
+
+          </div>
+        </form>
+
+      </div>
+    </mdb-tab>
+
+    <mdb-tab>
+      <ng-template mdbTabTitle><span><i class="fas fa-address-book fa-fw me-2"></i>Contact
+          List</span></ng-template>
+
+      <div class="tab2">
+        <table class="table align-middle mb-0 bg-white">
+          <thead class="bg-light">
+            <tr>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Position</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt style="width: 45px; height: 45px"
+                    class="rounded-circle" />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">John Doe</p>
+                    <p class="text-muted mb-0">john.doegmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">Software engineer</p>
+                <p class="text-muted mb-0">IT department</p>
+              </td>
+              <td>
+                <span class="badge badge-success rounded-pill d-inline">Active</span>
+              </td>
+              <td>Senior</td>
+              <td>
+                <button type="button" class="btn btn-link btn-sm btn-rounded">
+                  Edit
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt
+                    style="width: 45px; height: 45px" />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">Alex Ray</p>
+                    <p class="text-muted mb-0">alex.raygmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">Con sultant</p>
+                <p class="text-muted mb-0">Finance</p>
+              </td>
+              <td>
+                <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
+              </td>
+              <td>Junior</td>
+              <td>
+                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
+                  Edit
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt
+                    style="width: 45px; height: 45px" />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">Kate Hunington</p>
+                    <p class="text-muted mb-0">kate.huningtongmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">Designer</p>
+                <p class="text-muted mb-0">UI/UX</p>
+              </td>
+              <td>
+                <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
+              </td>
+              <td>Senior</td>
+              <td>
+                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mdb-tab>
+  </mdb-tabs>
+</div>

@@ -1,0 +1,115 @@
+.date-container {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+.form-group {
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+
+.form-group label {
+    display: block;
+    color: #777;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="date"] {
+    width: 380px; /* Adjust width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+
+.card1 :hover{
+    color: white;
+    background-color: #FF9B44;;
+
+
+    border-radius:20px;
+}
+
+
+
+// .dialogform{
+//     width: 200%;
+// }
+
+.modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left:0;
+    // right: 100px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    // background-size: 300% 100%; 
+    z-index: 1000;
+} 
+
+ .close-icon{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: 0;
+  outline:0;
+}
+
+@mixin mobile-and-up {
+    @media screen and (min-width: 601px) { @content; }
+  }
+  
+  @mixin tablet-and-down {
+    @media screen and (max-width: 768px) { @content; }
+  }
+  
+  @mixin mobile-only {
+    @media screen and (max-width: 600px) { @content; }
+  }
+  @mixin tablet-and-down {
+    @media screen and (max-width: 768px) { @content; }
+  }
+
+  @include tablet-and-down {
+    .tabx {
+        display: none;
+    }
+  }
+  
+  @include mobile-only {
+ .iconx{
+    display: none;
+ }
+ .mobileg {
+  margin-left: 10px;
+ }
+ .modal-dialog-phone {
+  width:90%
+ }
+ .mobmodel {
+  margin-top: 15px;
+ }
+ 
+  }
+@include  mobile-and-up {
+    .gamex{
+      display:none;
+    }
+    
+    .modal-dialog-phone {
+        width:55%;
+        
+       }
+       .modal-body {
+        background-color:#EFF0F4;
+     } 
+ }

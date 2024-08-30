@@ -1,0 +1,307 @@
+tr:nth-child(even) {
+  background-color: white;
+}
+tr {
+  height: 30px;
+}
+.round-button {
+  margin-left: 97%;
+  position: relative;
+  top: 26px;
+  width: 50px;
+}
+.modal-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+ border-radius: 20px;
+  height: 240px;
+  width: 550px;
+  align-items: center;
+  max-height: 700px;
+ max-width: 800%;
+}
+.close-icon {
+  position: absolute;
+  top: -15px;
+  right: -17px;
+  background-color: rgba(255, 255, 255, 0.616);
+ 
+}
+.header {
+  font-weight: 600;
+  align-items: center;
+  margin-top: 5%;
+}
+.tex-tbox {
+  margin-top: 15%;
+  width: 190%;
+  margin-left: -40%;
+}
+.submit-dialog {
+  margin-top: 20%;
+  margin-left: 40px;
+}
+.mat-option {
+  background-color: #fff;
+  color: black;
+}
+.dropdowndept {
+  width: 190%;
+  margin-left: -80px;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+      width: 90%;
+      margin: 5% auto;
+  }
+
+  .modal-dialog {
+      width: 100%;
+  }
+
+  .tex-tbox {
+      width: 120%;
+      margin-left: 3px;
+  }
+
+  .container {
+      width: 90%;
+      margin: 0 auto;
+
+  }
+
+  .col-md-12 {
+      width: 100%;
+  }
+
+  .col-sm-4 {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .dropdowndept {
+      width: 120%;
+      margin-left: 3px;
+  }
+
+  .submit-dialog {
+      margin-top: 20%;
+      
+  }
+
+  .bi--three-dots,
+  .bi--pencil-fill {
+      width: 24px;
+      height: 24px;
+ }
+}
+
+
+.main{
+  width: 100%;
+}
+
+.btn{
+  margin: 5px;
+  margin-bottom: 20px;
+  margin-left: 60%;
+  border-radius: 50px;
+}
+
+
+
+.row-last{
+display: flex;
+.col{
+position: relative;
+}
+.col-cancil{
+margin-right: -15%;
+.btn{
+  border: 1px solid orange;
+  color: orange;
+  background: white;
+}
+}
+}
+
+@media (max-width: 768px) {
+  .col {
+    margin-bottom: 10px;
+  }
+
+  .col-cancil {
+    margin-right: 0;
+  }
+
+  .btn {
+    flex: 1; 
+  }
+
+  .btn:last-child {
+    margin-left: 50px; 
+  }
+}
+
+// thead{
+//   // width: 120%; 
+//   // display: flex;
+//   // text-align: center;
+//   // height: 50px;
+// }
+
+
+
+
+
+
+
+
+tr:nth-child(even) {background-color: #f1e7c5;}
+tr{
+    height:30px;
+}
+
+.dialogform{
+    width: 200%;
+}
+
+
+
+
+
+
+.modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+} 
+
+ 
+ .close-icon{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: 0;
+    outline: 0;
+ }
+ .header{
+    font-weight: 600;
+    align-items: center;
+    margin-top: 5%;
+ }
+
+ .tex-tbox{
+    margin-top: 20%;
+    width: 190%;
+    margin-left: -40%;
+ }
+
+ .submit-dialog {
+    margin-top:10%;
+
+}
+
+
+@mixin mobile-and-up {
+    @media screen and (min-width: 601px) { @content; }
+  }
+  
+  @mixin tablet-and-down {
+    @media screen and (max-width: 768px) { @content; }
+  }
+  
+  @mixin mobile-only {
+    @media screen and (max-width: 600px) { @content; }
+  }
+  @mixin tablet-and-down {
+    @media screen and (max-width: 768px) { @content; }
+  }
+
+  @include tablet-and-down {
+    .tabx {
+        display: none;
+    }
+  }
+  
+
+  @include mobile-and-up() {
+
+    .modal-content {
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+        height: 390px;
+        width: 900px;
+        align-items: center;
+        max-height: 700px;
+        overflow: hidden; 
+        // max-width: 800%;
+     }
+     .widthdecider {
+        width:410px;
+
+    }
+  }
+  @include mobile-only {
+    .widthdecider {
+        width:310px;
+        margin-top:20px;
+    }
+    .mergecentermobile{
+
+      // justify-content: center;
+      // align-items: center;
+      padding-right: 50px;
+    }
+    .modal-content {
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+        height: 460px;
+        width: 350px;
+      
+        align-items: center;
+        max-height: 700px;
+        overflow: hidden; 
+        // max-width: 800%;
+     }
+     .margmobiletop {
+        margin-top: 20px;
+     }
+     .margmobileright{
+        margin-right:20px;
+     }
+ .iconx{
+    display: none;
+ }
+ .mobileg {
+  margin-left: 10px;
+ }
+ .modal-dialog-phone {
+  width:90%
+ }
+ .mobmodel {
+  margin-top: 15px;
+ }
+ 
+  }

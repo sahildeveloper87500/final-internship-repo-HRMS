@@ -1,0 +1,88 @@
+.containerx {
+  display: flex;
+
+
+  /* Smaller screens */
+  @media (max-width: 1000px) {
+    .modal-content {
+      width: 90%;
+      margin: 5% auto;
+      /* Center the modal on smaller screens */
+    }
+
+    .modal-dialog {
+      width: 100%;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      /* Center the container on smaller screens */
+    }
+
+    .col-md-12 {
+      width: 100%;
+    }
+
+    .col-sm-4 {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .submit-dialog {
+      margin-top: 5%;
+    }
+  }
+}
+
+
+//login css
+
+.custom-card {
+  width: 350px; // Adjust the width as needed
+  max-height: 410px; // Adjust the height as needed
+  margin: auto; // Center the card horizontally\
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn-orange {
+  background-color: orange; // Change the background color to orange
+  border: none;
+}
+
+.orange-link {
+  color: orange !important; // Change the link color to orange
+}
+
+.orange-background {
+  background-color: orange !important; // Change the button background color to orange
+}
+
+.btn-gradient {
+  background: linear-gradient(to right, rgb(245, 232, 131), rgb(239, 145, 22));
+  border: none;
+  /* Remove the border if not needed */
+}
+
+
+//carousel css
+
+mdb-carousel-item {
+  width: 100%;
+
+  height: 100vh;
+}
+
+
+
+
+@mixin mobile-only {
+  @media screen and (max-width: 600px) { @content; }
+}
+
+@include mobile-only {
+  .MFooterRemove{
+    display:none;
+}
+}

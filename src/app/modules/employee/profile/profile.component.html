@@ -1,0 +1,728 @@
+<div style="padding-left:15px; margin-right:-10px; overflow-x: hidden; background-color:whitesmoke">
+  <div style="display: flex; flex-direction: row; margin-left:30px;">
+    <div>
+      <a routerLink="/main/employee/Empdashboard">
+        <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div style="display: flex; flex-direction: column; 
+         ">
+       <h2>Emp Profile
+       <!-- <h2>Dashboard/Profile</h2> -->
+      </h2>
+    </div>
+  </div>
+  <div class="card"
+    style="display: flex; flex-direction: row; padding-left: 4vh; padding-top: 1vh;flex-wrap: wrap; width: 96%;margin-top: -20px;">
+    <div class="bg-image imagec">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid"
+        style="height:20vh;width:20vh; border-radius: 10vh; margin-top: 3.3vh;" />
+      <a href="#!">
+      </a>
+    </div>
+    <div class="card-body cardc " style="display: flex;
+       flex-direction: column; justify-content: center;border:0px solid red; ">
+      <div style="display: flex; flex-direction: column;  " class=" card2c">
+        <h2 class="card-title namec padx " *ngIf="personal">{{personal.fullName ? personal.fullName : "NA"}} </h2>
+        <h2 class="card-title namec padx " *ngIf="!personal">"NA" </h2>
+
+        <h5 *ngIf="designation" class="padx">{{ designation.designationName ? designation.designationName : "NA"}}</h5>
+        <h5 *ngIf="!designation" class="padx">NA</h5>
+
+        <h4 *ngIf="department" style="font-size: 2.3vh; color: grey;padding: 0px !important;margin:0px !important;"
+          class="positc">{{ department.departmentName ? department.departmentName : "NA"}}</h4>
+        <h4 *ngIf="!department" style="font-size: 2.3vh; color: grey;padding: 0px !important;margin:0px !important;"
+          class="positc">NA</h4>
+
+        <h5 class="padx" style="font-size: 2.3vh;padding: 0px !important;margin:0px !important;" *ngIf="personal"
+          class="idc">Employee ID : {{ personal.id ? personal.id : "NA"}}</h5>
+        <h5 class="padx" style="font-size: 2.3vh;padding: 0px !important;margin:0px !important;" *ngIf="!personal"
+          class="idc">Employee ID : NA</h5>
+        <h5 style="font-size: 2.3vh; color: grey; text-wrap: nowrap; " class="datecx" *ngIf="personal">Date of Join : {{
+          personal.dob ? personal.dob : "na"}}</h5>
+        <h5 style="font-size: 2.3vh; color: grey; text-wrap: nowrap; " class="datecx" *ngIf="!personal">Date of Join :
+          NA</h5>
+        <h5 style="font-size: 2.3vh; color: grey; text-wrap: nowrap;" class="datecx" *ngIf="personal">
+          Date of Join : {{ formatDate(personal.dob) }}
+        </h5>
+        <h5 style="font-size: 2.3vh; color: grey; text-wrap: nowrap;" class="datecx" *ngIf="!personal">
+          Date of Join : NA
+        </h5>
+
+      </div>
+      <div style="display: flex; flex-direction: column;  " class=" card2xs">
+        <h2 *ngIf="personal" style="margin-left:-40px">{{personal.fullName ? personal.fullName : "NA"}} </h2>
+        <h5 *ngIf="designation">{{ designation.designationName ? designation.designationName : "NA"}}</h5>
+        <h5 *ngIf="!designation">NA</h5>
+
+        <h4 *ngIf="department" style="font-size: 2.3vh; color: grey;" class="positc">{{ department.departmentName ?
+          department.departmentName : "NA"}}</h4>
+        <h4 *ngIf="!department" style="font-size: 2.3vh; color: grey;" class="positc">NA</h4>
+
+        <h5 class="padx" style="font-size: 2.3vh;" class="idc">Employee ID : {{ personal.id ? personal.id : "NA"}}</h5>
+        <h5 style="font-size: 2.3vh; color: grey; text-wrap: nowrap; " class="datecx">Date of Join : {{ personal.dob ?
+          personal.dob : "na"}}</h5>
+        <h5 style="font-size: 2.3vh; color: grey; text-wrap: nowrap;" class="datecx">
+          Date of Join : {{ formatDate(personal.dob) }}
+        </h5>
+
+      </div>
+      <a href="#!" class="btn btn-custom">Send Message</a>
+    </div>
+    <div class="vertical_dotted_lined" style="margin-right: 0px;"></div>
+
+    <div class="card-body card-body-x2"
+      style="display: flex; width:48vw;padding-top: 30px; height: auto; border:0px solid green;">
+      <div class="vertical_dotted_line "
+        style="width: 47vw;padding: 0;display:flex ;padding-left: 34px; justify-content: center; flex-direction: column; height: auto; ">
+        <div class="right-main" style="display: flex; border:0px solid red">
+          <h4>Phone: </h4>
+          <h4 class="second-right">{{ personal.mobileNo ? personal.mobileNo : "NA" }}</h4>
+        </div>
+        <div class="right-main" style="display: flex; flex-wrap: wrap;border:0px solid red">
+          <h4>Email: </h4>
+          <h4 class="second-right">{{ personal.email ? personal.email : "na" }}</h4>
+        </div>
+        <div class="right-main" style="display: flex; flex-wrap: wrap;border:0px solid red">
+          <h4> </h4>
+          <h4 class="second-right">Birthday:{{ formatDate(personal.dob) }}</h4>
+        </div>
+        <div class="right-main" style="display: flex; border:0px solid red">
+          <h4>Gender: </h4>
+          <h4 class="second-right">{{ personal.gender ? personal.gender :"NA" }}</h4>
+        </div>
+        <div class="right-main" style="display: flex; border:0px solid red">
+          <h4>Report to: </h4>
+          <h4 class="second-right">Supervisor Name</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 0px;  border: 0px;">
+
+
+    <div class=" tab-box" style="border-radius: 8px;  width: 96%;">
+
+      <div style="padding-top: 10px;">
+        <mdb-tabs [justified]="true" class="custom-tabs">
+          <mdb-tab style="border-color: orange;">
+            <ng-template mdbTabTitle>
+              <span style="color: orange;"><i class="fa fa-person "></i> Profile</span>
+            </ng-template>
+
+            <div>
+              <div
+                style="display: flex; flex-direction: row; padding-bottom:20px ;flex-wrap: wrap; border:0px solid black;padding-top:20px;overflow-x: scroll; justify-content: center; gap:30px">
+
+                <div class="card" *ngIf="personal"
+                  style=" width:   48%;margin-bottom: 30px;height:330px; min-width: 330px;">
+                  <div class="card-body">
+                    <div>
+                      <h3 style="font-size: 20px; font-weight: 500;"> Personal Informations</h3>
+                    </div>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>Full Name</td>
+                          <td>{{personal.fullName ? personal.fullName : "NA" }}</td>
+                        </tr>
+                        <tr>
+                          <td>Mobile No</td>
+                          <td>{{ personal.mobileNo ? personal.mobileNo : "na"}}</td>
+                        </tr>
+                        <tr>
+                          <td>Nationality</td>
+                          <td>Indian</td>
+                        </tr>
+                        <tr>
+                          <td>Religion</td>
+                          <td> {{ personal.reliegion ? personal.reliegion : "NA"}}</td>
+                        </tr>
+
+                        <tr>
+                          <td>Marital status</td>
+                          <td> {{ personal.maritalStatus ? personal.maritalStatus : "NA" }}</td>
+                        </tr>
+                        <tr>
+                          <td>Date of Marriage</td>
+                          <td>{{formatDate(personal.dateofMarriage)}}</td>
+                        </tr>
+                        <tr>
+                          <td>Blood Group</td>
+                          <td> {{personal.bloodGroup ? personal.bloodGroup : "NA"}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="card" *ngIf="personal === undefined "
+                  style=" width:   48%;margin-bottom: 30px;height:330px; min-width: 330px;">
+                  <div class="card-body">
+                    <div>
+                      <h3 style="font-size: 20px; font-weight: 500;"> Personal Informations</h3>
+                    </div>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>Full Name</td>
+                          <td> NA </td>
+                        </tr>
+                        <tr>
+                          <td>Mobile No</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>Nationality</td>
+                          <td>Indian</td>
+                        </tr>
+                        <tr>
+                          <td>Religion</td>
+                          <td> NA </td>
+                        </tr>
+
+                        <tr>
+                          <td>Marital status</td>
+                          <td> NA </td>
+                        </tr>
+                        <tr>
+                          <td>Date of Marriage</td>
+                          <td> NA </td>
+                        </tr>
+                        <tr>
+                          <td>Blood Group</td>
+                          <td> NA </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="card" *ngIf="contact"
+                  style=" width:48%;margin-bottom: 30px;height:fit-content; ; overflow:hidden ;  border:0px solid red; min-width: 330px;">
+                  <div class="card-body">
+                    <div>
+                      <h3 style="font-size: 20px; font-weight: 500; "> Contact Details</h3>
+                    </div>
+                    <table style="margin-top: -20px; border: 2px;">
+                      <tbody>
+                        <tr>
+                          <td style="font-weight: 600; text-wrap:nowrap">Main Contact</td>
+                        </tr>
+                        <tr>
+                          <td> Name</td>
+                          <td>{{ contact.emergencyContactPersonName ? contact.emergencyContactPersonName :"Na" }}</td>
+                        </tr>
+                        <tr>
+                          <td>Relationship</td>
+                          <td>{{contact.relationshipWithContactPerson ? contact.relationshipWithContactPerson:"Na"}}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Address.</td>
+                          <td>{{contact.contactPersonAddress ? contact.contactPersonAddress : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>Email:</td>
+                          <td>{{contact.personEmailId ? contact.personEmailId : "na"}},{{contact.professionalEmailId ?
+                            contact.professionalEmailId : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>Phone</td>
+                          <td>
+                            <span style="display: flex; padding-top: 0px;">
+                              <p>{{contact.contactPersonNumber ? contact.contactPersonNumber : "NA"}},</p>
+
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table style="padding-top: -10px;">
+                      <tbody>
+                        <tr>
+                          <td style="font-weight: 600;font-size: medium;text-wrap:nowrap">Alternate Contact</td>
+                        </tr>
+                        <tr>
+                          <td> Name</td>
+                          <td> {{contact.alternateEmergencyContactPersonName ?
+                            contact.alternateEmergencyContactPersonName : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>Relationship.</td>
+                          <td>{{contact.alternateRelationshipWithContactPerson ?
+                            contact.alternateRelationshipWithContactPerson : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>Address:</td>
+                          <td>{{contact.
+                            alternateContactPersonAddress ? contact.
+                            alternateContactPersonAddress : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>Phone</td>
+
+                          <td>
+                            <span style="display: flex; padding-top: 0px;">
+                              <p>{{contact.alternateContactPersonNumber ? contact.alternateContactPersonNumber : "NA"}}
+                              </p> ,
+                              <p>
+                                {{contact.alternateMobile ? contact.alternateMobile : "NA"}}
+                              </p>
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="card" *ngIf="!contact"
+                  style=" width:48%;margin-bottom: 30px;height:330px; ; overflow:hidden ;  border:0px solid red; min-width: 330px;">
+                  <div class="card-body">
+                    <div>
+                      <h3 style="font-size: 20px; font-weight: 500; "> Contact Details(Not Available)</h3>
+                    </div>
+                    <table style="margin-top: -20px; border: 2px;">
+                      <tbody>
+                        <tr>
+                          <td style="font-weight: 600; text-wrap:nowrap">Main Contact</td>
+                        </tr>
+                        <tr>
+                          <td> Name</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>Relationship</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>Address.</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>Email:</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+
+                          <td style="display: flex;flex-wrap:wrap; text-wrap: wrap;align-items: center;">
+                            <span style="display: flex; padding-top: 0px;">
+                              <p></p>
+
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table style="padding-top: -10px;">
+                      <tbody>
+                        <tr>
+                          <td style="font-weight: 600;font-size: medium;text-wrap:nowrap">Alternate Contact</td>
+                        </tr>
+                        <tr>
+                          <td> Name</td>
+                          <td>NA </td>
+                        </tr>
+                        <tr>
+                          <td>Relationship.</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>Address:</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+
+
+                          <td style="display: flex;flex-wrap:wrap; text-wrap: wrap;align-items: center;">
+                            <span style="display: flex; padding-top: 0px;">
+                              <p></p>
+                              <p>
+                              </p>
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
+              <div
+                style="display: flex; flex-direction: row; padding-bottom:40px  ;  flex-wrap: wrap; border:0px solid black;justify-content: center; gap:30px">
+
+                <div class="card" *ngIf="address"
+                  style="  width:48%;margin-bottom: 30px;height:fit-content ; min-width: 330px;">
+                  <div class="card-body">
+                    <h3 style="font-size: 20px; font-weight: 500; "> Address Informations</h3>
+                    <table style=" margin-top: -10px;">
+                      <tbody>
+                        <tr>
+                          <td style="font-weight: 600; font-size: medium;">Permanent</td>
+                        </tr>
+                        <tr>
+                          <td>Address 1:</td>
+                          <td>{{address.permanentAddress ? address.permanentAddress : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>Address 2:</td>
+                          <td>{{address.permanentAddress2 ? address.permanentAddress2 : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>Postal Code:</td>
+                          <td>{{address.permanentPostalCode ? address.permanentPostalCode : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>City,State,Country:</td>
+                          <td>{{address.permanentCity ? address.permanentCity :"na"}},{{address.permanentState ?
+                            address.permanentState : "NA"}}</td>
+                        </tr>
+
+
+                        <tr>
+                          <td style="font-weight: 600; font-size: medium;">Present</td>
+                        </tr>
+                        <tr>
+                          <td>Address 1:</td>
+                          <td>{{address.presentAddress ? address.presentAddress : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>Address 2:</td>
+                          <td>{{address.presentAddress2 ? address.presentAddress2 : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>Postal Code:</td>
+                          <td>{{address.presenttPostalCode ? address.presenttPostalCode : "NA"}}</td>
+                        </tr>
+                        <tr>
+                          <td>City,State,Country:</td>
+                          <td>{{address.presentCity ? address.presentCity : "NA"}},{{address.presenttState ?
+                            address.presenttState : "NA"}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="card" *ngIf="!address"
+                  style="  width:48%;margin-bottom: 30px;height:fit-content ; min-width: 330px;">
+                  <div class="card-body">
+                    <h3 style="font-size: 20px; font-weight: 500; "> Address Informations</h3>
+                    <table style=" margin-top: -10px;">
+                      <tbody>
+                        <tr>
+                          <td style="font-weight: 600; font-size: medium;">Permanent</td>
+                        </tr>
+                        <tr>
+                          <td>Address 1:</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>Address 2:</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>Postal Code:</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>City,State,Country:</td>
+                          <td>NA</td>
+                        </tr>
+
+
+                        <tr>
+                          <td style="font-weight: 600; font-size: medium;">Present</td>
+                        </tr>
+                        <tr>
+                          <td>Address 1:</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>Address 2:</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>Postal Code:</td>
+                          <td>NA</td>
+                        </tr>
+                        <tr>
+                          <td>City,State,Country:</td>
+                          <td>NA</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="card"
+                  style="  width:48%;margin-bottom: 30px;height:320px ; overflow:scroll ;min-width: 330px;">
+                  <div class="card-body">
+                    <div>
+
+                      <h3 style="font-size: 20px; font-weight: 500;">Family Informations</h3>
+                    </div>
+                    <table class="tablex">
+                      <thead style="border-bottom: 1px solid rgb(200, 192, 192);">
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Relationship</th>
+                          <th scope="col">Date of Birth</th>
+                          <th scope="col">Phone</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+
+                          <td>Jacob</td>
+                          <td>Brother</td>
+                          <td>feb 16th,2019</td>
+                          <td>9876543210</td>
+                          <td><i class="fa fa-ellipsis-v" aria-hidden="true" style="margin-left:0px ;"></i></td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
+              <div
+                style="display: flex; flex-direction: row; padding:0vh  ; flex-wrap: wrap; border:0px solid black;justify-content: center; gap:30px">
+
+
+                <div class="card" *ngIf="education"
+                  style="  width:48%;margin-bottom: 30px;height:fit-content ; min-width: 330px;">
+                  <div class="card-body">
+
+                    <div>
+                      <h1 style="font-size: 20px; font-weight: 500;">Education Information</h1>
+                    </div>
+
+                    <ul class="sessions">
+
+                      <li>
+                        <div class="time">
+                          <h6 style="font-weight: 800;"> International College of Arts and Science (UG)</h6>
+                          <h3 style="font-weight: 700; color:grey">{{ education.educationName }}</h3>
+                          <p>{{ education.remarks }}</p>
+                        </div>
+
+                      </li>
+                      <li>
+                        <div class="time">
+                          <h6 style="font-weight: 800;"> International College of Arts and Science (UG)</h6>
+                          <h3 style="font-weight: 700; color:grey">Bsc Computer Science</h3>
+                          <p>2000-2003</p>
+                        </div>
+
+                      </li>
+                      <ol class="sessions">
+
+                      </ol>
+                    </ul>
+
+
+                  </div>
+                </div>
+                <div class="card" *ngIf="!education"
+                  style="  width:48%;margin-bottom: 30px;height:49vh ; min-width: 330px;">
+                  <div class="card-body">
+
+                    <div>
+                      <h1 style="font-size: 20px; font-weight: 500;">Education Information</h1>
+                    </div>
+
+                    <ul class="sessions">
+
+                      <li>
+                        <div class="time">
+                          <h6 style="font-weight: 800;"> International College of Arts and Science (UG)</h6>
+                          <h3 style="font-weight: 700; color:grey"></h3>
+                          <p></p>
+                        </div>
+
+                      </li>
+                      <li>
+                        <div class="time">
+                          <h6 style="font-weight: 800;"> International College of Arts and Science (UG)</h6>
+                          <h3 style="font-weight: 700; color:grey">Bsc Computer Science</h3>
+                          <p>2000-2003</p>
+                        </div>
+
+                      </li>
+                      <ol class="sessions">
+
+                      </ol>
+                    </ul>
+
+
+                  </div>
+                </div>
+
+                <div class="card" *ngIf="job"
+                  style="  width:48%;margin-bottom: 30px;height:49vh ; margin-left: 0px; min-width: 330px;">
+                  <div class="card-body">
+
+                    <div>
+                      <h1 style="font-size: 20px; font-weight: 500;"> Experience Information</h1>
+                    </div>
+                    <ul class="sessions">
+                      <li>
+                        <div class="time">
+                          <h5 style="font-weight: 800;"> {{ job.jobTitleName }}</h5>
+                          <p style="font-weight: 700; color:grey">{{ job.jobDescription }}</p>
+                          <p style="font-weight: 700; color:grey">{{ job.remarks}}</p>
+                        </div>
+
+                      </li>
+                      <li>
+                        <div class="time">
+                          <h6 style="font-weight: 800;"> International College of Arts and Science (UG)</h6>
+                          <p style="font-weight: 700; color:grey">Jan 2013 - Present(5 years 2 months)</p>
+
+                        </div>
+
+                      </li>
+                      <li>
+                        <div class="time">
+                          <h6 style="font-weight: 800;"> International College of Arts and Science (UG)</h6>
+                          <p style="font-weight: 700; color:grey">Jan 2013 - Present(5 years 2 months)</p>
+
+                        </div>
+
+                      </li>
+
+                      <ol class="sessions">
+
+                      </ol>
+                    </ul>
+
+
+                  </div>
+                </div>
+                <div class="card" *ngIf="!job"
+                  style="  width:48%;margin-bottom: 30px;height:49vh ; margin-left: 0px; min-width: 330px;">
+                  <div class="card-body">
+
+                    <div>
+                      <h1 style="font-size: 20px; font-weight: 500;"> Experience Information</h1>
+                    </div>
+                    <ul class="sessions">
+                      <li>
+                        <div class="time">
+                          <h5 style="font-weight: 800;"> NA </h5>
+                          <p style="font-weight: 700; color:grey"></p>
+                          <p style="font-weight: 700; color:grey">NA</p>
+                        </div>
+
+                      </li>
+                      <li>
+                        <div class="time">
+                          <h6 style="font-weight: 800;"> International College of Arts and Science (UG)</h6>
+                          <p style="font-weight: 700; color:grey">Jan 2013 - Present(5 years 2 months)</p>
+
+                        </div>
+
+                      </li>
+                      <li>
+                        <div class="time">
+                          <h6 style="font-weight: 800;"> International College of Arts and Science (UG)</h6>
+                          <p style="font-weight: 700; color:grey">Jan 2013 - Present(5 years 2 months)</p>
+
+                        </div>
+
+                      </li>
+
+                      <ol class="sessions">
+
+                      </ol>
+                    </ul>
+
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </mdb-tab>
+
+
+
+          <mdb-tab>
+            <ng-template mdbTabTitle>
+              <span style="color: orange; padding: 0px !important;margin:0px !important"><i
+                  class="fa fa-project-diagram"></i> Identity</span>
+            </ng-template>
+
+            <div class="card cardx"
+              style="display: flex; justify-content: center;  flex-direction: row; margin-bottom: 40px;max-width: 1200px;">
+
+              <div class="card-body" style="display: flex; flex-wrap: wrap;">
+                <div style="padding-left: 60px ;" class="spacec"></div>
+
+                <div>
+                  <h2 class="card-title">ADHAR Card</h2>
+                  <h3 style="border: 0px solid black; margin:5px;padding:0px">Aadhar Card No: {{ identity.aadhaarNo ?
+                    identity.aadhaarNo : "NA"}} </h3>
+                  <h3 style="border: 0px solid black; margin:5px;padding:0px">Name: {{ identity.nameAsAadhaar ?
+                    identity.nameAsAadhaar : "NA"}}</h3>
+                  <h3 style="border: 0px solid black; margin:5px;padding:0px">Dob : {{ identity.dobAsAadhaar ?
+                    identity.dobAsAadhaar : "na"}} </h3>
+                </div>
+                <div style="padding-left: 290px ;" class="spacec"></div>
+                <div>
+                  <!-- <img src="{{ identity.aadhaarAttach ? identity.aadhaarAttach : "NA"}}" style="width: 250px; height: 150px; " alt=""> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="card cardx"
+              style="display: flex; justify-content: center;  flex-direction: row; margin-bottom: 40px;max-width: 1200px;">
+
+              <div class="card-body" style="display: flex; flex-wrap: wrap;">
+                <div style="padding-left: 60px ;" class="spacec"></div>
+
+                <div>
+                  <h2 class="card-title">PAN Card</h2>
+                  <h3 style="border: 0px solid black; margin:5px;padding:0px">PAN CARD No: {{ identity.panNo }} </h3>
+                  <h3 style="border: 0px solid black; margin:5px;padding:0px">Name: {{ identity.nameAsPan }}</h3>
+                  <h3 style="border: 0px solid black; margin:5px;padding:0px">Dob : {{ identity.dobAsPan }} </h3>
+                </div>
+                <div style="padding-left: 290px ;" class="spacec"></div>
+                <div>
+                  <img src="{{identity.panAttach}}" style="width: 250px; height: 150px; " alt="">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card cardx"
+              style="display: flex; justify-content: center;  flex-direction: row; margin-bottom: 40px;max-width: 1200px;">
+
+              <div class="card-body" style="display: flex; flex-wrap: wrap;">
+                <div style="padding-left: 60px ;" class="spacec"></div>
+
+                <div>
+                  <h2 class="card-title">PASSPORT</h2>
+                  <h3 style="border: 0px solid black; margin:5px;padding:0px">Pasport No: {{ identity.passportNo }}
+                  </h3>
+                  <h3 style="border: 0px solid black; margin:5px;padding:0px">Passport Type: {{ identity.passportType }}
+                  </h3>
+                  <h3 style="border: 0px solid black; margin:5px;padding:0px"> Passport Valid Till: {{
+                    identity.passportValidTill }} </h3>
+                </div>
+                <div style="padding-left: 290px ;" class="spacec"></div>
+                <div>
+                  <img src="{{ identity.passportAttach }}" style="width: 250px; height: 150px; " alt="">
+                </div>
+              </div>
+            </div>
+          </mdb-tab>
+          <mdb-tab>
+            <ng-template mdbTabTitle>
+              <span style="color: orange;"><i class="fa fa-person"></i> Profile</span>
+            </ng-template>
+            <h1>Content 3</h1>
+          </mdb-tab>
+        </mdb-tabs>
+      </div>

@@ -1,0 +1,23 @@
+<div [ngClass]="{'complete-container': true, 'complete-container-rtl': !isLayoutLtr}">
+    <div
+    [ngClass]="{'sidebar-container' : true, 'sidebar-container-rtl': !isLayoutLtr,'sidebar-active': isSidebarActive, 'sidebar-inactive' : !isSidebarActive}">
+        <app-sidebar [isLayoutLtr]="isLayoutLtr" [isSidebarActive]="isSidebarActive" (childEvent)="receiveSidebarData($event)"></app-sidebar>
+    </div>
+    <div class="main-body-container">
+        <div class="navbar-container">
+            <app-header [isLayoutLtr]="isLayoutLtr"></app-header>
+        </div>
+        <div class="main-content-container">
+            <app-main></app-main>
+            <button class="settings-toggle-btn" (click)="toggleSettings()">
+                <i class="settings-toggle-icon fa-solid fa-xl fa-gear" style="color: #ffffff;"></i>
+            </button>
+        </div>
+        <div class="footer-container">
+            <app-footer [isLayoutLtr]="isLayoutLtr"></app-footer>
+        </div>
+        <div [ngClass]="{'settings-container':true, 'settings-container-active':isSettingsActive}">
+            <app-settings [isLayoutLtr]="isLayoutLtr" [isSettingsActive]="isSettingsActive" (childEvent)="receiveSettingsData($event)" (layoutChangeEvent)="changeLayout($event)"></app-settings>
+        </div>
+</div>
+</div>

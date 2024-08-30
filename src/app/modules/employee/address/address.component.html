@@ -1,0 +1,391 @@
+<app-employee-sub-header></app-employee-sub-header>
+<div class="main ">
+  <mdb-tabs class=" d-md-block">
+    <mdb-tab>
+      <ng-template mdbTabTitle><span><i class="fas fa-id-card fa-fw me-2"></i>Present
+          Address</span></ng-template>
+      <div class="tab1">
+        <form [formGroup]="validationForm" (ngSubmit)="onSubmit(validationForm)">
+          <fieldset class="border p-2">
+            <legend class="float-none w-auto ">Address</legend>
+            <div class="row md-4">
+              <div class="col-sm-3 mb-4">
+                <mdb-form-control>
+                  <input mdbValidate mdbInput type="text" id="txt1" formControlName="PresentAddress"
+                    class="form-control" />
+                  <label mdbLabel class="form-label" for="form8Example1">Address 1
+                    <span class="text-danger">*</span></label>
+                  <mdb-error *ngIf="
+                    PresentAddress?.invalid && (PresentAddress?.dirty || PresentAddress?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            PresentAddress?.valid && (PresentAddress?.dirty || PresentAddress?.touched)
+                      "></mdb-success>
+                </mdb-form-control>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <!-- Email input -->
+                <mdb-form-control>
+                  <input mdbValidate mdbInput type="text" id="txt2" formControlName="PresentAddress2"
+                    class="form-control" />
+                  <label mdbLabel class="form-label" for="form8Example2">Address 2
+                    <span class="text-danger">*</span></label>
+                  <mdb-error *ngIf="
+                    PresentAddress2?.invalid && (PresentAddress2?.dirty || PresentAddress2?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            PresentAddress2?.valid && (PresentAddress2?.dirty || PresentAddress2?.touched)
+                      "></mdb-success>
+                </mdb-form-control>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <!-- Name dropdown list -->
+                <mdb-form-control>
+                  <input mdbValidate mdbInput type="text" id="txt3" formControlName="PresentCity"
+                    class="form-control" />
+                  <label mdbLabel class="form-label" for="form8Example3">City
+                    <span class="text-danger">*</span></label>
+                  <mdb-error *ngIf="
+                    PresentCity?.invalid && (PresentCity?.dirty || PresentCity?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            PresentCity?.valid && (PresentCity?.dirty || PresentCity?.touched)
+                      "></mdb-success>
+                </mdb-form-control>
+
+              </div>
+              <div class="col-sm-3 mb-4">
+                <mdb-form-control>
+                  <input mdbValidate mdbInput type="text" id="txt4" formControlName="PresentPostalcode"
+                    class="form-control" />
+                  <label mdbLabel class="form-label" for="form8Example3">Zip/Postal Code <span
+                      class="text-danger">*</span></label>
+                  <mdb-error *ngIf="
+                    PresentPostalcode?.invalid && (PresentPostalcode?.dirty || PresentPostalcode?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            PresentPostalcode?.valid && (PresentPostalcode?.dirty || PresentPostalcode?.touched)
+                      "></mdb-success>
+                </mdb-form-control>
+              </div>
+
+            </div>
+            <div class="row md-4">
+
+              <div class="col-sm-3 mb-4">
+                <!-- Name dropdown list -->
+                <mdb-form-control>
+
+                  <select mdbValidate mdbInput id="dpd1" class="form-control" formControlName="PresentCountry"
+                    aria-labelledby="dropdownMenuLink">
+                    <option value disabled selected hidden></option>
+                    <option value="1">India
+                    </option>
+                    <option value="2">Nepal
+                    </option>
+                    <option value="3">Sri Lanka
+                    </option>
+                    <!-- Add more options as needed -->
+                  </select>
+                  <label mdbLabel class="form-label" for="form8Example3">Country
+                    <span class="text-danger">*</span></label>
+                  <mdb-error *ngIf="
+                    PresentCountry?.invalid && (PresentCountry?.dirty || PresentCountry?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            PresentCountry?.valid && (PresentCountry?.dirty || PresentCountry?.touched)
+                      "></mdb-success>
+                  <i class="fas fa-caret-down"
+                    style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                </mdb-form-control>
+              </div>
+              <div class="col-sm-3 mb-4">
+                <!-- Name dropdown list -->
+                <mdb-form-control>
+
+                  <select mdbValidate mdbInput id="dpd2" class="form-control" formControlName="PresentState"
+                    aria-labelledby="dropdownMenuLink">
+                    <option value disabled selected hidden></option>
+                    <option value="1">Bihar
+                    </option>
+                    <option value="2">Jharkhand
+                    </option>
+                    <option value="3">Delhi
+                    </option>
+                    <!-- Add more options as needed -->
+                  </select>
+                  <label mdbLabel class="form-label" for="form8Example3">State/Provinoe <span
+                      class="text-danger">*</span></label>
+                  <mdb-error *ngIf="
+                    PresentState?.invalid && (PresentState?.dirty || PresentState?.touched)
+                      "></mdb-error>
+                  <mdb-success *ngIf="
+                                            PresentState?.valid && (PresentState?.dirty || PresentState?.touched)
+                      "></mdb-success>
+                  <i class="fas fa-caret-down"
+                    style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;    "></i>
+                </mdb-form-control>
+              </div>
+
+            </div>
+          </fieldset>
+          &nbsp;
+
+          <div class="toogle-button">
+            <span class="span">Same as</span>
+            &nbsp;
+            <label class="toggle-label">
+              <input class="toggle-checkbox" type="checkbox" (change)="toggleForm($event)">
+
+              <div class="toggle-slot">
+                <div class="sun-icon-wrapper">
+                  <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                </div>
+                <div class="toggle-button"></div>
+                <div class="moon-icon-wrapper">
+                  <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                </div>
+              </div>
+            </label>
+
+          </div>
+          &nbsp;
+
+          <div class="Permanent">
+            <fieldset class="border p-2">
+              <legend class="float-none w-auto">Permanent Address</legend>
+              <div class="row md-4">
+                <div class="col-sm-3 mb-4">
+                  <mdb-form-control>
+                    <input mdbValidate mdbInput type="text" id="txt5" formControlName="PermanentAddress"
+                      class="form-control" />
+                    <label mdbLabel class="form-label" for="form8Example1">Address
+                      1 <span class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                      PermanentAddress?.invalid && (PermanentAddress?.dirty || PermanentAddress?.touched)
+                      "></mdb-error>
+                    <mdb-success *ngIf="
+                                            PermanentAddress?.valid && (PermanentAddress?.dirty || PermanentAddress?.touched)
+                      "></mdb-success>
+                  </mdb-form-control>
+                </div>
+                <div class="col-sm-3 mb-4">
+                  <!-- Email input -->
+                  <mdb-form-control>
+                    <input mdbValidate mdbInput type="text" id="txt6" formControlName="PermanentAddress2"
+                      class="form-control" />
+                    <label mdbLabel class="form-label" for="form8Example2">Address
+                      2 <span class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                      PermanentAddress2?.invalid && (PermanentAddress2?.dirty || PermanentAddress2?.touched)
+                      "></mdb-error>
+                    <mdb-success *ngIf="
+                                            PermanentAddress2?.valid && (PermanentAddress2?.dirty || PermanentAddress2?.touched)
+                      "></mdb-success>
+                  </mdb-form-control>
+                </div>
+                <div class="col-sm-3 mb-4">
+                  <!-- Name dropdown list -->
+                  <mdb-form-control>
+                    <input mdbValidate mdbInput type="text" id="txt7" formControlName="PermanentCity"
+                      class="form-control" />
+                    <label mdbLabel class="form-label" for="form8Example3">City
+                      <span class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                      PermanentCity?.invalid && (PermanentCity?.dirty || PermanentCity?.touched)
+                      "></mdb-error>
+                    <mdb-success *ngIf="
+                                            PermanentCity?.valid && (PermanentCity?.dirty || PermanentCity?.touched)
+                      "></mdb-success>
+                  </mdb-form-control>
+
+                </div>
+                <div class="col-sm-3 mb-4">
+                  <mdb-form-control>
+                    <input mdbValidate mdbInput type="text" id="txt8" formControlName="PermanentPostalcode"
+                      class="form-control" />
+                    <label mdbLabel class="form-label" for="form8Example3">Zip/Postal Code <span
+                        class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                      PermanentPostalcode?.invalid && (PermanentPostalcode?.dirty || PermanentPostalcode?.touched)
+                      "></mdb-error>
+                    <mdb-success *ngIf="
+                                            PermanentPostalcode?.valid && (PermanentPostalcode?.dirty || PermanentPostalcode?.touched)
+                      "></mdb-success>
+                  </mdb-form-control>
+                </div>
+
+              </div>
+              <div class="row md-4">
+
+                <div class="col-sm-3 mb-4">
+                  <!-- Name dropdown list -->
+                  <mdb-form-control>
+
+                    <select mdbValidate mdbInput id="dpd3" class="form-control" formControlName="PermanentCountry"
+                      aria-labelledby="dropdownMenuLink">
+                      <option value disabled selected hidden></option>
+                      <option value="1">India
+                      </option>
+                      <option value="2">Nepal
+                      </option>
+                      <option value="3">Sri Lanka
+                      </option>
+                      <!-- Add more options as needed -->
+                    </select>
+                    <label mdbLabel class="form-label" for="form8Example3">Country
+                      <span class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                      PermanentCountry?.invalid && (PermanentCountry?.dirty || PermanentCountry?.touched)
+                      "></mdb-error>
+                    <mdb-success *ngIf="
+                                            PermanentCountry?.valid && (PermanentCountry?.dirty || PermanentCountry?.touched)
+                      "></mdb-success>
+                    <i class="fas fa-caret-down"
+                      style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                  </mdb-form-control>
+                </div>
+                <div class="col-sm-3 mb-4">
+                  <!-- Name dropdown list -->
+                  <mdb-form-control>
+
+                    <select mdbValidate mdbInput id="dpd4" class="form-control" formControlName="PermanentState"
+                      aria-labelledby="dropdownMenuLink">
+                      <option value disabled selected hidden></option>
+                      <option value="1">Bihar
+                      </option>
+                      <option value="2">Jharkhand
+                      </option>
+                      <option value="3">Delhi
+                      </option>
+                      <!-- Add more options as needed -->
+                    </select>
+                    <label mdbLabel class="form-label" for="form8Example3">State/Provinoe <span
+                        class="text-danger">*</span></label>
+                    <mdb-error *ngIf="
+                      PermanentState?.invalid && (PermanentState?.dirty || PermanentState?.touched)
+                      "></mdb-error>
+                    <mdb-success *ngIf="
+                                            PermanentState?.valid && (PermanentState?.dirty || PermanentState?.touched)
+                      "></mdb-success>
+                    <i class="fas fa-caret-down"
+                      style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                  </mdb-form-control>
+                </div>
+
+              </div>
+
+              <hr>
+
+              <div class="button col-sm-4">
+
+                <button mdbRipple type="button" class="btn btn-primary btn-sm"><i class="fa-solid fa-backward"></i>
+                  Back</button>
+                <button mdbRipple type="submit" class="btn btn-primary btn-sm"><i
+                    class="fas fa-save fa-fw me-2"></i>Save</button>
+                <button mdbRipple type="button" class="btn btn-primary btn-sm"><i class="fa-solid fa-forward"></i>
+                  Next</button> 
+              </div>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+    </mdb-tab>
+    <mdb-tab>
+      <ng-template mdbTabTitle><span><i class="fas fa-address-book fa-fw me-2"></i>Address
+          List</span></ng-template>
+      <div class="tab2">
+        <table class="table align-middle mb-0 bg-white">
+          <thead class="bg-light">
+            <tr>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Position</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt style="width: 45px; height: 45px"
+                    class="rounded-circle" />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">John Doe</p>
+                    <p class="text-muted mb-0">john.doegmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">Software engineer</p>
+                <p class="text-muted mb-0">IT department</p>
+              </td>
+              <td>
+                <span class="badge badge-success rounded-pill d-inline">Active</span>
+              </td>
+              <td>Senior</td>
+              <td>
+                <button type="button" class="btn btn-link btn-sm btn-rounded">
+                  Edit
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt
+                    style="width: 45px; height: 45px" />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">Alex Ray</p>
+                    <p class="text-muted mb-0">alex.raygmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">Consultant</p>
+                <p class="text-muted mb-0">Finance</p>
+              </td>
+              <td>
+                <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
+              </td>
+              <td>Junior</td>
+              <td>
+                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
+                  Edit
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt
+                    style="width: 45px; height: 45px" />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">Kate Hunington</p>
+                    <p class="text-muted mb-0">kate.huningtongmail.com</p>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="fw-normal mb-1">Designer</p>
+                <p class="text-muted mb-0">UI/UX</p>
+              </td>
+              <td>
+                <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
+              </td>
+              <td>Senior</td>
+              <td>
+                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </mdb-tab>
+
+  </mdb-tabs>
+</div>

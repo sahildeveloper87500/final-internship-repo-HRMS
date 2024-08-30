@@ -1,0 +1,30 @@
+.footer-container {
+    background: var(--orange-secondary);
+    width: 104%;
+    height: 100%;
+    margin-left: -4%;
+    padding-left: 5%;
+    padding-right: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    // color: white;
+}
+
+.highlighted{
+    // color: var(--orange-primary);
+    font-weight:600;
+}
+
+
+
+@mixin mobile-only {
+    @media screen and (max-width: 600px) { @content; }
+  }
+  
+  @include mobile-only {
+    .MFooterRemove{
+      display:none;
+  }
+  }

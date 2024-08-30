@@ -1,0 +1,305 @@
+<div class="container-fluid ">
+
+  <div class="outerbox" style="margin-top: 4vh;">
+   <div class="inner1">
+     <div class="heading">
+       <div>
+         <p class="head">Employee</p>
+       </div>
+ 
+       <div>
+ 
+         <p class="sub-head">Dashboard/Employee</p>
+       </div>
+     </div>
+   </div>
+ 
+   <div class="inner2">
+     <div class="button-links">
+       <mdb-form-control>
+         <div class="icon-container">
+           <a routerLink="../Empdashboard" matTooltip="Employee Dashboard">
+             <div class="icon-square">
+               <i class="fa-solid fa-border-all" style="color: white;"></i>
+ 
+             </div>
+           </a>
+           <a routerLink="../Emplist" matTooltip="Employee List">
+             <div class="icon-square">
+               <i class="fa-solid fa-list" style="color: white;" ></i>
+             </div>
+           </a>
+           <a routerLink="../personal" class="" matTooltip="Add Employee">
+          
+               <i  style="color:var(--orange-primary); margin-left: -0.8vw;"  class="fa-solid fa-circle-plus addEmp"></i>
+          
+           </a>
+         </div>
+       </mdb-form-control>
+     </div>
+   </div>
+ 
+  </div>
+ 
+ 
+  <div class="row" id="input-field">
+   <div class="col">
+     <!-- Name input -->
+     
+     <mdb-form-control>
+       <input mdbInput type="text" id="form8Example1" class="form-control" />
+       <label mdbLabel class="form-label" for="form8Example1">Full Name <span class="text-danger">*</span></label>
+     </mdb-form-control>
+   </div>
+   <div class="col">
+     <!-- Name input -->
+     <mdb-form-control>
+       <select mdbInput id="form8Example3" class="form-control" aria-labelledby="dropdownMenuLink">
+         <option value disabled selected hidden></option>
+         <option value="1">Project1</option>
+         <option value="2">Project2</option>
+         <option value="3">Others</option>
+         <!-- Add more options as needed -->
+       </select>
+       <label mdbLabel class="form-label" for="form8Example3">project <span class="text-danger">*</span></label>
+       <i class="fas fa-caret-down"
+         style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+     </mdb-form-control>
+   </div>
+   <div class="col">
+     <!-- Email input -->
+     <mdb-form-control>
+       <select mdbInput id="form8Example3" class="form-control" aria-labelledby="dropdownMenuLink">
+         <option value disabled selected hidden></option>
+         <option value="1">Web Development</option>
+         <option value="2">App Development</option>
+         <option value="3">Ios Development</option>
+         <!-- Add more options as needed -->
+       </select>
+       <label mdbLabel class="form-label" for="form8Example3">department <span class="text-danger">*</span></label>
+       <i class="fas fa-caret-down"
+         style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+     </mdb-form-control>
+   </div>
+ 
+ 
+   <div class="col">
+     <mdb-form-control>
+       <select mdbInput id="form8Example4" class="form-control" aria-labelledby="dropdownMenuLink">
+         <option value disabled selected hidden></option>
+         <option value="1">Neeraj</option>
+         <option value="2">Sandeep</option>
+         <option value="3">Pankaj</option>
+ 
+         <!-- Add more options as needed -->
+       </select>
+       <label mdbLabel class="form-label" for="form8Example4">project manager <span
+           class="text-danger">*</span></label>
+       <i class="fas fa-caret-down"
+         style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+     </mdb-form-control>
+   </div>
+   <div class="col">
+     <button type="button" class="btn" id="searchbtn"> 
+ 
+        <div style="display: flex; flex-direction: row;">
+         <div><i class="fa-solid fa-magnifying-glass"></i></div>
+         
+         <div>&nbsp; &nbsp; Search</div> 
+         
+        </div> 
+       </button>  
+       
+   </div>
+ </div> 
+ </div>
+
+
+<hr>
+<div class="main5">
+  <div class="card" *ngFor="let item of categoryGroup; let i = index">
+    <div class="image-container">
+      <!-- <a href>
+        <img *ngIf="item.fatherorHusbandName" [src]="getImageURL(item.fatherorHusbandName)" alt="Category Image" />
+      </a> -->
+      <a   (click)="sendItem(item.empPersDtlId)">
+        <img *ngIf="item.fatherorHusbandName"
+           [src]="getImageURL(item.fatherorHusbandName)" 
+          alt="Category Image"/>
+          </a>
+    </div>
+    <div class="icon" style="position: absolute; right: 25px; top: 25px; cursor: pointer; font-size: 25px;"
+      (click)="toggleOptions(i)">
+      <i class="fa-solid fa-ellipsis-vertical"></i>
+    </div>
+    <div *ngIf="showOptions[i]" class="options">
+      <div class="btn">
+        <div class="btn1">
+          <i class="fa-solid fa-pen-to-square" id="icon"></i>
+          <span class="text" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</span>
+        </div>
+        <div class="btn1">
+          <i class="fa-solid fa-trash" id="icon"></i><span>Delete</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+      <p class="app-name">{{item.fullName}}</p>
+      <p class="developer">{{item.fatherorHusbandName}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade rk" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Employee</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <!-- 2 column grid layout with text inputs for the first and last names -->
+          <div class="row mb-3">
+            <div class="col">
+              <label for>First Name</label>
+              <mdb-form-control>
+                <input mdbInput type="text" id="form6Example1" class="form-control" />
+                <label mdbLabel class="form-label" for="form6Example1">First
+                  name</label>
+              </mdb-form-control>
+            </div>
+            <div class="col">
+              <label for>Last Name</label>
+              <mdb-form-control>
+                <input mdbInput type="text" id="form6Example2" class="form-control" />
+                <label mdbLabel class="form-label" for="form6Example2">Last
+                  name</label>
+              </mdb-form-control>
+            </div>
+            <div class="col">
+              <label for>UserName</label>
+              <mdb-form-control>
+                <input mdbInput type="text" id="form6Example1" class="form-control" />
+                <label mdbLabel class="form-label" for="form6Example1">First
+                  name</label>
+              </mdb-form-control>
+            </div>
+          </div>
+          <div class="row mb-3">
+
+            <div class="col">
+              <label for>Email</label>
+              <mdb-form-control>
+                <input mdbInput type="email" id="form6Example2" class="form-control" />
+                <label mdbLabel class="form-label" for="form6Example2">Last
+                  name</label>
+              </mdb-form-control>
+            </div>
+            <div class="col">
+              <label for>Password</label>
+              <mdb-form-control>
+                <input mdbInput type="password" id="form6Example1" class="form-control" />
+                <label mdbLabel class="form-label" for="form6Example1">Password</label>
+              </mdb-form-control>
+            </div>
+            <div class="col">
+              <label for>Confirm Password</label>
+              <mdb-form-control>
+                <input mdbInput type="password" id="form6Example2" class="form-control" />
+                <label mdbLabel class="form-label" for="form6Example2">Confirm
+                  Password</label>
+              </mdb-form-control>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label for>Employee ID </label>
+              <mdb-form-control>
+                <input mdbInput type="text" id="form6Example1" class="form-control" />
+                <label mdbLabel class="form-label" for="form6Example1">Employee
+                  ID</label>
+              </mdb-form-control>
+            </div>
+            <div class="col">
+              <label for>Joining Date</label>
+              <mdb-form-control>
+                <input mdbInput type="date" id="form6Example2" class="form-control" />
+                <label mdbLabel class="form-label" for="form6Example2">Joining
+                  Date</label>
+              </mdb-form-control>
+            </div>
+            <div class="col">
+              <label for>Phone</label>
+              <mdb-form-control>
+                <input mdbInput type="number" id="form6Example1" class="form-control" />
+                <label mdbLabel class="form-label" for="form6Example1">Phone
+                  Number</label>
+              </mdb-form-control>
+            </div>
+          </div>
+          <div class="row mb-3">
+
+            <div class="col">
+              <label for>Company</label>
+              <mdb-form-control>
+
+                <select mdbInput id="form8Example3" class="form-control" aria-labelledby="dropdownMenuLink">
+                  <option value disabled selected hidden></option>
+                  <option value="option1">Global Technologies</option>
+                  <option value="option2">Delta Infotech</option>
+                  <option value="option3">International Software inc</option>
+                  <!-- Add more options as needed -->
+                </select>
+                <label mdbLabel class="form-label" for="form8Example3">company</label>
+                <i class="fas fa-caret-down"
+                  style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+              </mdb-form-control>
+            </div>
+            <div class="col">
+              <label for>Department</label>
+              <mdb-form-control>
+
+                <select mdbInput id="form8Example3" class="form-control" aria-labelledby="dropdownMenuLink">
+                  <option value disabled selected hidden></option>
+                  <option value="option1">Web Developement</option>
+                  <option value="option2">IT Management</option>
+                  <option value="option3">Marketing</option>
+                  <!-- Add more options as needed -->
+                </select>
+                <label mdbLabel class="form-label" for="form8Example3">Select
+                  Department</label>
+                <i class="fas fa-caret-down"
+                  style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+              </mdb-form-control>
+            </div>
+            <div class="col">
+              <label for>Designation</label>
+              <mdb-form-control>
+
+                <select mdbInput id="form8Example3" class="form-control" aria-labelledby="dropdownMenuLink">
+                  <option value disabled selected hidden></option>
+                  <option value="option1">Global Technologies</option>
+                  <option value="option2">Delta Infotech</option>
+                  <option value="option3">International Software inc</option>
+                  <!-- Add more options as needed -->
+                </select>
+                <label mdbLabel class="form-label" for="form8Example3">Select
+                  Designation</label>
+                <i class="fas fa-caret-down"
+                  style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+              </mdb-form-control>
+            </div>
+          </div>
+
+        </form>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-primary" id="button-footer">Save</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

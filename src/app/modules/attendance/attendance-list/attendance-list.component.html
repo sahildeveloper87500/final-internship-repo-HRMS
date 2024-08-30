@@ -1,0 +1,431 @@
+<app-attendance-sub-header></app-attendance-sub-header>
+<div class="attendance">
+  <h2>Attendance</h2>
+</div>
+
+<form class="form1">
+  <!-- Employee Name -->
+  <mdb-form-control class="mb-4">
+    <input mdbInput type="email" id="form1Example1" class="form-control" />
+    <label mdbLabel class="form-label" for="form1Example1">Emaployee Name</label>
+  </mdb-form-control>
+
+  <!--Select Month -->
+  <mdb-form-control class="mb-4">
+    <select class="form-select" aria-label="Default select example">
+      <option selected mdbLabel class="form-label" for="form1Example2">
+        Select Month
+      </option>
+      <option value="1">January</option>
+      <option value="2">February</option>
+      <option value="3">March</option>
+      <option value="4">Aprial</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">Octuber</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+  </mdb-form-control>
+
+  <!-- Select Year -->
+  <mdb-form-control class="mb-4">
+    <select class="form-select" aria-label="Default select example">
+      <option selected mdbLabel class="form-label" for="form1Example2">
+        Select Year
+      </option>
+      <option value="1">2022</option>
+      <option value="2">2023</option>
+      <option value="3">2024</option>
+      <option value="4">2025</option>
+      <option value="5">2026</option>
+    </select>
+  </mdb-form-control>
+
+  <!-- Submit button -->
+  <button mdbRipple type="button" class="btn mb-4 btn-primary btn-block">
+    SEARCH
+  </button>
+</form>
+
+<!-- Table -->
+<div style="overflow: scroll">
+  <div class="card" style="
+      border: 1px solid lightgray;
+      margin: 15px 14px;
+      border-radius: 10px;
+      overflow: scroll;
+      height: 450px;
+    ">
+    <table class="table align-middle mb-0 bg-white" style="position: relative">
+      <thead class="bg-light" style="position: sticky; top: 0px">
+        <tr>
+          <th class="emp">
+            <h2>Employee</h2>
+          </th>
+          <th class="btn" *ngFor="let item of list1">
+            {{ item.date }}
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let attendance of manualattendanceArray">
+          <td>
+            <div class="EmpProfile">
+              <img
+                src="https://png.pngtree.com/png-vector/20190411/ourmid/pngtree-business-male-icon-vector-png-image_916468.jpg"
+                width="30px" height="30px" style="border-radius: 200%" alt="" />
+              <h5>{{attendance[0]}}</h5>
+            </div>
+          </td>
+
+          <td class="btn" style="color: greenyellow" *ngFor="let item of listPresent" (click)="toggleTabs()"
+            matTooltip="Present">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" style="color: greenyellow" *ngFor="let item of listPresent" (click)="toggleTabs()"
+            matTooltip="Present">
+            {{ item.Attendance }}
+          </td>
+
+          <td class="btn" style="color: rgb(255, 36, 20)" *ngFor="let item of listAbusent" (click)="toggleTabs1()"
+            matTooltip="Abusent">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" *ngFor="let item of listPresent" (click)="toggleTabs()" matTooltip="Present"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" style="color: rgb(255, 36, 20)" *ngFor="let item of listAbusent" (click)="toggleTabs1()"
+            matTooltip="Abusent">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs3()" matTooltip="Holiday" style="color: rgb(255, 216, 20)"
+            *ngFor="let item of listHoliday">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs()" matTooltip="Present" *ngFor="let item of listPresent"
+            style="color: greenyellow">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs3()" matTooltip="Holiday" style="color: rgb(255, 216, 20)"
+            *ngFor="let item of listHoliday">
+            {{ item.Attendance }}
+          </td>
+          <td class="btn" (click)="toggleTabs3()" matTooltip="Holiday" style="color: rgb(255, 216, 20)"
+            *ngFor="let item of listHoliday">
+            {{ item.Attendance }}
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- popup  Present-->
+<div *ngIf="showTabs" class="modal-overlay">
+  <div class="modal-dialog" (click)="preventClose($event)">
+    <div class="modal-content abusent">
+      <button mat-icon-button (click)="toggleTabs()" class="close-icon">
+        <i class="far fa-times-circle"></i>
+      </button>
+      <div class="modal-content1">
+        <div class="menu">
+          <div class="timesheet">
+            <h4>Timesheet 11 Mar 2024</h4>
+            <div class="punch">
+              <p>
+                <b>punch in at</b> <br />
+                Wed,11th Mar 2024 10.00 Am
+              </p>
+            </div>
+            <div class="time">
+              <p>3.45 hrs</p>
+            </div>
+            <div class="punch">
+              <p>
+                <b>punch in at</b> <br />
+                Wed,11th Mar 2024 10.00 Am
+              </p>
+            </div>
+
+            <div class="break-ov">
+              <div class="break">
+                <p>
+                  <b>Break</b> <br />
+                  1.21 hrs
+                </p>
+              </div>
+              <div class="overtime">
+                <p>
+                  <b>Overtime </b><br />
+                  3 hrs
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity">
+            <h4>Activity</h4>
+            <ul>
+              <li>
+                <p>Punch in at ----- 10.00 AM</p>
+              </li>
+              <li>
+                <p>Punch in at ----- 10.00 AM</p>
+              </li>
+              <li>
+                <p>Punch in at ----- 10.00 AM</p>
+              </li>
+              <li>
+                <p>Punch in at ----- 10.00 AM</p>
+              </li>
+              <li>
+                <p>Punch in at ----- 10.00 AM</p>
+              </li>
+              <li>
+                <p>Punch in at ----- 10.00 AM</p>
+              </li>
+              <li>
+                <p>Punch in at ----- 10.00 AM</p>
+              </li>
+              <li>
+                <p>Punch in at ----- 10.00 AM</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div mat-dialog-actions [align]="'end'" class="submit-dialog">
+          <button mdbRipple type="button" class="btn btn-info btn-sm" mat-dialog-close
+            (click)="toggleTabs()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- popup Abusent -->
+<div *ngIf="showTabs1" class="modal-overlay">
+  <div class="modal-dialog" (click)="preventClose($event)">
+    <div class="modal-content abusent">
+      <button mat-icon-button (click)="toggleTabs1()" class="close-icon">
+        <i class="far fa-times-circle"></i>
+      </button>
+
+      <div class="main">
+        <mdb-tabs class="d-md-block">
+          <mdb-tab>
+            <ng-template mdbTabTitle><span><i class="fa-solid fa-person-walking-arrow-right"></i>Manual
+                Attendance</span></ng-template>
+            <div class="tab1">
+              <fieldset class="border p-2">
+                <legend class="float-none w-auto">Add Details</legend>
+                <div class="row">
+                  <div class="col mb-4">
+                    <mdb-form-control>
+                      <select mdbInput id="form8Example4" class="form-control" aria-labelledby="dropdownMenuLink">
+                        <option value disabled selected hidden></option>
+                        <option value="option1">Check In</option>
+                        <option value="option2">Check Out</option>
+                      </select>
+                      <label mdbLabel class="form-label" for="form8Example4">Attendaance type<span
+                          class="text-danger">*</span></label>
+                      <i class="fas fa-caret-down" style="
+                          position: absolute;
+                          top: 50%;
+                          transform: translateY(-50%);
+                          right: 10px;
+                        "></i>
+                    </mdb-form-control>
+                  </div>
+
+                  <div class="col mb-4">
+                    <mdb-form-control>
+                      <input mdbInput type="date" id="form8Example8" class="form-control" />
+                      <label mdbLabel class="form-label" for="form8Example8">Enter Date <span
+                          class="text-danger">*</span></label>
+                    </mdb-form-control>
+                  </div>
+                  <div class="col mb-4">
+                    <mdb-form-control>
+                      <input mdbInput type="time" id="form8Example8" class="form-control" />
+                      <label mdbLabel class="form-label" for="form8Example8">Enter Time <span
+                          class="text-danger">*</span></label>
+                    </mdb-form-control>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col mb-4">
+                    <mdb-form-control>
+                      <select mdbInput id="form8Example4" class="form-control" aria-labelledby="dropdownMenuLink">
+                        <option value disabled selected hidden></option>
+                        <option value="option1">Check In</option>
+                        <option value="option2">Check Out</option>
+                      </select>
+                      <label mdbLabel class="form-label" for="form8Example4">Attendaance type<span
+                          class="text-danger">*</span></label>
+                      <i class="fas fa-caret-down" style="
+                          position: absolute;
+                          top: 50%;
+                          transform: translateY(-50%);
+                          right: 10px;
+                        "></i>
+                    </mdb-form-control>
+                  </div>
+
+                  <div class="col mb-4">
+                    <mdb-form-control>
+                      <input mdbInput type="date" id="form8Example8" class="form-control" />
+                      <label mdbLabel class="form-label" for="form8Example8">Enter Date <span
+                          class="text-danger">*</span></label>
+                    </mdb-form-control>
+                  </div>
+                  <div class="col mb-4">
+                    <mdb-form-control>
+                      <input mdbInput type="time" id="form8Example8" class="form-control" />
+                      <label mdbLabel class="form-label" for="form8Example8">Enter Time <span
+                          class="text-danger">*</span></label>
+                    </mdb-form-control>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <mdb-form-control class="mb-4">
+                      <textarea mdbInput class="form-control" id="form4Example3" rows="4"></textarea>
+                      <label mdbLabel class="form-label" for="form4Example3">Reason of Manual Attendance</label>
+                    </mdb-form-control>
+                  </div>
+                </div>
+
+                <span class="text-danger">*</span> Required
+                <hr />
+
+                <button type="button" class="btn btn-secondary" (click)="toggleTabs1()">
+                  Submit
+                </button>
+              </fieldset>
+            </div>
+          </mdb-tab>
+
+          <mdb-tab>
+            <ng-template mdbTabTitle><span>
+                <i class="fa-solid fa-person-through-window"></i>Leave</span></ng-template>
+            <fieldset class="border p-2">
+              <legend class="float-none w-auto">Leave Details</legend>
+              <div class="tab2">
+                <table class="table align-middle mb-0 bg-white">
+                  <thead class="bg-light">
+                    <tr *ngFor="let m of leaveHeading">
+                      <th>{{m.Total}}</th>
+
+                      <th>{{m.Used}}</th>
+                      <th>{{m.Saved}}</th>
+                      <th>{{m.Actions}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let m of Leavelist">
+                      <td>{{ m.totalLeave }}</td>
+                      <td>{{ m.usedLeave }}</td>
+                      <td>{{ m.saveLeave }}</td>
+                      <td>
+                        <div>
+                          <input mdbCheckbox class="form-check-input" type="checkbox" id="checkboxNoLabel" value=""
+                            aria-label="..." />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="row" style="margin-top: 10px;">
+                  <div class="col">
+                    <mdb-form-control class="mb-4">
+                      <textarea mdbInput class="form-control" id="form4Example3" rows="4"></textarea>
+                      <label mdbLabel class="form-label" for="form4Example3">Drop a Message</label>
+                    </mdb-form-control>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div mat-dialog-actions [align]="'center'" class="submit-dialog"
+              style="margin-right: 45%; margin-top: 10px;">
+              <button mdbRipple type="button" class="btn btn-info btn-sm" mat-dialog-close
+                (click)="toggleTabs1()">Submit</button>
+            </div>
+          </mdb-tab>
+        </mdb-tabs>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- popup Holiday -->
+<div *ngIf="showTabs3" class="modal-overlay">
+  <div class="modal-dialog" (click)="preventClose($event)">
+    <div class="modal-content abusent">
+      <button mat-icon-button (click)="toggleTabs3()" class="close-icon">
+        <i class="far fa-times-circle"></i>
+      </button>
+
+      <div class="modal-content1">
+        <div class="main">
+          <div class="row">
+            <img src="https://images.news18.com/ibnlive/uploads/2023/03/happy-holi-2023-images-and-wishes-4.jpg" alt="">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,268 @@
+<nav class="navbar">
+    <div [ngClass]="{'upper-navbar': true, 'upper-navbar-rtl': !isLayoutLtr}">
+        <!-- <h6 class="navbar-heading" style="white-space: nowrap;">
+            {{pageTitle}}
+          </h6> -->
+
+        <h6 class="navbar-heading" style="white-space: nowrap;" (click)="navigateToPage()">{{pageTitle}}</h6>
+
+        <div class="upper-navbar-right">
+            <div class="search-container">
+                <input type="text">
+                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+            </div>
+            <div class="btn-section">
+                <!-- Language dropdown -->
+                <div class="btn-container">
+                    <button (click)="onLangBtnClick()">
+                        <i class="fa-solid fa-language fa-2xl" style="color: #ffffff;"></i>
+                    </button>
+                    <div class="btn-dropdown-container" *ngIf="isLangDropOpen">
+                        <div class="btn-dropdown-list">
+                            <button *ngFor="let language of languages">
+                                <i class={{language.flagClass}}></i>
+                                {{language.name}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Alert Dropdown -->
+                <div class="btn-container">
+                    <button (click)="onAlertBtnClick()">
+                        <i class="fa-solid fa-bell fa-xl" style="color: #ffffff;"></i>
+                    </button>
+                    <div class="btn-dropdown-container alert-dropdown-container" *ngIf="isAlertDropOpen">
+                        <div class="btn-dropdown-list">
+                            <p *ngFor="let alert of alerts">
+                                {{alert.data}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Message dropdown -->
+                <div class="btn-container">
+                    <button (click)="onMsgBtnClick()">
+                        <i class="fa-solid fa-message fa-xl" style="color: #ffffff;"></i>
+                    </button>
+                    <div class="btn-dropdown-container msg-dropdown-container" *ngIf="isMsgDropOpen">
+                        <div class="btn-dropdown-list">
+                            <p *ngFor="let message of messages">
+                                {{message.msg}}
+                                <br>
+                                -{{message.by}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUICK LINK SECTION -->
+            <div class="quick-link-dropdown-container" style="position: relative;">
+                <button class="quick-link-dropdown-btn" (click)="onQuickLinkBtnClick()">
+                    <i style="margin: 0px 2px;" class="fa-solid fa-ellipsis-vertical fa-xl"></i>
+                    <i style="margin: 0px 2px;" class="fa-solid fa-ellipsis-vertical fa-xl"></i>
+                    <i style="margin: 0px 2px;" class="fa-solid fa-ellipsis-vertical fa-xl"></i>
+                </button>
+                <div class="quick-link-dropdown-div" *ngIf="isQuickLinkDropOpen">
+                    <div class="quick-link-btn-div">
+                        <a (click)="isQuickLinkDropOpen = false" routerLink="dashboard" class="quick-link-btn"><i
+                                class="fa-solid fa-house fa-2xl"></i></a>
+                        <span class="quick-link-btn-text">Dashboard</span>
+                    </div>
+                    <div class="quick-link-btn-div">
+                        <a (click)="isQuickLinkDropOpen = false" routerLink="employee/Empdashboard"
+                            class="quick-link-btn"><i class="fa-solid fa-user fa-2xl"></i></a>
+                        <span class="quick-link-btn-text">Employee</span>
+                    </div>
+                    <div class="quick-link-btn-div">
+                        <a (click)="isQuickLinkDropOpen = false" routerLink="master/MasterHeader"
+                            class="quick-link-btn"><i class="fa-solid fa-user-tie fa-2xl"></i></a>
+                        <span class="quick-link-btn-text">Master</span>
+                    </div>
+                    <div class="quick-link-btn-div">
+                        <a (click)="isQuickLinkDropOpen = false" routerLink="attendence/atteHeader"
+                            class="quick-link-btn"><i class="fa-solid fa-clipboard-user fa-2xl"></i></a>
+                        <span class="quick-link-btn-text">Attendance</span>
+                    </div>
+                    <div class="quick-link-btn-div">
+                        <a (click)="isQuickLinkDropOpen = false" routerLink="leave/leaveHeader"
+                            class="quick-link-btn"><i class="fa-solid fa-mug-hot fa-2xl"></i></a>
+                        <span class="quick-link-btn-text">Leave</span>
+                    </div>
+                    <div class="quick-link-btn-div">
+                        <a (click)="isQuickLinkDropOpen = false" routerLink="asset/assetheader"
+                            class="quick-link-btn"><i class="fa-solid fa-laptop fa-2xl"></i></a>
+                        <span class="quick-link-btn-text">Assets</span>
+                    </div>
+                </div>
+            </div>
+            <!-- UPPER NAVBAR RIGHT PROFILE ICON -->
+            <div>
+                <button (click)="onProfileBtnClick()" class="upper-navbar-right-profile-btn">
+                    <img src="../../../assets/img/user-img.jpg">
+                </button>
+                <div class="profile-dropdown-container" *ngIf="isProfileDropOpen">
+                    <div class="btn-dropdown-list">
+                        <button (click)="toggleTabs()"> View Profile</button>
+                        <button (click)="logout()"><i class="fa fa-sign-in"> </i> Logout</button>
+                    </div>
+                </div>
+            </div>
+            <button class="lower-navbar-toggle-btn" (click)="toggleLowerNavbar()">
+                <i class="fa-solid fa-ellipsis-vertical fa-xl" style="color: #ffffff;"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- LOWER NAVBAR SECTION -->
+    <div [ngClass]="{'lower-navbar':true, 'lower-navbar-active':isLowerNav, 'lower-navbar-inactive':!isLowerNav}">
+        <div class="upper-navbar-right">
+            <div class="search-container">
+                <input type="text">
+                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+            </div>
+            <div class="btn-section">
+                <!-- Language dropdown -->
+                <div class="btn-container">
+                    <button (click)="onLangBtnClick()">
+                        <i class="fa-solid fa-language fa-2xl" style="color: #ffffff;"></i>
+                    </button>
+                    <div class="btn-dropdown-container" *ngIf="isLangDropOpen">
+                        <div class="btn-dropdown-list">
+                            <button *ngFor="let language of languages">
+                                <i class={{language.flagClass}}></i>
+                                {{language.name}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Alert Dropdown -->
+                <div class="btn-container">
+                    <button (click)="onAlertBtnClick()">
+                        <i class="fa-solid fa-bell fa-xl" style="color: #ffffff;"></i>
+                    </button>
+                    <div class="btn-dropdown-container alert-dropdown-container" *ngIf="isAlertDropOpen">
+                        <div class="btn-dropdown-list">
+                            <p *ngFor="let alert of alerts">
+                                {{alert.data}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Message dropdown -->
+                <div class="btn-container">
+                    <button (click)="onMsgBtnClick()">
+                        <i class="fa-solid fa-message fa-xl" style="color: #ffffff;"></i>
+                    </button>
+                    <div class="btn-dropdown-container msg-dropdown-container" *ngIf="isMsgDropOpen">
+                        <div class="btn-dropdown-list">
+                            <p *ngFor="let message of messages">
+                                {{message.msg}}
+                                <br>
+                                -{{message.by}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- QUICK LINK SECTION For MOBILE -->
+        <div class="quick-link-dropdown-container" style="position: relative;">
+            <button class="quick-link-dropdown-btn" (click)="onQuickLinkBtnClick()">
+                <i style="margin: 0px 2px;" class="fa-solid fa-ellipsis-vertical fa-xl"></i>
+                <i style="margin: 0px 2px;" class="fa-solid fa-ellipsis-vertical fa-xl"></i>
+                <i style="margin: 0px 2px;" class="fa-solid fa-ellipsis-vertical fa-xl"></i>
+            </button>
+            <div class="quick-link-dropdown-div" *ngIf="isQuickLinkDropOpen">
+                <div class="quick-link-btn-div">
+                    <a routerLink="dashboard" class="quick-link-btn"
+                        (click)="isQuickLinkDropOpen = false; isLowerNav = false"><i
+                            class="fa-solid fa-house fa-2xl"></i></a>
+                    <span class="quick-link-btn-text">Dashboard</span>
+                </div>
+                <div class="quick-link-btn-div">
+                    <a (click)="isQuickLinkDropOpen = false; isLowerNav = false" routerLink="employee/Empdashboard"
+                        class="quick-link-btn"><i class="fa-solid fa-user fa-2xl"></i></a>
+                    <span class="quick-link-btn-text">Employee</span>
+                </div>
+                <div class="quick-link-btn-div">
+                    <a (click)="isQuickLinkDropOpen = false; isLowerNav = false" routerLink="master/MasterHeader"
+                        class="quick-link-btn"><i class="fa-solid fa-user-tie fa-2xl"></i></a>
+                    <span class="quick-link-btn-text">Master</span>
+                </div>
+                <div class="quick-link-btn-div">
+                    <a (click)="isQuickLinkDropOpen = false; isLowerNav = false" routerLink="attendence/atteHeader"
+                        class="quick-link-btn"><i class="fa-solid fa-clipboard-user fa-2xl"></i></a>
+                    <span class="quick-link-btn-text">Attendance</span>
+                </div>
+                <div class="quick-link-btn-div">
+                    <a (click)="isQuickLinkDropOpen = false; isLowerNav = false" routerLink="leave/leaveHeader"
+                        class="quick-link-btn"><i class="fa-solid fa-mug-hot fa-2xl"></i></a>
+                    <span class="quick-link-btn-text">Leave</span>
+                </div>
+                <div class="quick-link-btn-div">
+                    <a (click)="isQuickLinkDropOpen = false; isLowerNav = false" routerLink="asset/assetheader"
+                        class="quick-link-btn"><i class="fa-solid fa-laptop fa-2xl"></i></a>
+                    <span class="quick-link-btn-text">Assets</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- View Profile Popup -->
+<div *ngIf="showTabs" class="modal-overlay" style=" background: rgba(0, 0, 0, 0.5); height: 100vh;">
+    <div class="modal-dialog " (click)="preventClose($event)" style="position: relative; ">
+
+        <button mat-icon-button (click)="toggleTabs()" class="close-icon"
+            style="position: absolute; top:-20px;right: -20px;cursor: pointer;">
+            <i class="far fa-times-circle " style="background-color:orange;
+        border-radius: 14px;"></i>
+        </button>
+
+        <form class="modal-content" style="border: 0px solid green; position: relative; border-radius: 20px;  height:  270px ;
+      width: 500px;">
+            <form>
+                <button mat-icon-button (click)="toggleTabs()" class="close-icon"
+                    style="position: absolute; top:-20px;right: -20px;cursor: pointer;z-index: 30;">
+                    <i class="far fa-times-circle " style="background-color:orange;
+          border-radius: 14px;"></i>
+                </button>
+
+                <div class="model-body" style="margin-left: 40px; border-bottom: 0px solid black;">
+                    <div style="position:absolute;top:20px;left:20px; width: 95%; ">
+                        <div style=" border-bottom: 2px solid lightgray ;width: 95%; ">
+                            <h2 style="border: 0px solid;margin: 0px 0px 7px 0px;color: black;"><b>Add Family</b></h2>
+                        </div>
+
+                        <div style="display: flex; flex-wrap: wrap; gap:4%;border: 0px solid;padding-top: 15px;"
+                            class="commentresp">
+                            <div style="width: 47%;">
+                                <mdb-form-control class="tex-tbox">
+                                    <input mdbValidate mdbInput type="text" name="familyName" id="form1"
+                                        class="form-control" formControlName="deptName" required />
+                                    <label mdbLabel class="form-label" for="form1">Family Name &nbsp;<span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                        </div>
+                        <br>
+                        <div style="border-bottom: 2px solid lightgray; padding-bottom: 20px;"></div>
+                        <br>
+                        <div class="mycontainer">
+                            <div class="req">
+                                <span class="text-danger req">*</span> Required
+                            </div>
+                            <div class="sub">
+                                <button type="submit" class="btn btn-primary btn-rounded"
+                                    data-mdb-ripple-init>More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </form>
+    </div>
+</div>
+
+<!-- <button (click)="toggleTabs()"> View Profile</button> -->

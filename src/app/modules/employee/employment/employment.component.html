@@ -1,0 +1,511 @@
+<app-employee-sub-header></app-employee-sub-header>
+<div class="main ">
+    <mdb-tabs class=" d-md-block">
+        <mdb-tab>
+            <ng-template mdbTabTitle><span><i class="fas fa-user-plus fa-fw me-2"></i>Add</span></ng-template>
+            <div class="tab1">
+                <fieldset class="border p-2">
+                    <legend class="float-none w-auto ">Add Employee</legend>
+                    <form [formGroup]="addEmployeeForm"
+                        (ngSubmit)="handleSaveBtn(addEmployeeForm)">
+                        <div class="row md-4">
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <select mdbInput id="form8Example6" class="form-control"
+                                        aria-labelledby="dropdownMenuLink" mdbValidate required
+                                        formControlName="officeLocation">
+                                        <option [value]="" disabled selected hidden></option>
+                                        <option *ngFor="let office of officeList; let i = index"
+                                            value="{{office.officeId}}">{{office.officeName}}</option>
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example6">Office Location<span
+                                            class="text-danger">*</span></label>
+                                    <!-- <mdb-error
+                                        *ngIf="officeLocation?.invalid && (officeLocation?.dirty || officeLocation?.touched)">
+                                        Input invalid
+                                    </mdb-error>
+                                    <mdb-success
+                                        *ngIf="officeLocation?.valid && (officeLocation?.dirty || officeLocation?.touched)">
+                                        Looks good!
+                                    </mdb-success> -->
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                </mdb-form-control>
+                                <!-- Country dropdown list -->
+
+
+
+                            </div>
+
+
+                            <div class="col-sm-3 mb-4">
+                                <!-- Email input -->
+
+                                <mdb-form-control>
+                                    <select mdbInput id="form8Example6" class="form-control"
+                                        aria-labelledby="dropdownMenuLink" mdbValidate [required]="true"
+                                        formControlName="employeeStatus">
+                                        <option value="" disabled selected hidden></option>
+                                        <option value="option1">Full-Time Contract
+                                        </option>
+                                        <option value="option2">Full-Time Internship
+                                        </option>
+                                        <option value="option3">Full-Time Permanent
+                                        </option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example6">Employee Status <span
+                                            class="text-danger">*</span></label>
+                                    <!-- <mdb-error
+                                        *ngIf="employeeStatus?.invalid && (employeeStatus?.dirty || employeeStatus?.touched)">
+                                        Input invalid
+                                    </mdb-error>
+                                    <mdb-success
+                                        *ngIf="employeeStatus?.valid && (employeeStatus?.dirty || employeeStatus?.touched)">
+                                        Looks good!
+                                    </mdb-success> -->
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                </mdb-form-control>
+
+
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <!-- Email input -->
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate type="date" id="form8Example10" class="form-control"
+                                        [required]="true" formControlName="probEndDate" />
+                                    <label mdbLabel class="form-label" for="form8Example10">Probation End Date</label>
+                                    <!-- <mdb-error
+                                        *ngIf="probEndDate?.invalid && (probEndDate?.dirty || probEndDate?.touched)">
+                                        Input invalid
+                                    </mdb-error>
+                                    <mdb-success
+                                        *ngIf="probEndDate?.valid && (probEndDate?.dirty || probEndDate?.touched)">
+                                        Looks good!
+                                    </mdb-success> -->
+                                </mdb-form-control>
+
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <!-- Date of Marriage input -->
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate type="date" id="form8Example10" class="form-control"
+                                        [required]="true" formControlName="dateOfPermanency" />
+                                    <label mdbLabel class="form-label" for="form8Example10">Date Of Permanency</label>
+                                    <!-- <mdb-error
+                                        *ngIf="dateOfPermanency?.invalid && (dateOfPermanency?.dirty || dateOfPermanency?.touched)">
+                                        Input invalid
+                                    </mdb-error>
+                                    <mdb-success
+                                        *ngIf="dateOfPermanency?.valid && (dateOfPermanency?.dirty || dateOfPermanency?.touched)">
+                                        Looks good!
+                                    </mdb-success> -->
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <!-- Email input with checkbox -->
+                                <mdb-form-control>
+                                    <select mdbInput mdbValidate id="form8Example6" class="form-control"
+                                        aria-labelledby="dropdownMenuLink" [(ngModel)]="deptInputVal"
+                                        (change)="handleDeptInput($event)" [required]="true"
+                                        formControlName="department">
+                                        <option value="" disabled selected hidden></option>
+                                        <option *ngFor="let department of departmentList; let i = index"
+                                            value="{{department.deptId}}">{{department.departmentName}}</option>
+                                        <!-- <option value="option1">Engineers (IT)</option>
+                                    <option value="option2">Finance Team</option>
+                                    <option value="option3">Research and Development (R&D)</option>
+                                    <option value="option3">Human Resources</option>
+                                    <option value="option3">Marketing</option> -->
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example6">Department <span
+                                            class="text-danger">*</span></label>
+                                    <!-- <mdb-error
+                                        *ngIf="department?.invalid && (department?.dirty || department?.touched)">
+                                        Input invalid
+                                    </mdb-error>
+                                    <mdb-success
+                                        *ngIf="department?.valid && (department?.dirty || department?.touched)">
+                                        Looks good!
+                                    </mdb-success> -->
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                </mdb-form-control>
+                            </div>
+
+
+
+                            <div class="col-sm-3 mb-4">
+                                <!-- Email input -->
+                                <mdb-form-control>
+                                    <select mdbInput mdbValidate id="form8Example6" class="form-control"
+                                        aria-labelledby="dropdownMenuLink" [required]="true"
+                                        formControlName="designation">
+                                        <option value="" disabled selected hidden></option>
+                                        <option *ngFor="let designation of designationList; let i = index"
+                                            value={{designation.desigId}}>{{designation.designationName}}</option>
+                                        <option disabled *ngIf="designationList.length === 0" value="">---</option>
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example6">Designation <span
+                                            class="text-danger">*</span></label>
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                </mdb-form-control>
+
+                            </div>
+
+
+                            <div class="col-sm-3 mb-4">
+                                <!-- Date of Marriage input -->
+
+                                <mdb-form-control>
+                                    <select mdbInput mdbValidate id="form8Example6" class="form-control"
+                                        aria-labelledby="dropdownMenuLink" [required]="true"
+                                        formControlName="supervisor">
+                                        <option value="" disabled selected hidden></option>
+                                        <option value="option1">Sandeep</option>
+                                        <option value="option2">Niraj</option>
+                                        <option value="option3">Suraj</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example6">Supervisor <span
+                                            class="text-danger">*</span></label>
+                                    <!-- <mdb-error
+                                        *ngIf="supervisor?.invalid && (supervisor?.dirty || supervisor?.touched)">
+                                        Input invalid
+                                    </mdb-error>
+                                    <mdb-success
+                                        *ngIf="supervisor?.valid && (supervisor?.dirty || supervisor?.touched)">
+                                        Looks good!
+                                    </mdb-success> -->
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                </mdb-form-control>
+
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <!-- Email input -->
+
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate type="email" id="form8Example8" class="form-control"
+                                        [disabled]="!enableEmployeeID" [required]="true" formControlName="employeeId">
+                                    <label mdbLabel class="form-label" for="form8Example8">Employee ID <span
+                                            class="text-danger">*</span></label>
+                                    <!-- <mdb-error
+                                        *ngIf="employeeId?.invalid && (employeeId?.dirty || employeeId?.touched)">
+                                        Input invalid
+                                    </mdb-error>
+                                    <mdb-success
+                                        *ngIf="employeeId?.valid && (employeeId?.dirty || employeeId?.touched)">
+                                        Looks good!
+                                    </mdb-success> -->
+                                    <!-- Checkbox to enable/disable -->
+                                    <label class="enable-checkbox">
+                                        <input type="checkbox">
+
+                                    </label>
+                                </mdb-form-control>
+
+
+
+
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3 mb-4">
+                                <!-- Email input -->
+                                <mdb-form-control>
+                                    <select mdbInput id="form8Example6" class="form-control"
+                                        aria-labelledby="dropdownMenuLink" [required]="true" mdbValidate
+                                        formControlName="role">
+                                        <option value="" disabled selected hidden></option>
+                                        <option value="" disabled selected hidden></option>
+                                        <option *ngFor="let role of roleList; let i = index" value="{{role.roleId}}">
+                                            {{role.roleName}}</option>
+                                        <!-- <option value="option1">Admin</option>
+                                        <option value="option2">User</option>
+                                        <option value="option3">Vendor</option>
+                                        <option value="option3">Digital Marketing</option> -->
+                                        <!-- <option value="option3">Option 3</option> -->
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example6">Select Role <span
+                                            class="text-danger">*</span></label>
+                                    <!-- <mdb-error *ngIf="role?.invalid && (role?.dirty || role?.touched)">
+                                        Input invalid
+                                    </mdb-error>
+                                    <mdb-success *ngIf="role?.valid && (role?.dirty || role?.touched)">
+                                        Looks good!
+                                    </mdb-success> -->
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                </mdb-form-control>
+
+                            </div>
+
+
+
+                            <div class="col-sm-3 mb-4">
+                                <!-- Email input -->
+                                <mdb-form-control>
+                                    <select mdbInput id="form8Example6" class="form-control"
+                                        aria-labelledby="dropdownMenuLink" mdbValidate [class.validateError]="true"
+                                        [required]="true" formControlName="workShift">
+                                        <option value="" disabled selected hidden></option>
+                                        <option *ngFor="let workShift of workShiftList; let i = index"
+                                            value="{{workShift.workShiftId}}">
+                                            {{workShift.workShiftName}} ({{workShift.workFrom}} to {{workShift.workTo}})
+                                        </option>
+                                        <!-- <option value="option3">Vendor</option>
+                                    <option value="option3">Digital Marketing</option> -->
+                                        <!-- <option value="option3">Option 3</option> -->
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example6">work Shift <span
+                                            class="text-danger">*</span></label>
+                                    <!-- <mdb-error *ngIf="workShift?.invalid && (workShift?.dirty || workShift?.touched)">
+                                        Input invalid
+                                    </mdb-error>
+                                    <mdb-success *ngIf="workShift?.valid && (workShift?.dirty || workShift?.touched)">
+                                        Looks good!
+                                    </mdb-success> -->
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                </mdb-form-control>
+
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <!-- Email input -->
+                                <mdb-form-control>
+                                    <select mdbInput id="form8Example6" class="form-control"
+                                        aria-labelledby="dropdownMenuLink" mdbValidate [required]="true"
+                                        formControlName="workType">
+                                        <option value="" disabled selected hidden></option>
+                                        <option value="option1">Admin</option>
+                                        <option value="option2">User</option>
+                                        <option value="option3">Vendor</option>
+                                        <option value="option3">Digital Marketing</option>
+                                        <!-- <option value="option3">Option 3</option> -->
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example6">Work Type <span
+                                            class="text-danger">*</span></label>
+                                    <!-- <mdb-error *ngIf="workType?.invalid && (workType?.dirty || workType?.touched)">
+                                        Input invalid
+                                    </mdb-error>
+                                    <mdb-success *ngIf="workType?.valid && (workType?.dirty || workType?.touched)">
+                                        Looks good!
+                                    </mdb-success> -->
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                </mdb-form-control>
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <div class="toogle-button">
+                            <span class="span">Create Login Details</span>
+                            &nbsp;
+                            <label class="toggle-label">
+                                <input class="toggle-checkbox" type="checkbox" (change)="toggleForm($event)">
+
+                                <div class="toggle-slot">
+                                    <div class="sun-icon-wrapper">
+                                        <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                                    </div>
+                                    <div class="toggle-button"></div>
+                                    <div class="moon-icon-wrapper">
+                                        <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false">
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <form *ngIf="showForm" class="tab1" [formGroup]="addLoginDetailsForm">
+                                <fieldset class="border p-2">
+                                    <legend class="float-none w-auto">Login Detail</legend>
+                                    <div class=" row">
+                                        <div class="col-sm-3 mb-4">
+                                            <!-- Email input -->
+                                            <mdb-form-control>
+                                                <input mdbInput mdbValidate [required]="true" formControlName="username"
+                                                    type="text" id="username" class="form-control" />
+                                                <label mdbLabel class="form-label" for="username">Username <span
+                                                        class="text-danger">*</span></label>
+
+                                            </mdb-form-control>
+                                        </div>
+                                        <div class="col-sm-3 mb-4">
+                                            <!-- Email input -->
+                                            <mdb-form-control>
+                                                <label class="status-label">Status:</label>
+                                                <label for="status_enable" class="status-label">Enable</label>
+                                                <input type="radio" id="status_enable" name="status" value="enable"
+                                                    checked>
+                                                &nbsp;
+                                                <label for="status_disable" class="status-label">Disable</label>
+                                                <input type="radio" id="status_disable" name="status" value="disable">
+                                            </mdb-form-control>
+                                        </div>
+                                        <div class="col-sm-3 mb-4">
+                                            <!-- Email input -->
+                                            <mdb-form-control>
+                                                <input mdbValidate [required]="true" formControlName="password" mdbInput
+                                                    type="password" id="fromDate" class="form-control"
+                                                    (change)="validateConfirmPassword(addLoginDetailsForm)" />
+                                                <label mdbLabel class="form-label" for="fromDate">Password <span
+                                                        class="text-danger">*</span></label>
+
+                                            </mdb-form-control>
+                                        </div>
+                                        <div class="col-sm-3 mb-4">
+                                            <!-- Email input -->
+                                            <mdb-form-control>
+                                                <input mdbInput mdbValidate [required]="true"
+                                                    formControlName="confirmPassword" type="password" id="toDate"
+                                                    class="form-control"
+                                                    (change)="validateConfirmPassword(addLoginDetailsForm)" />
+                                                <label mdbLabel class="form-label" for="toDate">Confirm Password <span
+                                                        class="text-danger">*</span></label>
+
+                                                <mdb-error *ngIf="confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)
+                                                            ">Password does not match</mdb-error>
+                                            </mdb-form-control>
+                                        </div>
+                                    </div>
+
+
+                                    <div class=" row">
+                                        <div class="col-sm-3 mb-4">
+                                            <!-- Email input -->
+                                            <mdb-form-control>
+                                                <select mdbValidate [required]="true" formControlName="essRole" mdbInput
+                                                    id="form8Example3" class="form-control"
+                                                    aria-labelledby="dropdownMenuLink">
+                                                    <option value="" disabled selected hidden></option>
+                                                    <option value="option1">Default ESS</option>
+                                                    <!-- <option value="option2">Option</option>
+                                            <option value="option3">Option</option> -->
+                                                    <!-- Add more options as needed -->
+                                                </select>
+                                                <label mdbLabel class="form-label" for="form8Example3">ESS Role <span
+                                                        class="text-danger">*</span></label>
+
+                                                <i class="fas fa-caret-down"
+                                                    style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                            </mdb-form-control>
+                                        </div>
+                                        <div class="col-sm-3 mb-4">
+                                            <!-- Email input -->
+                                            <mdb-form-control>
+                                                <select mdbValidate [required]="true" formControlName="supRole" mdbInput
+                                                    id="form8Example3" class="form-control"
+                                                    aria-labelledby="dropdownMenuLink">
+                                                    <option value="" disabled selected hidden></option>
+                                                    <option value="option1">Default Supervisor</option>
+                                                    <!-- <option value="option2">Option</option>
+                                            <option value="option3">Option</option> -->
+                                                    <!-- Add more options as needed -->
+                                                </select>
+                                                <label mdbLabel class="form-label" for="form8Example3">Supervisor Role
+                                                    <span class="text-danger">*</span></label>
+
+                                                <i class="fas fa-caret-down"
+                                                    style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                            </mdb-form-control>
+                                        </div>
+                                        <div class="col-sm-3 mb-4">
+                                            <!-- Email input -->
+                                            <mdb-form-control>
+                                                <select mdbValidate [required]="true" formControlName="adminRole"
+                                                    mdbInput id="form8Example3" class="form-control"
+                                                    aria-labelledby="dropdownMenuLink">
+                                                    <option value="" disabled selected hidden></option>
+                                                    <option value="option1">Global Admin</option>
+                                                    <option value="option2">Leave Admin</option>
+                                                    <option value="option3">Report Admin</option>
+                                                    <!-- Add more options as needed -->
+                                                </select>
+                                                <label mdbLabel class="form-label" for="form8Example3">Admin Role <span
+                                                        class="text-danger">*</span></label>
+
+                                                <i class="fas fa-caret-down"
+                                                    style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                            </mdb-form-control>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <hr>
+
+                        <div class="button col-sm-4">
+                            <a routerLink="../personal" mdbRipple class="btnClass btnClass-secondary"><i
+                                    class="fa-solid fa-backward"></i> &nbsp; Back</a>
+                            <button mdbRipple type="submit" class="btnClass btnClass-primary"><i
+                                    class="fas fa-save fa-fw me-2"></i>Save</button>
+                            <a routerLink="../contact" mdbRipple type="button" class="btnClass btnClass-secondary"> Next
+                                &nbsp; <i class="fa-solid fa-forward"></i></a>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </mdb-tab>
+
+        <mdb-tab>
+            <ng-template mdbTabTitle><span><i class="fas fa-users-line fa-fw me-2"></i>List</span></ng-template>
+
+            <div class="tab2">
+                <table class="table align-middle mb-0 bg-white">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Position</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt=""
+                                        style="width: 45px; height: 45px" class="rounded-circle" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">John Doe</p>
+                                        <p class="text-muted mb-0">john.doegmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">Software engineer</p>
+                                <p class="text-muted mb-0">IT department</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-success rounded-pill d-inline">Active</span>
+                            </td>
+                            <td>Senior</td>
+                            <td>
+                                <button type="button" class="btn btn-link btn-sm btn-rounded">Edit</button>
+                            </td>
+                        </tr>
+                        <!-- Repeat similar structure for other rows -->
+                    </tbody>
+                </table>
+            </div>
+
+        </mdb-tab>
+
+    </mdb-tabs>
+</div>

@@ -1,0 +1,69 @@
+.settings-container{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 5px 5px rgba(124, 124, 124, 0.541);
+    padding: 0.5rem;
+}
+
+.settings-heading-section{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.settings-heading{
+    line-height: 0.1rem;
+}
+
+.settings-close-btn{
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0.2rem;
+    border-radius: 50%;
+}
+
+.layout-section{
+    width: 100%;
+}
+
+.layout-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10%;
+}
+
+.layout-ltr-container,
+.layout-rtl-container
+{
+    width: 30%;
+    text-align: center;
+}
+
+.layout-ltr,
+.layout-rtl
+{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.layout-ltr{
+    background-image: url('../../../../assets/img/ltr.jpg');
+    background-size: contain;
+}
+
+.layout-rtl{
+    background-image: url('../../../../assets/img/rtl.jpg');
+    background-size: contain;
+}
+
+.layout-active{
+    border: 1px solid green;
+}

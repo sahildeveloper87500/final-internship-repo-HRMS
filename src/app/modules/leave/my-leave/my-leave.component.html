@@ -1,0 +1,100 @@
+<app-leave-sub-header></app-leave-sub-header>
+<div style="overflow-x: hidden">
+  <div class="card" style="
+      margin: 40px;
+      border: 1px solid rgb(188, 184, 184);
+      border-radius: 30px;
+    ">
+    <div class="card-body">
+      <form action="/action_page.php">
+        <h1 style="padding-left: 20px">
+          Search
+          <sub style="font-size: small" class="iconx">(Please Specify your search) </sub>
+          <i class="fa-solid fa-calendar-days" style="color: orange; padding: 7px"></i>
+        </h1>
+        <div class="date-container">
+          <div class="col-sm-3 mb-4 "
+            style="margin-right: 0px; margin-left: 30px;padding-top:10px;border-radius: 10px; width:400px">
+            <!-- Email input -->
+            <mdb-form-control style="border-radius: 10px;">
+              <input mdbInput type="date" id="form8Example10" class="form-control" />
+              <label mdbLabel class="form-label" for="form8Example10">From*</label>
+            </mdb-form-control>
+          </div>
+          <div class="col-sm-3 mb-4 "
+            style="margin-right: 0px; margin-left: 30px;padding-top:10px;border-radius: 10px; width:400px">
+            <!-- Email input -->
+            <mdb-form-control style="border-radius: 10px;">
+              <input mdbInput type="date" id="form8Example10" class="form-control" />
+              <label mdbLabel class="form-label" for="form8Example10">To*</label>
+            </mdb-form-control>
+          </div>
+        </div>
+        <hr style="width: 92%; margin-left: 3%; margin-right:3%" />
+        <div style="display: flex ;flex-wrap: wrap;gap:20px; padding-left: 0px;">
+          <label class="orange-checkbox-container" style="padding-left: 30px; padding-right: 20px">
+            <input type="checkbox" name="chk" value="Smile">Cancelled<br>  
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="orange-checkbox-container" style="padding-left: 30px; padding-right: 20px">
+            <input type="checkbox" name="chk" value="Smile">Pending Approval<br>  
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="orange-checkbox-container" style="padding-left: 30px; padding-right: 20px">
+            <input type="checkbox" name="chk" value="Smile">Scheduled<br>  
+
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="orange-checkbox-container" style="padding-left: 30px; padding-right: 20px">
+            <input type="checkbox" name="chk" value="Smile">Taken<br>  
+            <span class="checkmark"></span>
+          </label>
+          <label class="orange-checkbox-container" style="padding-left: 30px; padding-right: 20px">
+            <input type="checkbox" name="chk" value="Smile">Rejected<br>  
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+        <div style="
+            display: flex;
+            flex-direction: row-reverse;
+            padding-right: 0px;
+            padding-top: 30px;
+            justify-content: space-between;
+            border:0px solid ;
+            flex-wrap: nowrap;
+          ">
+          <div>
+         
+            <button style="
+            width: 130px;
+            height: 40px;
+            color: white;
+            background-color: rgb(8, 110, 11);
+            font-size: large;
+            margin-left: 0px;                margin-bottom: 10px;                border-radius: 20px;
+
+
+          "  (click)="selectAllCheckboxes()">
+          Select All
+        </button>
+            <button style="
+                width: 80px;
+                height: 40px;
+                color: white;
+                background-color: rgb(240, 157, 23);
+                font-size: large;
+                margin-left: 20px;                border-radius: 20px;
+
+              " (click)="deselectAllCheckboxes()">
+              Clear
+            </button>
+          </div><!-- <h6 style="margin-left: 37px">*Required</h6> -->
+        </div>
+      </form>
+    </div>
+</div>
+</div>

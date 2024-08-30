@@ -1,0 +1,120 @@
+<app-master-sub-header></app-master-sub-header>
+<p></p>
+<div style="margin-left:1%;">
+    <h1><b>Manage-Pay-Grades</b></h1>
+    <div style="overflow: scroll; ">
+        <div class="card"
+            style="border: 1px solid lightgray; margin: 0px 12px;border-radius: 10px; overflow: scroll; height:480px;">
+            <table class="table align-middle mb-0 bg-white" style="position: relative;">
+                <thead class="bg-light" style="position: sticky; top:0; z-index: 1;">
+                    <!-- Inside the <thead> section -->
+                    <tr>
+                        <th>
+                            <input mdbCheckbox class="form-check-input" type="checkbox" id="checkboxNoLabel"
+                                [(ngModel)]="selectAll" (change)="toggleSelectAll()" aria-label="..." />
+                        </th>
+                        <th>Pay Grades<i class="fa fa-arrow-up"></i></th>
+                        <th>Currency</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <div class="round-button" style="position:fixed; top:100px;right:9px; width:50px; z-index: 1;">
+                    <button mat-fab extended (click)="toggleTabs()" matTooltip="Add ManagePayGrades "
+                        aria-label="Button that displays a tooltip in various positions" color="warn">
+                        <i class="fas fa-plus fa-2x" style="color: rgba(10, 253, 253, 0.773);"></i></button>
+                </div>
+                <tbody>
+                    <tr *ngFor="let m of ManagePayGrades;let i = index">
+                        <td>
+                            <div>
+                                <input mdbCheckbox class="form-check-input" type="checkbox" id="checkboxNoLabel"
+                                    [(ngModel)]="m.isSelected" aria-label="..." />
+                            </div>
+                        </td>
+                        <td>{{m.name}}</td>
+                        <td>{{m.money}}</td>
+                        <td>{{m.c}}</td>
+                        <th>
+                            <span style="text-decoration: none;">
+                                <div mdbDropdown class="dropdown dropx">
+                                    <a role="button" id="dropdownMenuLink" mdbDropdownToggle
+                                        style="width:2px; height: 2px; color: black; border-radius: 1px; padding:0px 60px">
+                                        <i class="fas fa-ellipsis-v fa-1.8x  ico"
+                                            style="margin-bottom: 0px; margin-left:0px;margin-right:20px" id="icox"></i>
+                                    </a>
+                                    <ul mdbDropdownMenu class="dropdown-menu" style="margin-right: 40px;">
+                                        <li>
+                                            <hr class="dropdown-divider" />
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" (click)="toggleTabs()">
+                                                <i class="fa-solid fa-pen-to-square"></i> Edit
+                                            </a>
+                                        </li>
+                                        <!-- Inside your <li> element for the "Delete" dropdown item -->
+                                        <li>
+                                            <a class="dropdown-item" (click)="deleteManagePayGrade(i)">
+                                                <i class="fa-solid fa-trash-can"></i> Delete
+                                            </a>
+                                        </li>
+                                        <li><a class="dropdown-item" routerLink=""><i class="fas fa-medal "></i>
+                                                Inactive </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </span>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- popup Holiday -->
+        <div *ngIf="showTabs" class="modal-overlay"
+            style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 3;">
+            <div class="modal-dialog" (click)="preventClose($event)">
+                <div class="modal-content abusent">
+                    <button mat-icon-button (click)="toggleTabs()" class="close-icon">
+                        <i class="far fa-times-circle"></i>
+                    </button>
+                    <div class="modal-content1">
+                        <div class="main">
+                            <div class="row">
+                                <form>
+                                    <div class="container">
+                                        <div class="row mb-2">
+                                            <div class="col-md-4">
+                                            </div>
+                                        </div>
+                                        <h1>
+                                            Add Manage-Pay-Grades
+                                        </h1>
+                                        <!-- Gutter g-1 -->
+                                        <div class="row g-1">
+                                            <div class="col">
+                                                <!-- Name input -->
+                                                <mdb-form-control>
+                                                    <input mdbInput type="text" id="text" class="form-control" />
+                                                    <label mdbLabel class="form-label" for="text">Pay Grade<span
+                                                            class="text-danger">*</span></label>
+                                                </mdb-form-control>
+                                            </div>
+                                            <p></p>
+                                            <mdb-form-control>
+                                                <textarea mdbInput class="form-control" id="text" rows="3"></textarea>
+                                                <label mdbLabel class="form-label" for="text">Currency<span
+                                                        class="text-danger">*</span></label>
+                                            </mdb-form-control>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row g-8">
+                                        <div class="col-md-5 offset-md-4">
+                                            <div mat-dialog-actions [align]="'end'" class="submit-dialog">
+                                                <button mdbRipple type="button" class="btn btn-info btn-sm"
+                                                    mat-dialog-close (click)=" AddManagePayGrades()"><i
+                                                        class="fas fa-save fa-fw me-2"></i>Save</button>
+                                            </div>

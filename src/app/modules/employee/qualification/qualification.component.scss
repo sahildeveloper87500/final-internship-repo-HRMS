@@ -1,0 +1,85 @@
+tr:nth-child(even) {
+    background-color: #f1e7c5;
+  }
+  
+  tr {
+    height: 30px;
+  }
+  
+  .modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 102%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    height: auto;
+    /* Change height to auto */
+    width: 700px;
+    align-items: center;
+    max-height: 600px;
+    overflow-y: auto;
+    max-width: 800px;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: 0;
+    outline: 0;
+  }
+  
+  .header {
+    font-weight: 600;
+    align-items: center;
+    margin-top: 5%;
+  }
+  
+  .tex-tbox {
+    margin-top: 1%;
+    width: 100%;
+  }
+  
+  .submit-dialog {
+    margin-top: 10px;
+  }
+  
+  .image-container img {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin-top: 10px;
+  }
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 96%;
+      height: 58%;
+      margin: 5% auto;
+      /* Center the modal on smaller screens */
+    }
+  }
+  
+  ::ng-deep .row {
+    margin-right: calc(-0 * var(--mdb-gutter-x)) !important;
+  }
+  
+  ::ng-deep .mat-typography {
+    font-size: 15 !important;
+  }
+  
+  ::ng-deep .btn-info {
+    background: linear-gradient(to bottom right, #f74c06, #f9bc2c) !important;
+    color: #fff !important;
+    --mdb-btn-box-shadow: #f74c06 !important;
+  }

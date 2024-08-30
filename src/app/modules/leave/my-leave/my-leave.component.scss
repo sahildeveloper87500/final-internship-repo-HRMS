@@ -1,0 +1,73 @@
+.date-container {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+
+.form-group {
+  margin-bottom: 10px;
+  padding-left: 30px;
+}
+
+
+.form-group label {
+  display: block;
+  color: #777;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="date"] {
+  width: 380px; /* Adjust width */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+
+.card1 :hover{
+  color: white;
+  background-color: rgb(162, 241, 162);
+  border-radius:20px;
+}
+
+
+
+// .dialogform{
+//     width: 200%;
+// }
+
+.modal-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left:0;
+  // right: 100px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  // background-size: 300% 100%; 
+  z-index: 1000;
+} 
+
+.close-icon{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: 0;
+  outline:0;
+ }
+
+ @mixin mobile-only {
+  @media screen and (max-width: 600px) { @content; }
+}
+
+ @include mobile-only {
+  .iconx{
+     display:none;
+ }
+}

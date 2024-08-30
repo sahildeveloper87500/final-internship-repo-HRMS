@@ -1,0 +1,193 @@
+/* New css */
+
+// .dashboard-info-box {
+//   display: grid;
+//   grid-template-columns: repeat(4, auto);
+//   // grid-gap: 1em;
+// }
+.dashboard {
+  padding: 0px 0px;
+}
+.dashboard-info-wrapper {
+  width: 22%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 15px;
+  height: 110px;
+  margin-top: 3vh;
+  
+}
+.dashboard-head h1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+.dashboard-head small {
+  font-size: small;
+  font-weight: 100;
+}
+.dashboard-info-detail p {
+  font-size: 18px;
+}
+.dashboard-info-detail small {
+  font-size: small;
+}
+.dashboard-info-wrapper:nth-child(1) {
+  background-color: #ffbc58;
+}
+
+.dashboard-info-wrapper:nth-child(2) {
+  background-color: #13c9ca;
+}
+
+.dashboard-info-wrapper:nth-child(3) {
+  background-color: #ff8084;
+}
+
+.dashboard-info-wrapper:nth-child(4) {
+  background-color: #a5a5a5;
+}
+
+.dashboard-info-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50px;
+  font-size: 22px;
+}
+
+.light-yellow {
+  color: #ffbc58;
+}
+
+.light-blue {
+  color: #13c9ca;
+}
+
+.light-pink {
+  color: #ff8084;
+}
+
+.light-grey {
+  color: #a5a5a5;
+}
+
+.dashboard-info-detail {
+  width: 70%;
+}
+
+.gradient-bg {
+  position: relative; /* Ensure position relative for absolute positioning of the icon */
+  background: linear-gradient(to bottom, #5dbfec, #3427e5);
+  color: white;
+}
+
+.gradient-bg2 {
+  position: relative; /* Ensure position relative for absolute positioning of the icon */
+  background: linear-gradient(to bottom, #a21ab4, #c67acd);
+  color: white;
+}
+.gradient-bg3 {
+  position: relative; /* Ensure position relative for absolute positioning of the icon */
+  background: linear-gradient(to bottom, #8aed73, #0e9e2d);
+  color: white;
+}
+.gradient-bg4 {
+  position: relative; /* Ensure position relative for absolute positioning of the icon */
+  background: linear-gradient(to bottom, #eba34c, #e49920);
+  color: white;
+}
+
+.blurry-icon {
+  filter: blur(0px); /* Adjust the blur level as needed */
+  position: absolute; /* Position the icon absolutely */
+  bottom: 30px; /* Adjust bottom position */
+  right: 10px; /* Adjust right position */
+  z-index: 1; /* Set a very low z-index to position the icon behind other content */
+}
+
+// .dashboard {
+//     min-height: 100vh;
+// }
+
+.gradient-bg {
+  position: relative; /* Ensure position relative for absolute positioning of the icon */
+  background: linear-gradient(to bottom, #5dbfec, #3427e5);
+  color: white;
+}
+
+.gradient-bg2 {
+  position: relative; /* Ensure position relative for absolute positioning of the icon */
+  background: linear-gradient(to bottom, #a21ab4, #c67acd);
+  color: white;
+}
+.gradient-bg3 {
+  position: relative; /* Ensure position relative for absolute positioning of the icon */
+  background: linear-gradient(to bottom, #8aed73, #0e9e2d);
+  color: white;
+}
+.gradient-bg4 {
+  position: relative; /* Ensure position relative for absolute positioning of the icon */
+  background: linear-gradient(to bottom, #eba34c, #e49920);
+  color: white;
+}
+
+.blurry-icon {
+  filter: blur(0px); /* Adjust the blur level as needed */
+  position: absolute; /* Position the icon absolutely */
+  bottom: 30px; /* Adjust bottom position */
+  right: 10px; /* Adjust right position */
+  z-index: 1; /* Set a very low z-index to position the icon behind other content */
+}
+
+@mixin mobile-and-up {
+  @media screen and (min-width: 601px) { @content; }
+}
+
+@mixin tablet-and-down {
+  @media screen and (max-width: 768px) { @content; }
+}
+
+@mixin mobile-only {
+  @media screen and (max-width: 600px) { @content; }
+}
+@mixin tablet-and-down {
+  @media screen and (max-width: 768px) { @content; }
+}
+
+@include tablet-and-down {
+  .tabx {
+      display: none;
+  }
+}
+
+
+@include mobile-and-up() {
+  .card{
+    min-width: 190px;
+  }
+  .dashboard-info-wrapper {
+    min-width: 190px;
+  }
+
+}
+@include mobile-only {
+  .card{
+    min-width: 240px ;
+  }
+  .dashboard-info-wrapper {
+    min-width: 240px;
+  }
+  ::ng-deep .card-containX{
+padding-left: 50px !important;
+}
+
+::ng-deep .dashboard-info-box{
+  padding-left: 50px !important;
+
+}
+}

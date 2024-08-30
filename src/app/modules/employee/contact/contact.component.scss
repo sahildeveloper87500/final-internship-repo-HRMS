@@ -1,0 +1,23 @@
+.button{
+    width: 100%;     
+   display: flex;
+   justify-content: space-between;
+}
+
+.main {
+    padding: 5px 20px;
+  }
+  
+  .tab1 {
+    overflow-x: hidden;
+  }
+  
+  .form-container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .button {
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
+ }

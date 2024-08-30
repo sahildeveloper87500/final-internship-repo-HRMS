@@ -1,0 +1,34 @@
+.sidebar-wrapper.open {
+    display: block;
+    /* margin-left: calc(-260px); */
+    width: 70px;
+  }
+  
+  .sidebar-wrapper {
+    width: 255px;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    height: 100vh;
+    z-index: 2;
+    transition: 0.3s;
+    margin-left: 0;
+    /* overflow-y: scroll; */
+  }
+  
+  .main-page {
+    min-height: calc(100vh - 80px);
+    margin-top: 80px;
+    width: calc(100% - 255px);
+    margin-left: 255px;
+    max-width: 100vw;
+  
+    transition: 0.3s;
+  }
+  
+  .main-page.view {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+    transition: 0.3s;
+  }
+  

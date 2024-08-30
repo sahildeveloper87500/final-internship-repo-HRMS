@@ -1,0 +1,85 @@
+.modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.modal-content {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    height: 320px;
+    width: 625px;
+    align-items: center;
+    max-height: 700px;
+    overflow-y: auto;
+    max-width: 800%;
+}
+.image {
+    width: 500px;
+    height: 100px;
+    margin-top: -30px;
+    // margin-left: 600px;
+}
+.close-icon{
+    margin-left: 525px;
+    margin-top: -10px;
+}
+.save-button{
+    margin-left:50%;
+}
+
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 100%;
+        margin: 5% auto;
+        height: 200px;
+        /* Center the modal on smaller screens */
+    }
+
+    .modal-dialog {
+        width: 80%;
+      
+    }
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        height: 10%;
+        /* Center the container on smaller screens */
+    }
+    .image{
+        width: 230px;
+        height: 300px;
+        margin-top: 0px;
+    }
+    .close-icon{
+        margin-left: 220px;
+        margin-top: -10px;
+    }
+    
+    .row-md-4{
+        width: 100%;
+    }
+
+    .col-sm-4 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .save-button {
+        margin-left: 40%;
+    }
+
+    .bi--three-dots,
+    .bi--pencil-fill {
+        width: 24px;
+        height:24px;
+ }
+}

@@ -1,0 +1,43 @@
+.main {
+  // height: 10vh;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+.tab2 {
+  border-radius: 20px;
+}
+
+.tab1 {
+  background-color: rgba(255, 255, 255, 0.692);
+  border-radius: 20px;
+}
+
+.tab3 {
+  background-color: rgba(255, 255, 255, 0.692);
+  border-radius: 20px;
+}
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.responsive-tabs {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.responsive-tabs select {
+  width: 100%;
+}
+
+.tab1,
+.tab2 {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+/* Add any additional responsive styles here */
+@media (max-width: 767px) {
+  .mdb-tab-content {
+    padding: 10px; /* Adjust the padding as needed */
+  }
+}

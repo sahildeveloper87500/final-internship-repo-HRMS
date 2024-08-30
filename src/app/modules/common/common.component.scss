@@ -1,0 +1,131 @@
+.complete-container {
+  display: flex;
+  height: 100svh;
+}
+
+.complete-container-rtl{
+ flex-direction: row-reverse;
+}
+
+.sidebar-container-rtl{
+ border-radius: 2rem 0 0 2rem;
+}
+
+.sidebar-container {
+  height: max-content;
+  min-height: 100svh;
+  position: sticky;
+  top: 0;
+  min-width: 70px;
+  max-width: 250px;
+  background-color: white;
+  box-shadow: 0px 0px 20px 10px rgba(148, 148, 148, 0.3);
+  border-radius: 0 2rem 2rem 0;
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+
+.sidebar-container-rtl{
+ border-radius: 2rem 0 0 2rem;
+}
+
+.sidebar-active {
+  width: 20%;
+  min-width: 200px;
+}
+
+.sidebar-inactive {
+  width: 5%;
+}
+
+.settings-toggle-btn {
+  background-color: #FF9B44;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 99999;
+  cursor: pointer;
+}
+
+.settings-toggle-icon {
+  animation-name: spin;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 60;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.settings-container {
+  position: fixed;
+ //  border: 2px solid red;
+  height: 100svh;
+  top: 0;
+  left: 75%;
+  z-index: 9999;
+  width: 25vw;
+  transform: translateX(100%);
+  transition: 0.5s ease;
+}
+
+.settings-container-active {
+  transform: translateX(0%);
+}
+
+.main-body-container {
+  width: 100%;
+  height: 100svh;
+}
+
+.navbar-container {
+  margin-top: 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  height: 8%;
+}
+
+.main-content-container {
+  height: 87%;
+  overflow: auto;
+}
+
+.footer-container {
+  height: 5%;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .sidebar-container {
+    position: fixed;
+  }
+
+  .sidebar-inactive {
+    width: 200px;
+    transform: translateX(-100%);
+  }
+
+  .sidebar-active {
+    transform: translateX(0%);
+  }
+
+  .settings-toggle-btn,
+  .settings-container {
+    display:none;
+}
+}

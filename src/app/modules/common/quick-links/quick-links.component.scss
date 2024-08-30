@@ -1,0 +1,246 @@
+.modal-contents {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    height: 300px;
+    width: 100%;
+    align-items: center;
+    max-height: 100%; /* Set the maximum height for the form */
+    overflow-y: auto; /* Add vertical scrollbar if content overflows */
+}
+.share-button{
+    background-color: #c5b8b8;
+    margin-right: 50px;
+}
+.myshortcut-overlays{
+    margin-left: 73%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; 
+    padding: 1px;
+}
+
+.contact-button{
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.test-button{
+    margin-left: 35%;
+    margin-top: -85px;
+    
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.test-name{
+    // margin-top: 1px;
+    margin-left: 40%;
+}
+
+
+.leave-list{
+    margin-left: 35%;
+    margin-top: 20px;
+    margin-top: -85px;
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.leave-name{
+    margin-left: 35%;
+}
+
+
+
+.orange-button{
+    margin-left: 70%;
+    margin-top: -80px;
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+.orange-name{
+    margin-left: 70%;
+    margin-top: -90px;
+}
+
+.assign-button{
+    margin-top: 30px;
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.leave-calender{
+    margin-left: 70%;
+    margin-top: -80px;
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.leave-calender-name{
+    margin-left: 70%;
+    
+}
+.general-button{
+    margin-top: 30px;
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.hiring-button{
+    margin-left: 35%;
+    margin-top: -80px;
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.hiring-name{
+    margin-left: 35%;
+}
+
+.timesheet-button{
+    margin-left: 70%;
+    margin-top: -80px;
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.timesheet-name{
+   margin-left: 70%;
+}
+
+.apply-button{
+    margin-top: 30px;
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.myleave-button{
+    margin-left: 35%;
+    margin-top: -80px;
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.myleave-name{
+    margin-left: 35%;
+}
+
+.submit-request{
+    margin-left: 70%;
+    margin-top: -80px;
+
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.submit-request-name{
+    margin-left: 65%;
+}
+
+.mytimesheet-button{
+    margin-top: 20px;
+
+    
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it circular */
+    background-color: rgb(232, 228, 228); /* Default background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.contact-overlays{
+    margin-left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; 
+    padding:1px;
+}

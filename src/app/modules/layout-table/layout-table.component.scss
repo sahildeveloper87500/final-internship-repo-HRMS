@@ -1,0 +1,135 @@
+.main{
+  max-width: 100%;
+  width: 1370px; /* Adjust as needed */
+
+}
+
+.tablex {
+  margin: auto;
+  border-radius: 5px;
+  // height: 20% !important;
+  // background-color: yellow;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+  // height: 100% ;
+  // margin-top: 10px;
+  // margin-left: 70%;
+  
+}
+
+// .filterxy{
+// height: 100%;
+// }
+
+td{
+// height: 100% !important;
+white-space: nowrap;
+}
+
+th{
+  background-color: #ECECEC !important;
+  border-radius: 5px;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+
+.pagination{
+  background-color: #ECECEC !important;
+  width: 96%;
+  margin-left: 2%;
+  border-radius: 5px;
+}
+
+
+table{
+  border-radius: 50px !important;
+}
+
+.container-fluid {
+
+  width: 98%;
+  height: 100%;
+}
+.outerbox{
+  display: flex;
+  justify-content: space-between;
+}
+
+.outerbox{
+  width: 95%;
+}
+.heading {
+  text-align: left;
+}
+.head{
+  font-weight: bolder;
+  font-size: 5vh;
+}
+.button-links a {
+  margin-left: 10px; /* Adjust margin as needed */
+}
+.button-links {
+  text-align: right;
+}
+
+.icon-container {
+  display: flex;
+}
+.icon-square {
+  background-color: rgb(254, 254, 254);
+  width: 40px; /* Adjust the size as needed */
+  height: 40px; /* Adjust the size as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px; /* Adjust the spacing between icons */
+ 
+  border-radius: 50% ;
+  background-color: var(--orange-primary);
+  color: white;
+}
+
+
+.icon-square i {
+  color: rgb(53, 49, 49); /* Adjust the icon color */
+  font-size: 20px; /* Adjust the icon size */
+}
+@media only screen and (max-width: 650px) {
+ 
+  #input-field{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+  }
+  #input-field .col{
+    margin: 1vh;
+  }
+  #input-field #searchbtn{
+    width:87vw;
+  }
+  .outerbox{
+    width: 95%;
+  }
+   
+  } 
+
+  a {
+    text-decoration: none;
+    color: black !important;
+  }
+
+  a i {
+    font-size: 40px;
+  }
+
+  #searchbtn{
+    background-color: var(--orange-primary);
+    color: white;
+    width:16vw;
+    border-radius: 18px 18px 18px 18px; 
+  }

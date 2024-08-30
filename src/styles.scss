@@ -1,0 +1,147 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$HRMS-primary: mat.define-palette(mat.$indigo-palette);
+$HRMS-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$HRMS-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$HRMS-theme: mat.define-light-theme((
+  color: (
+    primary: $HRMS-primary,
+    accent: $HRMS-accent,
+    warn: $HRMS-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($HRMS-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+
+@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
+@import 'ngx-toastr/toastr';
+:root {
+  --navbar-gradient: linear-gradient(to right, rgb(255, 176, 73), rgb(255, 101, 40), rgb(253, 149, 13));
+  --orange-primary: #FF9B44;
+  --orange-secondary: rgba(248, 118, 32, 0.2);
+  --orange-secondary-hover: rgba(219, 88, 0, 0.2);
+  --link-icon-color: rgb(24, 95,161);
+ 
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #8f8f8f;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(63, 63, 63);
+}
+
+// For Quick Links
+.share-button {
+  background-color: #c5b8b8;
+  margin-right: 50px;
+}
+
+// Start : Utility Classes
+// For Button : by Vaibhav
+.btnClass {
+  border: none;
+  outline: none;
+  min-width: 7rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.btnClass-primary {
+  background-color: #307FB0;
+  //background: linear-gradient(to bottom right, #f74c06, #f9bc2c); 
+  //background: linear-gradient(to bottom right, #2193b0, #6dd5ed);
+  color: white;
+}
+
+.btnClass-secondary {
+  background-color: var(--orange-secondary);
+  color: var(--orange-primary);
+  transition: 0.1s ease;
+}
+
+.btnClass-secondary:disabled{
+  background-color: #ffb06b;
+  color: #8f8f8f;
+}
+
+.btnClass-secondary:disabled:hover{
+  background-color: #ffb06b;
+  color: #8f8f8f;
+}
+
+.btnClass-secondary:hover{
+  color: var(--orange-primary);
+  background-color: var(--orange-secondary-hover);
+}
+
+legend{
+  font-size: 15px;
+  color: rgb(22, 142, 138);
+} 
+// End : Utility Classes
+label{
+  font-size: 15px;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

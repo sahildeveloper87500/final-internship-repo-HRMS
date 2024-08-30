@@ -1,0 +1,141 @@
+<div>
+  <div style="display: flex;">
+    <div class="container " style="padding-bottom:40px">
+      <div class="container "
+        style="display: flex; align-items: center; justify-content: center; flex-direction: column; align-items: center; padding-bottom: 0px">
+        <div style="margin-top:0px ; height: 14vh;">
+        </div>
+        <div>
+          <div class="card custom-card" style="box-shadow: 2px 2px 10px; margin-bottom: 0vh; ">
+            <div class="card-body" style="display: flex; flex-direction: column; justify-content: center;">
+              <a href="https://nighwantech.com/" target="_blank">
+                <img src="../../assets/login/maintop.png" alt="klve"
+                  style=" border-radius: 500px; margin-left: 40px; height: 12vh; width: 25vh;"></a>
+              <form (ngSubmit)="onSubmit()" name="loginForm" [formGroup]="loginForm" style="border: 0px solid red; ">
+                <!-- <h4><i class="fa-solid fa-user"></i> Login</h4> -->
+                <div style="background-color: white;">
+                  <div>
+                    <label for="email" style="font-weight: 500; padding-bottom: 15px;"></label>
+                    <mdb-form-control style="border: 0px solid ; border-radius:0px;">
+                      <input formControlName="email" style="color: rgb(111, 107, 107); width:100%;padding:5px ; font-weight: 400;
+                    " id="email" class="form-control" mdbInput id="form1" required />
+                      <label mdbLabel class="form-label" for="form1">Enter Email Id</label>
+                    </mdb-form-control>
+                    <mat-error *ngIf="submitClicked &&!loginForm.controls['email'].valid"
+                      style="background-color:white;padding-bottom: 10px; width:90%;">
+                      Enter valid Email Id
+                    </mat-error>
+                  </div>
+                </div>
+                <div style="background-color: white;">
+                  <div>
+                    <label for="password" style="font-weight: 500;padding: 10px 0px;"></label>
+
+                    <div style="position: relative; width: 100%;">
+                      <mdb-form-control style="border: 0px solid ; border-radius: 0px;">
+                        <input style="color: rgb(111, 107, 107); padding: 5px; font-weight: 800;
+                                    border-radius: 10px; padding-right: 40px;" formControlName="password" matInput
+                          [type]="hide ? 'password' : 'text'" id="password" class="form-control" mdbInput id="form2"
+                          required />
+                        <label mdbLabel class="form-label" for="form2">Enter Password Id</label>
+                      </mdb-form-control>
+                      <button style="position: absolute; top:-7px;
+                       right: 5px;  
+                      " mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>
+                          {{hide ? 'visibility_off' : 'visibility'}}
+                        </mat-icon>
+                      </button>
+                    </div>
+                    <mat-error *ngIf="submitClicked &&!loginForm.controls['password'].valid"
+                      style="background-color: white;">
+                      Password is required
+                    </mat-error>
+                  </div>
+                </div>
+                <span>
+                  <a class="text-link" class="aLink me-5" routerLink="../forgot-password">Forgot Password?</a>
+                </span>
+
+                <button mat-flat-button class="custom-button-color btn btn-gradient btn-block mb-4"
+                  style="border-radius: 30px; margin-top:20px ;"><mat-icon>lock_open</mat-icon>Sign in</button>
+              </form>
+            </div>
+          </div>
+          <div class="footer-container MFooterRemove" style="position: fixed; bottom: 10px; ">
+            <span class="left">Copyright &copy; 2020 <a href="https://nighwantech.com" target="_blank"
+                class="highlighted">Developed by NTPL.<br>
+              </a> All rights reserved 
+              <a href="https://www.facebook.com/Nighwantech" target="_blank" class="me-2 text-reset">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/nighwantech" target="_blank" class="me-2 text-reset">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/nighwantech" target="_blank" class="me-2 text-reset">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/nighwan-technology-pvt-ltd/mycompany" target="_blank"
+                class="me-2 text-reset">
+                <i class="fab fa-linkedin"></i>
+              </a> </span>
+
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    <div class="container containerx">
+      <!-- <app-carousel></app-carousel> -->
+      <div class="container-fluid">
+        <mdb-carousel [controls]="true">
+          <mdb-carousel-item>
+            <div class="card text-center">
+              <!-- Your card content -->
+              <img src="../../assets/login/imgx1.png" alt="Background Image" style="height: fit-content; width:100%;">
+              <button
+                style="background-color: #3d9b4e; border:green;height: 5vh; width: 5vh; top: 84vh; left:39vh;z-index: 100000; position: absolute; border-radius: 30px;"></button>
+              <button
+                style="background-color: #3d9b4e;border:green; height: 5vh; width: 5vh; top: 84vh; left:54vh;z-index: 100000; position: absolute; border-radius: 30px;"></button>
+              <button
+                style="color: white; z-index: 1000; position: absolute; top: 25vh; left: 18vw; width:24vh; height:5.3vh ;border-radius:20px;background-color:green"><a
+                  href="https://nighwantech.com/" style="text-decoration: none;color: white;">Learn More <i
+                    class="fa fa-chevron-circle-right"></i></a>
+              </button>
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="card text-center">
+              <!-- Your card content -->
+              <img src="../../assets/login/imgx2.png" alt="Background Image" style="height: fit-content; width:100%;">
+              <button
+                style="background-color: #f1aa1e; border: 1px solid #f6c039;height: 6vh; width: 6vh; top: 83vh; left:26vw;z-index: 100000; position: absolute; border-radius: 30px;"></button>
+              <button
+                style="background-color:#f6c039; border: 1px solid #f6c039;height: 6vh; width: 6vh; top: 84vh; left:18vw;z-index: 100000; position: absolute; border-radius: 30px;"></button>
+
+              <button
+                style="color: white; z-index: 1000; position: absolute; top: 70vh; left: 30vw; width:24vh; height:5.3vh ;border:3px solid black;border-radius:20px;background-color:orange"><a
+                  href="https://nighwantech.com/" style="text-decoration: none;color: white; ">Learn More <i
+                    class="fa fa-chevron-circle-right"></i></a></button>
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="card text-center">
+              <!-- Your card content -->
+              <img src="../../assets/login/imgx3.png" alt="Background Image" style="height: fit-content; width:100%;">
+              <button
+                style="background-color: #3d9b4e;border:green; height: 7vh; width: 7vh; top: 84vh; left:39vh;z-index: 100000; position: absolute; border-radius: 30px;"></button>
+              <button
+                style="background-color: #3d9b4e; height: 7vh;border:green; width: 7vh; top: 84vh; left:54vh;z-index: 100000; position: absolute; border-radius: 30px;"></button>
+              <button
+                style="color: white; z-index: 1000; position: absolute; top: 57vh; left: 29vw; width:24vh; height:5.3vh ;border-radius:20px;background-color:green"><a
+                  href="https://nighwantech.com/" style="text-decoration: none;color: white;">Get it now <i
+                    class="fa fa-chevron-circle-right"></i></a></button>
+            </div>
+          </mdb-carousel-item>
+        </mdb-carousel>
+      </div>
+    </div>
+  </div>
+</div>

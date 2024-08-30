@@ -1,0 +1,278 @@
+<app-master-sub-header></app-master-sub-header>
+<div class="main ">
+    <mdb-tabs class=" d-md-block">
+        <mdb-tab>
+            <ng-template mdbTabTitle><span><i class="fas fa-user-plus fa-fw me-2"></i>office</span></ng-template>
+            <div class="tab1">
+                <fieldset class="border p-2">
+                    <legend class="float-none w-auto ">Add Details</legend>
+                    <form [formGroup]="officeForm" (ngSubmit)="handleFormSubmission(officeForm)">
+
+                        <div class="row md-4">
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="officeName" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">Office Name <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="shortCode" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">ShortCode
+                                        <span class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="address" type="text" id="form8Example1"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">Address <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="landmark" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">Landmark<span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="state" type="text" id="form8Example1"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">State <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="city" type="text" id="form8Example1"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">City <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="locality" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">Locality <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="phoneNo" type="text" id="form8Example1"
+                                        class="form-control" placeholder="+91" />
+                                    <label mdbLabel class="form-label" for="form8Example1">Phone Number <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="alternateNo" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">Alternate No <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="email" type="text" id="form8Example1"
+                                        class="form-control" placeholder="admin123@gmail.com" />
+                                    <label mdbLabel class="form-label" for="form8Example1">Email <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="officeManager" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">OfficeManager <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="OMContactNo" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">OMContactNo <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="OMEmail" type="text" id="form8Example1"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">OMEmail <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="zipCode" type="text" id="form8Example1"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">ZipCode <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="registrationNo" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">RegistrationNo <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="panNo" type="text" id="form8Example1" (input)="changeToUpperCase('panNo')"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">PAN No <span
+                                            class="text-danger">*</span></label>
+                                    <span class="position-absolute top-3 end-0 mt-n4" style=" width: 30px;">
+                                        <i class="far fa-question-circle" (click)="toggleQuestion('pan')"></i>
+                                    </span>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="cinNo" type="text" id="form8Example1 " (input)="changeToUpperCase('cinNo')"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">CinNo <span
+                                            class="text-danger">*</span></label>
+                                    <span class="position-absolute top-3 end-0 mt-n4" style=" width: 30px;">
+                                        <i class="far fa-question-circle" (click)="toggleQuestion('cin')"></i></span>
+                                </mdb-form-control>
+                            </div>
+
+
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="gstIn" (input)="changeToUpperCase('gstIn')" type="text" id="form8Example1"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">GSTIN <span
+                                            class="text-danger">*</span></label>
+
+                                    <span class="position-absolute top-3 end-0 mt-n4" style=" width: 30px;">
+                                        <i class="far fa-question-circle" (click)="toggleQuestion('gst')"></i></span>
+
+                                </mdb-form-control>
+                            </div>
+
+
+
+
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="bankDetail" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">BankDetail <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="inFavourOf" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">InFavorOf <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="bankAccountNo" type="text"
+                                        id="form8Example1" class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">BankAccountNumber <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="neftIsc" type="text" id="form8Example1" (input)="changeToUpperCase('neftIsc')"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">NEFT IFSC <span
+                                            class="text-danger">*</span></label>
+                                            <span class="position-absolute top-3 end-0 mt-n4" style=" width: 30px;">
+                                                <i class="far fa-question-circle" (click)="toggleQuestion('neft')"></i></span>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="logo" type="text" id="form8Example1"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">Logo <span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+                            <div class="col-sm-3 mb-4">
+                                <mdb-form-control>
+                                    <input mdbInput mdbValidate formControlName="remarks" type="text" id="form8Example1"
+                                        class="form-control" />
+                                    <label mdbLabel class="form-label" for="form8Example1">Remarks<span
+                                            class="text-danger">*</span></label>
+                                </mdb-form-control>
+                            </div>
+
+
+                            <div class="col-sm-3 mb-4">
+                                <!-- Country dropdown list -->
+
+                                <mdb-form-control>
+                                    <select mdbInput mdbValidate formControlName="clientId" id="form8Example4"
+                                        class="form-control" aria-labelledby="dropdownMenuLink">
+                                        <option value="" disabled selected hidden></option>
+                                        <option value="1">ID-101</option>
+                                        <option value="2">ID-102</option>
+                                        <option value="3">ID-103</option>
+                                        <option value="4">ID-104</option>
+                                        <option value="5">ID-105</option>
+                                        <option value="6">ID-106</option>
+                                        <option value="7">ID-107</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <label mdbLabel class="form-label" for="form8Example4">ClientID <span
+                                            class="text-danger">*</span></label>
+                                    <i class="fas fa-caret-down"
+                                        style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+                                </mdb-form-control>
+                            </div>
+                        </div>
+
+                        <div class="save-button">
+
+                            <button mdbRipple type="submit" class="btnClass btnClass-primary"><i
+                                    class="fas fa-save fa-fw me-2"></i>Save</button>
+
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </mdb-tab>
+    </mdb-tabs>
+</div>
+
+
+
+<div *ngIf="showQuestion" class="modal-overlay" (click)="closePopup()">
+    <div class="modal-dialog " (click)="preventCloses($event)">
+        <div class="modal-content">
+
+            <button mat-icon-button (click)="closePopup()" style="margin-left: 525px;margin-top: -10px;">
+                <i class="far fa-times-circle"></i>
+            </button>
+
+            <div class="image">
+                <a mdbRipple routerLink="">
+                    <img style="background-size: cover; background-attachment: fixed;" alt="example"
+                        class="img-fluid rounded" src={{currentModalImgUrl}} />
+                </a>
+            </div>
+        </div>
+  </div>
+</div>

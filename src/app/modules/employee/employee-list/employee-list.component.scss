@@ -1,0 +1,231 @@
+.Table-body {
+  overflow-y: auto; /* This property enables the vertical scrollbar */
+  max-height: 500px; /* Set a maximum height for the container */
+  border: 1px solid #ccc;
+}
+
+.Table-body::-webkit-scrollbar {
+  width: 12px;
+}
+
+.Table-body::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+.Table-body::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+.text-center {
+  position: absolute;
+  margin-top: 400px;
+  margin-left: 800px;
+}
+ 
+#button {
+  width: 20vw;
+}
+
+.icon {
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: black !important;
+}
+
+.button-links a {
+  margin-left: 10px; /* Adjust margin as needed */
+}
+a i {
+  font-size: 40px;
+}
+
+tr:nth-child(even) {
+  background-color: #f1e7c5;
+}
+tr {
+  height: 30px;
+}
+ 
+.modal-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 400px;
+  max-width: calc(100% - 20px); /* Take up maximum width with 20px padding */
+}
+
+.modal-dialog {
+  overflow: hidden; /* Hide overflow content */
+}
+
+/* Ensure all form elements display without any gap */
+.modal-content form > * {
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+/* Ensure the submit buttons align to the end */
+.submit-dialog {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Adjust margin as needed */
+}
+
+.header {
+  font-weight: 600;
+  align-items: center;
+  // margin-top: 5%;
+  // margin-left: 20%;
+  white-space: nowrap;
+}
+.close-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: 0;
+  outline: 0;
+} 
+.filter-header {
+  position: relative;
+}
+
+.filter-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 65px;
+}
+.submit-dialog button {
+  margin-left: 10px; /* Adjust the margin between buttons */
+}
+
+.filter-icon i {
+  font-size: 15px;
+}
+.table th {
+  white-space: nowrap; /* Prevent line breaks */
+  font-size: 14px; /* Adjust font size as needed */
+  padding: 10px; /* Adjust padding as needed */
+}
+
+#search{
+width: 20vw;
+}
+.top{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#div{
+  margin-left: 1vw;
+}
+.width{
+  width: 19%;
+}
+.bgcolor{
+  background-color: #ff7022;
+}
+.addEmp{
+  width: 4vw;
+}
+
+// 
+
+
+.outer {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100vw;
+}
+
+.heading {
+  text-align: left;
+}
+
+.button-links {
+  text-align: right;
+}
+
+.icon-container {
+  display: flex;
+}
+
+.icon-square {
+  background-color: rgb(254, 254, 254);
+  width: 40px; /* Adjust the size as needed */
+  height: 40px; /* Adjust the size as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px; /* Adjust the spacing between icons */
+ 
+  border-radius: 50% ;
+  background-color: var(--orange-primary);
+  color: white;
+}
+
+
+.icon-square i {
+  color: rgb(53, 49, 49); /* Adjust the icon color */
+  font-size: 20px; /* Adjust the icon size */
+}
+.head{
+  font-weight: bolder;
+  font-size: 5vh;
+}
+
+.outerbox{
+  display: flex;
+  justify-content: space-between;
+}
+.container-fluid {
+
+  width: 98%;
+  height: 100%;
+}
+
+#searchbtn{
+  background-color: var(--orange-primary);
+  color: white;
+  width:16vw;
+  border-radius: 18px 18px 18px 18px; 
+}
+
+@media only screen and (max-width: 650px) {
+ 
+#input-field{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+ 
+}
+#input-field .col{
+  margin: 1vh;
+}
+#input-field #searchbtn{
+  width:87vw;
+}
+.outerbox{
+  width: 95%;
+}
+ 
+} 
+outer{
+  display: flex;
+ flex-direction:row;
+}

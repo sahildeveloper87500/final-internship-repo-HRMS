@@ -1,0 +1,204 @@
+<app-leave-sub-header></app-leave-sub-header>
+<div style="overflow-x: hidden;">
+    <div style="background-color: rgb(243, 241, 241); padding: 10px; overflow-x: hidden;">
+        <div class="card" style="margin-left: 10px; margin-right: 20px;">
+            <div class="card-body">
+                <div>
+                    <h5 class="card-title">Apply Leave</h5>
+                </div>
+                <div style="display: flex; flex-direction: row; background-color: rgba(153, 160, 167, 0.101);  padding-bottom:0 px;flex-wrap: wrap;">
+
+                    <div style="border:0px solid black; margin-left:45px">
+                        <img src="../../../assets/img/profile.png" alt=""
+                            style="width: 23vh; height: 23vh; border-radius: 80px; border: 0px solid black; ">
+
+                        <h3 style="padding-top: 15px;margin-top: 15px;">0.00 Day(s) Utilized</h3>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; margin-left:3vw; border:0px solid red">
+                        
+                        <div class="mobileg" style="display: flex; flex-direction: row; flex-wrap: wrap; border:0px solid ">
+                            <div class="card card1"
+                                style="width: 26vh; height: 18vh; color:   #FF9B44;; border-radius: 20px; margin:13px; padding: 0px;">
+                                <div class="card-body"
+                                    style="white-space: nowrap; height: fit-content; overflow: hidden; display: flex; flex-direction: column; align-items: center;justify-content: center;">
+
+                                    <h1 class="card-title" style="font-weight: 900; padding: 0px !important; margin: 0px !important;font-family: calibri; font-size: 20px;">Vacation Leave</h1>
+                                    <h1 style="font-weight: 900; padding: 0px !important; margin: 0px !important;font-size: 40px;font-family: calibri;"> 0.00</h1>
+                                    <p class="card-text" style="font-weight: 700;font-size: smaller;font-family: calibri;">(Balance Days)</p>
+                                </div>
+                            </div>
+                            <div class="card card1"
+                                style="width: 26vh; height: 18vh; color:  #FF9B44;; border-radius: 20px; margin:13px; padding: 0px;">
+                                <div class="card-body"
+                                    style="overflow-x: hidden;white-space: nowrap; height: fit-content; overflow-y: hidden; display: flex; flex-direction: column; align-items: center;justify-content: center;">
+
+                                    <h1 class="card-title" style="font-weight: 900; padding: 0px !important; margin: 0px !important;font-size: 20px;font-family: calibri; ">Sick Leave-US</h1>
+                                    <h3 style="font-weight: 900; padding: 0px !important; margin: 0px !important;font-size: 40px;font-family: calibri;"> 0.00</h3>
+                                    <p class="card-text" style="font-weight: 700;font-size: smaller;font-family: calibri;">(Balance Days)</p>
+                                </div>
+                            </div>
+                            <div class="card card1"
+                            style="width: 26vh; height: 18vh; color:  #FF9B44;; border-radius: 20px; margin:13px; padding: 0px;">
+                            <div class="card-body"
+                                style="white-space: nowrap; height: fit-content; overflow: hidden; display: flex; flex-direction: column; align-items: center;justify-content: center;">
+
+                                <h1 class="card-title" style="font-weight: 900; padding: 0px !important; margin: 0px !important;font-size: 20px; font-family: calibri;">Maternity Leave</h1>
+                                <h1 style="font-weight: 900; padding: 0px !important; margin: 0px !important;font-size: 40px;font-family: calibri;"> 0.00</h1>
+                                <p class="card-text" style="font-weight: 700;font-size: smaller;font-family: calibri;">(Balance Days)</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="card cardview" style=" margin-top: 60px; border-radius: 20px; border:0px solid red;background-color:rgba(153, 160, 167, 0.101);">
+                            <div class="card-body"
+                                style="display: flex; align-items: center; height: 16px;padding: 0px; ; border-radius: 10px; ">
+                                <button mat-fab extended (click)="toggleTabs()" matTooltip="Add Department"
+                                aria-label="Button that displays a tooltip in various positions"  style="background-color:  #FF9B44;; display:flex ; align-items: center;padding:18px 18px 20px 18px; color:white ;border: 2px solid;margin-bottom: 60px;" class="btnClass btnClass-primary">
+                                <i class="fa fa-calendar fa-2x" ></i> View leave Balance</button> 
+                                <!-- <a class="" (click)="openModal()"
+                                    style="margin-top:0px ;margin-left: 10px; color: rgb(251, 130, 1); cursor: pointer; ">View
+                                    Leave Balance</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form action="/action_page.php">
+                <div class="date-container" style="display: flex;flex-direction: row;flex-wrap: wrap;gap:30px;padding:30px" >
+                    <div class="col-sm-4" style=" padding-top:10px;border-radius: 10px; width: 30%;min-width:230px">
+                        <!-- Email input -->
+                        <mdb-form-control style="border-radius: 10px;">
+                            <input mdbInput type="date" id="form8Example10" class="form-control" />
+                            <label mdbLabel class="form-label" for="form8Example10">From*</label>
+                        </mdb-form-control>
+                        
+                    </div>
+                    <div class="col-sm-6 " style="margin-right: 0px; padding-top:10px;border-radius: 10px; width:30%;min-width:230px">
+                        <!-- Email input -->
+                        <mdb-form-control style="border-radius: 10px;">
+                            <input mdbInput type="date" id="form8Example10" class="form-control" />
+                            <label mdbLabel class="form-label" for="form8Example10">To*</label>
+                        </mdb-form-control>
+                        
+                    </div>
+                    <div class="card" style="width: 27%;  border-radius: 20px;min-width: 230px;">
+                        <div class="card-body"
+                            style="display: flex; align-items: center; height: 25px;padding: 25px; background-color: #FF9B44;; border-radius: 10px; color: white;">
+                            <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+                            <h6 class="" style="margin-top:27px ;margin-left: 10px; cursor: pointer; font-weight:600;">
+                                Last Leave taken on 2023-11-03
+                                <p style="font-weight: 400;">Sick Leave - US - 5.00 day(s)</p>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding-left: 30px;padding-right: 35px;padding-top: 10px;padding-bottom: 14px; ">
+                    <div class="form-group"
+                        style="background-color: rgb(239, 242, 243); padding-top: 10px;padding-bottom: 10px; ">
+                        <label for="w3review" style="font-size: 20px; font-weight: 400;"><i class="fa fa-comment"
+                                aria-hidden="true"></i>
+                            Comments</label>
+                        <textarea rows="4" cols="20" style="border-radius: 10px;" class="gamex"></textarea>
+                        <!-- <textarea rows="4" cols="95" style="border-radius: 10px;" class="iconx"></textarea> -->
+                        <textarea rows="4" cols="55" style="border-radius: 10px;" class="tabx"></textarea>
+                    </div>
+                </div>
+                <hr style="width: 94%;margin-left: 40px;">
+                <div
+                    style="display: flex; flex-direction: row-reverse; padding-right: 40px; padding-bottom: 30px; justify-content: space-between;">
+                    <!-- #B0D473 -->
+                    <!-- rgb(56, 188, 56);  -->
+                    <input type="submit"
+                        style="width: 100px; height: 50px; border-radius: 20px; color: white; background-color: #FF9B44;
+                        font-size: large; border:none">
+                    <h2 style="margin-left: 37px;">*Required</h2>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div *ngIf="showTabs" class="modal-overlay">
+    <div class="modal-dialog  modal-dialog-phone " (click)="preventClose($event)" style="height:fit-content;position: relative;">
+        <form class="modal-content"   style="border-radius: 30px;">
+         <div style="padding:0px;border-radius: 10px; " class=".modal card">
+                <div class="modal-header " style="display: flex; ;padding: 0px; border-radius: 25px;" >
+                    <div class="mcs" style="display: flex; flex-wrap: wrap;padding-top:20px ;">
+                        <span class="iconx" style="padding-left:30px"></span>
+
+                    <h2 class="modal-title" id="exampleModalLabel" >Leave Balance</h2>
+                    <span class="iconx" style="padding-left:200px"></span>
+                    <h2 class="iconx">
+                        2024-01-01 - 2024-12-31 
+                        <i class="fa fa-chevron-circle-left" style="padding: 2px;"></i>         
+                        <i class="fa fa-chevron-circle-right"></i>
+                    </h2>
+                </div>
+                        <button
+                        style="position: absolute; top:10px;right:20px;padding: 3px; color: white;border-radius: 10px;"
+                        type="button"
+                        class="btn-close"
+                        aria-label="Close"
+                        (click)="toggleTabs()"
+                      ></button>
+                  </div>
+            
+                  <div style="padding: -10px;"></div>
+
+                  <div class="modal-body" >
+
+               <div style="display: flex;padding-left: 50px; gap:100px; border: 0px solid black;">
+                <h2 style="padding-right: 0px;" class="iconx">
+                Available balance
+                </h2>
+                <h2 class="iconx" style="margin-left: 180px;" >
+                   Note
+                </h2>
+               </div>
+               <div class="card" style="display: flex; flex-direction: row; height:fit-content;flex-wrap:wrap;border-radius:10px;margin: -9px 15px 15px 15px; border:0px solid black ;padding: 10px;">
+
+                <div class="mobmodel" style="display:flex ;padding:10px; margin-left:2%;flex-direction: column;height: 80px;padding-top: 20px;border: 0px solid black;min-width: 80px;min-height: 0px;justify-content: center;">
+                    
+                    <h2 class="gamex" style="padding: 0px !important;margin: 0px  !important; border: 0px solid;">Available Balance</h2>
+                     <h2 style="padding: 0px; font-size: 50px; border: 0px solid;width: 170px;">
+                    0.00<sub style="font-size: x-small; ">(Days)</sub>
+                </h2>
+            </div>
+                    <div class="card-body mobmodel" style="background-color: #FF9B44;;border-radius:20px ;display: flex;justify-content: center; flex-direction: column; width:12%;height:80px;border:0px solid;min-width: 140px;">
+                        <!-- <h2 class="gamex" style="padding: 0px !important;margin: 0px  !important;">Note</h2>   -->
+                         <table>
+                             <tr>
+                                <th>From <i class="fa fa-calendar" aria-hidden="true" style="margin-left: 14px;"></i></th>
+                               <th>
+                               </th>
+                               
+                               <th>to</th>
+                             </tr>
+                             <tr>
+                                <td>2 april 2023</td>
+                                <td></td>
+                                <td>2 april 2023</td>
+                             </tr>
+                        </table>
+
+                </div>
+                  <div class="card mobmodel" style="min-width: 160px;height: 80px; padding: 10px;margin-left: 10px;">
+                        <h4>Note will go here</h4>
+                        <input type="text"/>
+                    </div>
+    <div style="padding-left:20%" class="iconx"></div>
+               </div>
+                  </div> 
+                  <div style="padding: 7px;"></div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn" (click)="toggleTabs()" style="border-radius: 30px;background-color:  #FF9B44;;margin-right: 20px;  ">
+                      Cancel
+                    </button>
+                    <!-- <button type="button" class="btn " style="border-radius: 10px;color: white; background-color:green">Save changes</button>  -->
+                  </div>
+                  <div style="padding: 7px;"></div>
+
+            </div> 
+        </form>
+</div>
+</div>

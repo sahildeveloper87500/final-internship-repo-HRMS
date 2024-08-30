@@ -1,0 +1,212 @@
+<!-- <app-employee-sub-header></app-employee-sub-header> -->
+<div class="main">
+  <div class="container-fluid ">
+
+    <div class="outerbox" style="margin-top: 4vh;">
+      <div class="inner1">
+        <div class="heading">
+          <div>
+            <p class="head">Employee</p>
+          </div>
+
+          <div>
+
+            <p class="sub-head">Dashboard/Employee</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="inner2">
+        <div class="button-links">
+          <mdb-form-control>
+            <div class="icon-container">
+              <a routerLink="../Empdashboard" matTooltip="Employee Dashboard">
+                <div class="icon-square">
+                  <i class="fa-solid fa-border-all" style="color: white;"></i>
+
+                </div>
+              </a>
+              <a routerLink="../Emplist" matTooltip="Employee List">
+                <div class="icon-square">
+                  <i class="fa-solid fa-list" style="color: white;"></i>
+                </div>
+              </a>
+              <a routerLink="../personal" class="" matTooltip="Add Employee">
+
+                <i style="color:var(--orange-primary); margin-left: -0.8 vw;"
+                  class="fa-solid fa-circle-plus addEmp"></i>
+
+              </a>
+            </div>
+          </mdb-form-control>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row" id="input-field">
+      <div class="col">
+        <!-- Name input -->
+
+        <mdb-form-control>
+          <input mdbInput type="text" id="form8Example1" class="form-control" />
+          <label mdbLabel class="form-label" for="form8Example1">Full Name <span class="text-danger">*</span></label>
+        </mdb-form-control>
+      </div>
+      <div class="col">
+        <!-- Name input -->
+        <mdb-form-control>
+          <select mdbInput id="form8Example3" class="form-control" aria-labelledby="dropdownMenuLink">
+            <option value disabled selected hidden></option>
+            <option value="1">Project1</option>
+            <option value="2">Project2</option>
+            <option value="3">Others</option>
+            <!-- Add more options as needed -->
+          </select>
+          <label mdbLabel class="form-label" for="form8Example3">project <span class="text-danger">*</span></label>
+          <i class="fas fa-caret-down"
+            style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+        </mdb-form-control>
+      </div>
+      <div class="col">
+        <!-- Email input -->
+        <mdb-form-control>
+          <select mdbInput id="form8Example3" class="form-control" aria-labelledby="dropdownMenuLink">
+            <option value disabled selected hidden></option>
+            <option value="1">Web Development</option>
+            <option value="2">App Development</option>
+            <option value="3">Ios Development</option>
+            <!-- Add more options as needed -->
+          </select>
+          <label mdbLabel class="form-label" for="form8Example3">department <span class="text-danger">*</span></label>
+          <i class="fas fa-caret-down"
+            style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+        </mdb-form-control>
+      </div>
+
+
+      <div class="col">
+        <mdb-form-control>
+          <select mdbInput id="form8Example4" class="form-control" aria-labelledby="dropdownMenuLink">
+            <option value disabled selected hidden></option>
+            <option value="1">Neeraj</option>
+            <option value="2">Sandeep</option>
+            <option value="3">Pankaj</option>
+
+            <!-- Add more options as needed -->
+          </select>
+          <label mdbLabel class="form-label" for="form8Example4">project manager <span
+              class="text-danger">*</span></label>
+          <i class="fas fa-caret-down"
+            style="position: absolute; top: 50%; transform: translateY(-50%); right: 10px;"></i>
+        </mdb-form-control>
+      </div>
+      <div class="col">
+        <!-- <button type="button" class="btn" id="searchbtn"> 
+ 
+        <div style="display: flex; flex-direction: row;">
+         <div><i class="fa-solid fa-magnifying-glass"></i></div>
+         
+         <div>&nbsp; &nbsp; Search</div> 
+         
+        </div> 
+       </button>    
+       <input type="text" class="form-control" placeholder="search here...." autocomplete="off" [(ngModel)]="filterName">
+       <p>{{ filterName }}</p> -->
+
+        <div class="filterxy">
+          <mat-form-field>
+            <mat-label class="filterx">Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Search Here...." #input>
+          </mat-form-field>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="filterx">
+  <mat-form-field>
+    <mat-label class="filterxy">Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search Here...." #input>
+  </mat-form-field>
+  
+</div> -->
+  <div class="tablex "
+    style="background-color: #ECECEC; max-width: 96% !important;width: 96% !important; overflow: scroll;position: relative;height: 320px;">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.fullName}} </td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+        <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="bloodGroup">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Blood group </th>
+        <td mat-cell *matCellDef="let row"> {{row.bloodGroup}} </td>
+      </ng-container>
+
+      <!-- Fruit Column -->
+      <ng-container matColumnDef="dob">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> DOB </th>
+        <td mat-cell *matCellDef="let row"> {{row.dob}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="maritalStatus">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Marital Status </th>
+        <td mat-cell *matCellDef="let row"> {{row.maritalStatus}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="reliegion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Reliegion </th>
+        <td mat-cell *matCellDef="let row"> {{row.reliegion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fatherorHusbandName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> FatherorHusbandName </th>
+        <td mat-cell *matCellDef="let row"> {{row.fatherorHusbandName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dateofMarriage">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date of Marriage </th>
+        <td mat-cell *matCellDef="let row"> {{row.dateofMarriage}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="mobileNo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Mobile No </th>
+        <td mat-cell *matCellDef="let row"> {{row.mobileNo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  </div>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"
+    class="pagination"></mat-paginator>
+
+
+
+</div>

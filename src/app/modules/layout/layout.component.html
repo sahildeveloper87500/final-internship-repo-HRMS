@@ -1,0 +1,261 @@
+<button type="button" routerLink="../layouttable" class="btn btn-primary btn-rounded" mdbRipple>Primary</button>
+
+
+<app-leave-sub-header></app-leave-sub-header>
+<div style="margin-left: 5%; margin: top 2%;">
+    <h1><b>Holiday</b></h1>
+  </div>
+  
+  <div *ngIf="showTabs" class="modal-overlay" >
+    <div class="modal-dialog" (click)="preventClose($event)">
+      <form class="modal-content"style="height: 100%;  ">
+     <form [formGroup]="validationForm" (ngSubmit)="onSubmit()" style="width: 90%;">
+          <button mat-icon-button (click)="toggleTabs()" class="close-icon">
+            <i class="far fa-times-circle"></i>
+          </button>
+          <h1 style="margin-top: 10px;"><b>Add Holiday</b></h1>
+          <div class="main">
+          <div class="row">
+            <div class="col mb-4">
+              <mdb-form-control>
+                <select
+                  mdbValidate
+                  [required]="true"
+                  formControlName="select"
+                  mdbInput
+                  id="form8Example4"
+                  class="form-control"
+                  aria-labelledby="dropdownMenuLink"
+                >
+                  <option value disabled selected hidden></option>
+                  <option value="option1">National</option>
+                  <option value="option2">Manual</option>
+                </select>
+                <label mdbLabel class="form-label" for="form8Example4"
+                  >Holiday type<span class="text-danger">*</span></label
+                >
+                <i
+                  class="fas fa-caret-down"
+                  style="
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 10px;
+                  "
+                ></i>
+              </mdb-form-control>
+            </div>
+            <div class="col mb-4">
+                <mdb-form-control>
+                  <input
+                    mdbValidate
+                    mdbInput
+                    type="text"
+                    id="form1"
+                    class="form-control"
+                    formControlName="input"
+                    required
+                  />
+                  <label mdbLabel class="form-label" for="form1"
+                    >Enter Name<span class="text-danger">*</span></label
+                  >
+               </mdb-form-control>
+              </div>
+           </div>
+           <div class="row">
+            <div class="col mb-4">
+                <mdb-form-control>
+                  <input
+                    mdbValidate
+                    mdbInput
+                    type="date"
+                    id="form1"
+                    class="form-control"
+                    formControlName="input1"
+                    required
+                  />
+                  <label mdbLabel class="form-label" for="form1"
+                    >From<span class="text-danger">*</span></label
+                  >
+               </mdb-form-control>
+              </div>
+              <div class="col mb-4">
+                <mdb-form-control>
+                  <input
+                    mdbValidate
+                    mdbInput
+                    type="date"
+                    id="form1"
+                    class="form-control"
+                    formControlName="input2"
+                    required
+                  />
+                  <label mdbLabel class="form-label" for="form1"
+                    >To<span class="text-danger">*</span></label
+                  >
+               </mdb-form-control>
+              </div>
+           </div>
+           <div class="row">
+            <div class="col">
+              <mdb-form-control>
+                <textarea
+                  mdbValidate
+                  mdbInput
+                  type="text"
+                  id="form1"
+                  class="form-control"
+                  formControlName="textarea"
+                  required
+                ></textarea>
+                <label mdbLabel class="form-label" for="form1"
+                  >Description<span>*</span></label
+                >
+                
+              </mdb-form-control>
+            </div>
+           </div>
+          <br />
+        
+          <div class="row-last" >
+            <div class="col"> <span class="text-danger">*</span> Required</div>
+            <div class="col-cancil"><button  type="button" class="btn btn-primary">Cancel</button></div>
+  <div class="col"><button  type="submit" class="btn btn-primary">Submit</button></div>
+          </div>
+          
+            
+
+          <!-- </div> -->
+        </div>
+        </form> 
+            
+          </form>
+    </div>
+  </div>
+  <div style="overflow: scroll;">
+    <div
+      class="card"
+      style="
+        border: 1px solid lightgray;
+        margin: 15px 14px;
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+  
+      "
+    >
+    
+      <table class="table align-middle mb-0 bg-white table-bordered row-border hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"  style="width: 100%; white-space: nowrap;" >
+      
+        <thead class="bg-light" style="
+        position: sticky;
+        top: 0;
+        z-index: 1;">
+<tr>
+  <th >
+
+Full Name
+</th>
+<th >Gender</th>
+<th >Blood group</th>
+<th >DOB</th>
+<th >MaritalStatus</th>
+<th >Reliegion</th>
+<th >FatherorHusbandName</th>
+<th >FateofMarriage</th>
+<th >Mobile No</th>
+</tr>
+</thead>
+
+        <div
+          class="round-button"
+          style="position: fixed; top: 140px; right: 9px; width: 50px; z-index: 1"
+        >
+          <button
+            mat-fab
+            extended
+            (click)="toggleTabs()"
+            matTooltip="Add Holiday"
+            aria-label="Button that displays a tooltip in various positions"
+            color="warn"
+          >
+            <i
+              class="fas fa-plus fa-2x"
+              style="color: rgba(10, 253, 253, 0.773)"
+            ></i>
+          </button>
+        </div>
+        <tbody>
+          <tr *ngFor="let item of employeeList">
+            <td>{{item.fullName}}</td>
+            <td>{{item.gender}}</td>
+            <td>{{item.bloodGroup}}</td>
+            <td>{{item.dob}}</td>
+            <td>{{item.maritalStatus}}</td>
+            <td>{{item.reliegion}}</td>
+            <td>{{item.fatherorHusbandName}}</td>
+            <td>{{item.dateofMarriage}}</td>
+            <td>{{item.mobileNo}}</td>
+                    </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()"
+                      [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)"
+                      [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (click)="selection.toggle(row)">
+    </tr>
+  </table>
+  
+  
+  

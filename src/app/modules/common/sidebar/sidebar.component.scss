@@ -1,0 +1,248 @@
+.full-container{ // full container style
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    height: 100svh;
+    width: 100%;
+}
+
+
+.accordion-container{ // Nested list container style
+    width: 100%;
+    height: 50vh;
+    overflow: auto;
+    // border: 1px solid black;
+}
+.accordion{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.accordion-item{
+    width: 100%;
+}
+
+.toggle-btn{
+    position: absolute;
+    z-index: 10;
+    top: 5svh;
+    right: 0;
+    margin-right: -20px;
+    width: fit-content;
+    aspect-ratio: 1 / 1;
+    padding: 0.3rem 0.8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #FF9B44;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.toggle-btn-rtl{
+    position: absolute;
+    z-index: 10;
+    top: 5svh;
+    left: 0;
+    margin-left: -20px;
+    width: fit-content;
+    aspect-ratio: 1 / 1;
+    padding: 0.3rem 0.8rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #FF9B44;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    transition: 0.2s ease;
+    transform: rotate(180deg);
+}
+
+.rotate-btn{
+    transform: rotate(180deg);
+}
+
+.rotate-btn-rtl{
+    transform: rotate(0deg);
+}
+
+.profile-image{
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    margin: auto;
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+
+.profile-image-active{
+    width: 4rem;
+}
+
+.profile-photo{
+    width: inherit;
+}
+
+.profile-text{
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.profile-text-bold{
+    font-weight: 600;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    width: 95%;
+}
+
+.logo-img{
+    display: inline-block;
+    width: 2.5rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+.logo-img-active{
+    display: inline-block;
+    width: 100%;
+    max-width: 7rem;
+    // aspect-ratio: 1 / 1;
+    transition: 0.2s ease;
+}
+
+.search-container{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(233, 233, 233);
+    padding: 0.3rem;
+    border-radius: 2rem;
+}
+
+.search-container input{
+    width: 80%;
+    outline: none;
+    background-color: inherit;
+    border: none;
+    padding: 0 0.5rem;
+}
+
+.search-container button{
+    width: 17%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.search-container button img {
+    width: 100%;
+    aspect-ratio: inherit;
+}
+
+.active-links-container a i{
+    width: 1.5rem;
+    margin: 0 0.5rem;
+}
+
+.active-links-container a span{
+    color: rgb(24, 95, 161);
+}
+
+.divider{
+    width: 100%;
+    background-color: lightgray;
+    height: 1px;
+}
+
+.sidebar-icon-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.sidebar-icon-div:hover{
+    background-color: rgb(190, 190, 255);
+}
+
+.inactive-icon-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidebar-icon-div button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.active-links-container{
+    width: 100%;
+    height: 50%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.active-links-container-links{
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    // border: 2px solid red;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+}
+
+.active-links-container-links span{
+    display: inline-block;
+    width: 70%;
+    overflow: hidden;
+}
+
+.active-links-container-links-rtl{
+    flex-direction: row-reverse;
+}
+
+.active-links-container a:hover{
+    background-color: rgba(248, 118, 32, 0.3);
+}
+
+@media (max-width: 500px){
+    .toggle-btn{
+        margin-right: -40px;
+        top: 5svh;
+    }
+    .rotate-btn{
+        margin-right:-20px;
+}
+}
+
+
+.active {
+  
+    font-weight: bold; 
+    background-color:var(--orange-secondary);
+}

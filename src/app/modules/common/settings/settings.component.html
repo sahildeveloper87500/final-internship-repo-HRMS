@@ -1,0 +1,31 @@
+<div class="settings-container">
+    <div class="settings-heading-section">
+        <div class="settings-heading">
+            <h1>Customize Layout</h1>
+            <p>Customize the Page layout</p>
+        </div>
+        <button (click)="toggleSettings()" class="settings-close-btn">
+            <i class="fa-regular fa-circle-xmark fa-2xl" style="color: #ff1414;"></i>
+        </button>
+    </div>
+    <hr/>
+    <div class="layout-section">
+        <h2>Choose Layout</h2>
+        <div class="layout-container">
+            <div class="layout-ltr-container" (click)="setLayoutLtr()">
+                <div [ngClass]="{'layout-ltr':true, 'layout-active':isLayoutLtr}">
+                    &nbsp;
+                    <i *ngIf="isLayoutLtr" class="fa-solid fa-circle-check fa-xl" style="color: #0e7c10;"></i>
+                </div>
+                <p>Left To Right</p>
+            </div>
+            <div class="layout-rtl-container" (click)="setLayoutRtl()">
+                <div [ngClass]="{'layout-rtl':true, 'layout-active':!isLayoutLtr}">
+                    &nbsp;
+                    <i *ngIf="!isLayoutLtr" class="fa-solid fa-circle-check fa-xl" style="color: #0e7c10;"></i>
+                </div>
+                <p>Rigth To Left</p>
+            </div>
+        </div>
+</div>
+</div>

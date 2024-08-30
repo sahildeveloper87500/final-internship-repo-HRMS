@@ -1,0 +1,157 @@
+.main {
+    // height: 10vh;
+    border-radius: 20px;
+    padding: 5px 20px;
+  }
+  
+  
+  
+  .tab2 {
+    border-radius: 20px;
+  }
+  
+  .tab1 {
+    background-color: rgba(255, 255, 255, 0.692);
+    border-radius: 20px;
+  }
+  
+  .tab3 {
+    background-color: rgba(255, 255, 255, 0.692);
+    border-radius: 20px;
+  } 
+  .button{
+     width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .responsive-tabs {
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
+  
+  .responsive-tabs select {
+    width: 100%;
+  }
+  
+  .tab1,
+  .tab2 {
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
+  
+  /* Add any additional responsive styles here */
+  @media (max-width: 767px) {
+    .mdb-tab-content {
+      padding: 10px; /* Adjust the padding as needed */
+  }
+  }
+  
+  
+  
+  
+  .toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  }
+  
+  .toggle-slot {
+  font-size: 10px;
+  position: relative;
+  height: 2.5em;
+  width: 6em;
+  border: 0px solid transparent;
+  border-radius: 10em;
+  background-color: rgba(128, 128, 128, 0.253);
+  transition: background-color 250ms;
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot {
+  background-color: rgba(255, 166, 0, 0.5);
+  }
+  
+  .toggle-button {
+  transform: translate(0.3em, 0.25em);
+  position: absolute;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background-color: #ffbb52;
+  box-shadow: inset 0px 0px 0px 0.75em #ffeccf;
+  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: white;
+  box-shadow: inset 0px 0px 0px 0.75em orange;
+  transform: translate(3.65em, 0.25em);
+  }
+  
+  .sun-icon {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  color: #ffbb52;
+  }
+  
+  .sun-icon-wrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  opacity: 1;
+  transform: translate(2em, 2em) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(3em, 2em) rotate(0deg);
+  }
+  
+  .moon-icon {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  color: white;
+  }
+  
+  .moon-icon-wrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  opacity: 0;
+  transform: translate(11em, 2em) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(2em, 2em) rotate(-15deg);
+  }
+  
+  .span{
+  font-size: 15px;
+  }
+  
+  
+  .enable-checkbox {
+  position: absolute;
+  right: 10px; /* Adjust this value as needed to position the checkbox */
+  top: 55%;
+  transform: translateY(-50%);
+  }
+  
+  
+  
+  .status-label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .savebutton{
+    background-color: rgba(0, 128, 0, 0.603);
+    color:white;
+  }

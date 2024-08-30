@@ -1,0 +1,103 @@
+<app-asset-sub-header></app-asset-sub-header>
+<div *ngIf="showTabs" class="modal-overlay">
+    <div class="modal-dialog " (click)="preventClose($event)">
+        <form class="modal-content">
+            <form [formGroup]="departmrntForm">
+
+                <button mat-icon-button (click)="toggleTabs()" class="close-icon">
+                    <i class="far fa-times-circle"></i>
+                </button>
+
+                <h1 class="header">Add Categories</h1>
+
+                <div class="col-lg-5 sm-4 brandname">
+                    <mdb-form-control>
+                        <input mdbInput type="text" id="form8Example1" class="form-control" />
+                        <label mdbLabel class="form-label" for="form8Example1"> Name <span
+                                class="text-danger">*</span></label>
+                    </mdb-form-control>
+                </div>
+            </form>
+
+            <div mat-dialog-actions [align]="'end'" class="submit-dialog">
+                <button mdbRipple type="button" class="btn btn-info btn-sm" mat-dialog-close
+                    (click)="addDepartment()"><i class="fas fa-save fa-fw me-2"></i>Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<div style="overflow: scroll; ">
+    <div class="card"
+        style="border: 1px solid lightgray; margin: 15px 14px;border-radius: 10px; overflow: scroll; height:450px;">
+        <table class="table align-middle mb-0 bg-white" style="position: relative;">
+            <thead class="bg-light" style="position: sticky; top:0px">
+                <tr>
+                    <th><i class="fas fa-ellipsis-h"></i></th>
+                    <th>Id <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </th>
+                    <th>Category</th>
+                    <th>Total</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <div class="round-button" style="position: fixed; top:100px;right:10px; width:50px">
+                <button mat-fab extended (click)="toggleTabs()" matTooltip="Add Category"
+                    aria-label="Button that displays a tooltip in various positions" color="warn">
+                    <i class="fas fa-plus fa-2x" style="color: rgba(10, 253, 253, 0.773);"></i></button>
+            </div>
+
+            <tbody>
+                <tr *ngFor="let m of AttendanceEmployee">
+                    <td>
+                        <div>
+                            <input mdbCheckbox class="form-check-input" type="checkbox" id="checkboxNoLabel" value=""
+                                aria-label="..." />
+                        </div>
+                    </td>
+                    <td>{{ m.id }}</td>
+                    <td>{{ m.punch_in }}</td>
+                    <td>{{ m.id }}</td>
+                    <td>
+                        <div class="progress" style="height: 20px; background-color: #831a1a;">
+                            <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40"
+                                aria-valuemin="0" aria-valuemax="100">
+                                2
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="main-box" style="display: flex; margin-left: 20px;margin-top: 20px;">
+            <div class="box" style="height: 20px;width: 20px; background-color: #4d20d5; "></div>
+            <div class="para" style="margin-left: 5px;">
+                <p>in-stock</p>
+            </div>
+        </div>
+
+        <div class="main-box" style="display: flex; margin-left: 290px;margin-top: -33px;">
+            <div class="box" style="height: 20px;width: 20px; background-color: #80cd21; "></div>
+            <div class="para" style="margin-left: 5px;">
+                <p>in-use</p>
+            </div>
+        </div>
+
+        <div class="main-box" style="display: flex; margin-left: 560px;margin-top: -33px;">
+            <div class="box" style="height: 20px;width: 20px; background-color: #a9c929; "></div>
+            <div class="para" style="margin-left: 5px;">
+                <p>in-Decommissioned</p>
+            </div>
+        </div>
+
+        <div class="main-box" style="display: flex; margin-left: 940px;margin-top: -32px;">
+            <div class="box" style="height: 20px;width: 20px; background-color: #a11212; "></div>
+            <div class="para" style="margin-left: 5px;">
+                <p>Stolen</p>
+            </div>
+        </div>
+  </div>
+</div>

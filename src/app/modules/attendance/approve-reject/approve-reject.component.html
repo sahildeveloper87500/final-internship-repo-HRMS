@@ -1,0 +1,161 @@
+<app-attendance-sub-header></app-attendance-sub-header>
+
+<div style="overflow: scroll">
+    <div
+      class="card"
+      style="
+        border: 1px solid lightgray;
+        margin: 15px 14px;
+        border-radius: 10px;
+        overflow: scroll;
+        height: 450px;
+      "
+    >
+<div class="container row-1">
+    <div class="pay-policy">
+      <p>Pay Policy</p>
+  
+      <mdb-form-control class="mb-4">
+        <select class="form-select" aria-label="Default select example">
+          <option value="1">India</option>
+          <option value="2">Japan</option>
+          <option value="3">China</option>
+          <option value="4">Rusia</option>
+          <option value="5">Dubai</option>
+          <option value="6">Philipins</option>
+          <option value="7">Australia</option>
+          <option value="8">August</option>
+        </select>
+      </mdb-form-control>
+  
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheck" />
+        <label for="">Last Complited Pay Period Only</label>
+      </div>
+    </div>
+  
+    <div class="line"></div>
+    <div class="attendance-sheet">
+      <p>Attendance sheet found</p>
+  
+      <table class="table"  >
+        <thead >
+         
+          <tr>
+            <th>
+  
+              <!-- (click)="updateColor()" this function for update bg-color -->
+             
+             <div class="container-icon" >  
+             <div (click)="updateColor()">
+              <input
+              
+               (click)="toogleTag()"
+                class="form-check-input"
+                type="checkbox"
+                [(ngModel)]="parentSelector"
+                [value]="-1"
+                id="flexCheck"
+                (change)="onChangeAttendance($event)"
+             
+             /></div>
+             
+              <div class="icon" *ngIf="iconActive" (click)="updateColor()">
+                <button
+                
+                  type="button"
+                  class="btn"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Approved All"
+                >
+                  <i class="fa-solid fa-check-double"></i>
+                </button>
+              </div>
+             </div>  
+             
+            </th>
+            
+            <th >Employee id</th>
+            <th>Employee Name</th>
+            <th>Supervisor(s)</th>
+            <th>Pay Period</th>
+            <th>Total Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+  
+        <tbody >
+          <tr *ngFor="let n of attendance" >
+            <td>
+              <input
+              
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheck"
+                [value]="n.id"
+                [checked]="n.select"
+                (change)="onChangeAttendance($event)"
+              />
+            </td>
+            <td [style.backgroundColor]="color"><div class="id-1"> {{ n.id }}</div></td>
+            <td  [style.backgroundColor]="color">{{ n.name }}</td>
+            <td  [style.backgroundColor]="color">{{ n.supervisor }}</td>
+            <td [style.backgroundColor]="color">{{ n.pay_period }}</td>
+            <td [style.backgroundColor]="color">{{ n.Total_time }}</td>
+            <td>
+              <button mat-button [matMenuTriggerFor]="icon1">
+                <div class="valign-center">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+</div>
+   <!-- (click)="toggleTabs()"  -->
+  
+  <mat-menu #icon1="matMenu">
+    <button
+    
+      mat-menu-item
+      
+      class="btn-approved"
+    >
+      <i class="fa-solid fa-person-circle-check"></i>Approved
+    </button>
+    <button
+    (click)="toggleTabs()"  
+      mat-menu-item
+      
+      class="btn-reject"
+    >
+      <i class="fa-solid fa-ban"></i>Reject
+    </button>
+  </mat-menu>
+  
+ 
+  
+  <div *ngIf="showTabs" class="modal-overlay">
+    <div class="modal-dialog " (click)="preventClose($event)">
+        <form class="modal-content" >
+            <!-- <form [formGroup]="departmrntForm" class="popupmenu"> -->
+               
+                <button mat-icon-button (click)="toggleTabs()" class="close-icon">
+                    <i class="far fa-times-circle"></i>
+                </button>
+                
+                <h1 class="header">Reasons of Rejection</h1>
+  
+                <mdb-form-control class="tex-tbox">
+                    <input mdbInput type="text" id="form1" class="form-control" />
+                    <label mdbLabel class="form-label" for="form1">Reasons of Rejection</label>
+                </mdb-form-control>
+                <button mdbRipple type="button" class="btn btn-info btn-sm" mat-dialog-close
+                (click)="addDepartment()"><i class="fas fa-save fa-fw me-2"></i>Submit</button>
+  </form></div></div>

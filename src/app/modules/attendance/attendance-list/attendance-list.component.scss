@@ -1,0 +1,287 @@
+.attendance {
+    padding-left: 5%;
+}
+
+.form1 {
+    display: flex;
+    // padding-left: 10%;
+    // margin: 5%;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 50px;
+
+
+
+
+    .mb-4 {
+        width: 100%;
+        margin-left: 5%;
+    }
+
+
+    .btn {
+        width: 30%;
+
+    }
+}
+
+
+
+.menu {
+    display: flex;
+
+
+    height: 100%;
+    width: 100%;
+
+
+    .timesheet {
+        margin-right: 2%;
+        width: 200%;
+        text-align: center;
+        padding: 2%;
+        border: 1px solid rgb(174, 174, 175);
+        padding-bottom: 5%;
+        border-radius: 10px;
+
+        .punch {
+            padding: 2%;
+            height: 20%;
+            background-color: rgb(247, 242, 249);
+            padding: 2%;
+            border-radius: 10px;
+            border: 1px solid rgb(174, 174, 175);
+                }
+
+        .time {
+            padding: 3%;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            margin-left: 30%;
+            padding-top: 8%;
+            height: 24%;
+            width: 85px;
+
+            border: 3px solid rgb(174, 174, 175);
+            border-radius: 100%;
+            text-align: center;
+            background-color: rgb(247, 242, 249);
+        }
+
+        .break-ov {
+            height: 20%;
+            display: flex;
+            padding-top: 5%;
+
+            
+            .break {
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                border-radius: 5px;
+                background-color: rgb(247, 242, 249);
+                border: 1px solid rgb(174, 174, 175);
+
+            }
+
+            .overtime {
+                
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                border-radius: 5px;
+                background-color: rgb(247, 242, 249);
+                border: 1px solid rgb(174, 174, 175);
+                margin-left: 40%;
+            }
+        }
+    }
+
+    .activity {
+
+        padding: 2%;
+        text-align: center;
+        border: 1px solid rgb(174, 174, 175);
+        width: 200%;
+        border-radius: 10px;
+    }
+}
+
+
+// scss
+
+tr:nth-child(even) {
+    background-color: #f1e7c5;
+}
+tr {
+    height: 30px;
+}
+.round-button {
+    margin-left: 97%;
+    position: relative;
+    top: 26px;
+    width: 50px;
+
+}
+
+.modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-width: 190%;
+}
+.modal-content {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    height: 550px;
+    width: 1090px;
+    align-items: center;
+    overflow-y: auto; /* Add vertical scrollbar if content overflows */
+ }
+.close-icon{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: 0;
+    outline: 0;
+ }
+.header{
+    font-weight: 600;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: -57%;
+ }
+.first-index{
+    margin-left: -60%;
+}
+.sceond-index{
+    margin-left: -60%;
+}
+.third-index{
+    margin-left: -60%;
+}
+.fourth-index{
+    margin-left: -60%;
+}
+.five-index{
+    margin-left: -60%;
+}.six-index{
+    margin-left: -57%;
+    width: 215%;
+}
+
+.submit-dialog {
+    display: flex;
+    justify-content: flex-end; 
+  }
+  
+.submit-dialog button {
+    margin-left: 10px; 
+  }
+
+.image{
+    width: 350px;
+    height: 400px;
+    margin-top: -80%;
+    margin-left: 80%;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+
+li {
+    padding-bottom: 0.1rem;
+    border-left: 1px solid #c7bebc;
+    position: relative;
+    padding-left: 20px;
+    margin-left: 20px;
+
+    &:last-child {
+        border: 3px;
+        padding-bottom: 0;
+    }
+
+    &:before {
+        content: '';
+        width: 13px;
+        height: 13px;
+        background: white;
+        border: 2px solid orange;
+        
+        border-radius: 50%;
+        position: absolute;
+        left: -7px;
+        top: 0px;
+    }
+}
+
+
+.EmpProfile{
+    display: flex;
+    h5{
+        margin-left: 5px;
+    }
+}
+
+
+i{
+    margin-right: 10px;
+}
+ng-template{
+    display: flex;
+}
+.modal-dialog{
+    margin-left: 30%;
+    height: 65vh;
+    width: 35vw;
+}
+
+  
+
+.modal-content1{
+
+    width: 90%;
+    margin-top: 20px;
+
+    .btn{
+        margin-top:10px ;
+        margin-right: 45%;
+        display: flex;
+    }
+    
+}
+
+.modal-content{
+    height: 100%;
+    width: 150%;
+    .btn{
+        margin-left: 45%;
+    }
+    
+}
+.main{
+    width: 100%;
+}
+.close-btn{
+    margin-top: 5px;
+    margin-left: 25%;
+}
+
+.btn{
+    font-size: 20px;
+}
